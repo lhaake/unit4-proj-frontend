@@ -85,10 +85,10 @@ Screenshots of Strava for inspiration:
 		- Workouts
 			- Date - date 
 			- Title - string
-			- Time - decimal
+			- Time - float
 			- Sport - string
-			- Description - string
-			- Distance - decimal 
+			- Description - text
+			- Distance - float
 			- Exertion - integer 
 			- Url (if video) - string
 			- isFavorite - boolean 
