@@ -9,26 +9,26 @@
 |Day 3 - Monday, Nov. 23 | Frontend | -
 |Day 4 - Tuesday, Nov. 24 | Frontend | -
 |Day 5 - Wednesday, Nov. 25 | Frontend, Style  | -
-|Day 6 - Thursday, Nov. 26 | Frontend, Style  | -
+|Day 6 - Thursday, Nov. 26 | | -
 |Day 7 - Friday, Nov. 27 | Style | -
 
 ## Project Links
 
 - [My github repo - frontend](https://github.com/lhaake/unit4-proj-frontend)
 - [My github repo - backend](https://github.com/lhaake/unit4-proj-backend)
-- [Deployment - frontend]()
-- [Deployment - backend]()
+- [Netlify Deployment - frontend]()
+- [Heroku Deployment - backend](https://lh-training-log-backend.herokuapp.com)
 
 ## Project Description
 
-For my project, I plan to create a training log dashboard for a user to log their workouts with CRUD functionality. I'd like to use Strava as an example app. 
+For my project, I plan to create a training log dashboard for a user to log their workouts with CRUD functionality. I'd like to use Strava as an example app to guide my design. 
 - Using React and Rails 
 - Incorporating User Authentication
 - New tech -- Libraries: React Bootstrap Or Atomize (TBD)
 
 
 ## Wireframes
-Screenshots of Strava for inspiration:
+Screenshots of Strava application for inspiration:
 
 - [DASHBOARD](https://res.cloudinary.com/lhaake/image/upload/v1605761293/Capstone/Dashboard.png)
 - [DASHBOARD](https://res.cloudinary.com/lhaake/image/upload/v1605761293/Capstone/Dashboard%202.png)
@@ -52,7 +52,7 @@ Screenshots of Strava for inspiration:
 | Dashboard | Full list of workouts with some details  | 
 | WorkoutForm | Form for user to add and update a workout | 
 | Workout | 1 workout with full details | 
-| Filter | Search bar that filters workouts based on title | 
+| Filter | Search bar that filters workouts based on the title | 
 
 
 ## MVP/PostMVP 
