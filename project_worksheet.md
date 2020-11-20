@@ -141,9 +141,9 @@ Screenshots of Strava for inspiration:
 
 | Thursday, November 19 | 
 |---|
-| Met with Alex for project approval. |
-| Backend: Rails app is set up. 2 tables in database - users and workouts. Set up Authorization on backend. Tested CRUD routes, Auth on Postman. Deployed to Heroku. Tested on postman after deployment with Heroku url. | 
-| Goal for rest of the day: watch Alex's videos about setting up Auth on front end, think through, write notes for react Architecture | 
+- Met with Alex for project approval. 
+- Backend: Rails app is set up. 2 tables in database - users and workouts. Set up Authorization on backend. Tested CRUD routes, Auth on Postman. Deployed to Heroku. Tested on postman after deployment with Heroku url. 
+- Goal for rest of the day: watch Alex's videos about setting up Auth on front end, think through, write notes for react Architecture 
 
 
 | Friday, November 20 | 
