@@ -16,7 +16,7 @@
 
 - [My github repo - frontend](https://github.com/lhaake/unit4-proj-frontend)
 - [My github repo - backend](https://github.com/lhaake/unit4-proj-backend)
-- [Netlify Deployment - frontend]()
+- [Netlify Deployment - frontend - not added yet]()
 - [Heroku Deployment - backend](https://lh-training-log-backend.herokuapp.com)
 
 ## Project Description
@@ -55,52 +55,52 @@ Screenshots of Strava application for inspiration:
 | Filter | Search bar that filters workouts based on the title | 
 
 
-## MVP/PostMVP 
+## MVP
 
-#### MVP 
-- Front End 
-	- Set up VS Code for React App
-	- Installs
-	- Set up file structure
-	- Build Components
-	- Make API Calls
-	- Build CRUD Functionality
-	- Key Features:
-		- User Authentication 
-		- Display all workouts on Dashboard - listing title, date, time, type of workout
-		- Add/Edit/Delete workouts
-		- Display one workout view with full details 
-		- Workout Form
-			- Drop down of Sports to select 
-			- Hide distance field on form when "crossfit", "yoga" are selected
-			- Exertion - use a slider (like on Strava)
+Front End 
+- Set up VS Code for React App
+- Installs
+- Set up file structure
+- Build Components
+- Make API Calls
+- Build CRUD Functionality
+- Key Features:
+	- User Authentication 
+	- Display all workouts on Dashboard - listing title, date, time, type of workout
+	- Add/Edit/Delete workouts
+	- Display one workout view with full details 
+	- Workout Form
+		- Drop down of Sports to select 
+		- Hide distance field on form when "crossfit", "yoga" are selected
+		- Exertion - use a slider (like on Strava)
 		- Filter - Search all for workouts by title, date, favorites 
 	- Style
 	- Deployment
 
-- Back End 
-	- Set up project with Rails
-	- 2 tables: Users and Workouts
-		- One to many relationship --> USER can have many workouts
-		- Users
-			- Username - string
-			- Password - string
-		- Workouts
-			- Date - string 
-			- Title - string
-			- Time - float
-			- Sport - string
-			- Description - text
-			- Distance - float
-			- Exertion - integer 
-			- Url (if video) - string
-			- isFavorite - boolean 
-			- user_id - integer (foreign key of user)
-	- Edit Controllers
-	- Testing in Postman
-	- Deployment
+Back End 
+- Set up project with Rails
+- 2 tables: Users and Workouts
+	- One to many relationship --> USER can have many workouts
+	- Users
+		- Username - string
+		- Password - string
+	- Workouts
+		- Date - string 
+		- Title - string
+		- Time - float
+		- Sport - string
+		- Description - text
+		- Distance - float
+		- Exertion - integer 
+		- Url (if video) - string
+		- isFavorite - boolean 
+		- user_id - integer (foreign key of user)
+- Edit Controllers
+- Testing in Postman
+- Deployment
 
-#### PostMVP 
+
+## PostMVP 
 - For running: calculate pace based on distance and time
 - Calendar that would display the workouts entered by date (API research needed for this)
 - Add additional functionality to filter data by date, time, distance, keyword 
@@ -141,21 +141,21 @@ Screenshots of Strava application for inspiration:
 
 | Thursday, November 19 | 
 |---|
-- Met with Alex for project approval. 
-- Backend: Rails app is set up. 2 tables in database - users and workouts. Researched Authentication. Set up Auth on backend. Tested CRUD routes, Auth on Postman. Deployed to Heroku. Tested on postman after deployment with Heroku url. 
-- Goal for rest of the day: watch Alex's videos about setting up Auth on front end, think through, write notes for react Architecture 
+1. Met with Alex for project approval. 
+2. Backend: Rails app is set up. 2 tables in database - users and workouts. Researched Authentication. Set up Auth on backend. Tested CRUD routes, Auth on Postman. Deployed to Heroku. Tested on postman after deployment with Heroku url. 
+3. Goal for rest of the day: watch Alex's videos about setting up Auth on front end, think through & write notes for react Architecture 
 
 
 | Friday, November 20 | 
 |---|
-- Worked on Authentication
+1. Worked on Authentication
 	- Research
 	- Troubleshooting the sign up, login, log out functionality
 	- The sign up and log in forms are working. 
 	- Can see the token being saved in local storage in the "Application" section of Developer Tools 
 	- Have been able to fetch workout data for user that is logged in. 
 	- Log out button is working. 
-- Goal for rest of the day: map over user's data on dashboard component 
+2. Goal for rest of the day: map over user's data on dashboard component 
 
 
 ## Additional Libraries
