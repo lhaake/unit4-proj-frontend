@@ -108,19 +108,20 @@ Screenshots of Strava for inspiration:
 
 | Component | Priority | Estimated Time | Actual Time | Status |
 | --- | :---: |  :---: | :---: | :---: |
-| Meetings | H | 3hrs|  | |
-| Backend: Setup | H | 2hrs| |  |
-| Backend: Building Structure, relationships, seeding data | H | 3hrs|  | |
-| Backend: Authentication | H | 4hrs| |  |
-| Backend: Testing CRUD | H | 2hrs| |  |
-| Backend: Heroku Deployment | H | 2hr | |  |
+| Meetings | H | 3hrs| 0.5 | |
+| Backend: Rails set up, building structure, relationships, seeding data | H | 3hrs| 2.5hrs | |
+| Backend: Authentication + Research | H | 4hrs| 3hrs |  |
+| Backend: Testing CRUD | H | 2hrs| 1hr |  |
+| Backend: Heroku Deployment | H | 2hr | 0.5hr |  |
 | Frontend: Create React App | H | 1hr|  |  |
 | Frontend: Build Components | H | 8hrs|  | |
+| Frontend: Authentication + Research | H | 4hr| 3hr |  |
 | Frontend: Testing CRUD | H | 4hrs|  | |
 | Frontend: Netlify Deployment| H | 1hr| |
+| Frontend: new tech | H | 5hr| |
 | Styling | M | 5hrs| |  |
-| Research | M | 5hr| |  |
-| Testing / Troubleshooting | H | 5hrs| | |
+| Research | M | 4hr| |  |
+| Troubleshooting | H | 5hrs| 1hr | |
 | Total |  | 45hrs|  | |
 
 
@@ -138,18 +139,20 @@ Screenshots of Strava for inspiration:
 
 | Thursday, November 19 | 
 |---|
-| Backend: Rails app is set up. 2 models - users and workouts. Set up Authorization. Tested on Postman. Deployed to Heroku | 
-| Goal for rest of the day: watch Alex's videos about setting up Auth on front end, think through react Architecture | 
+| Met with Alex for project approval. |
+| Backend: Rails app is set up. 2 tables in database - users and workouts. Set up Authorization on backend. Tested CRUD routes, Auth on Postman. Deployed to Heroku. Tested on postman after deployment with Heroku url. | 
+| Goal for rest of the day: watch Alex's videos about setting up Auth on front end, think through, write notes for react Architecture | 
 
 
 | Friday, November 20 | 
 |---|
 - Worked on Authentication
 	- Troubleshooting the sign up, login, log out functionality
-	- The sign up and login in forms are working. 
-	- Have been able to fetch data. Log out is working. 
+	- The sign up and log in forms are working. 
 	- Can see the token being saved in local storage in the "Application" section of Developer Tools 
-- Goal for rest of the day: Render user's data on dashboard component 
+	- Have been able to fetch workout data for user that is logged in. 
+	- Log out button is working. 
+- Goal for rest of the day: map over user's data on dashboard component 
 
 
 ## Additional Libraries
