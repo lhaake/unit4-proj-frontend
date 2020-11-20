@@ -83,7 +83,7 @@ Screenshots of Strava for inspiration:
 			- Username - string
 			- Password - string
 		- Workouts
-			- Date - date 
+			- Date - string 
 			- Title - string
 			- Time - float
 			- Sport - string
@@ -92,7 +92,7 @@ Screenshots of Strava for inspiration:
 			- Exertion - integer 
 			- Url (if video) - string
 			- isFavorite - boolean 
-			- foreign key of user
+			- user_id - integer (foreign key of user)
 		- One to many relationship --> USER can have many workouts
 	- Edit Controllers
 	- Testing in Postman
@@ -131,6 +131,25 @@ Screenshots of Strava for inspiration:
 | Calendar | M | 6hr| |  |
 | Additional functionality to filter data | M | 6hr| |  |
 | Total |  | 15hrs| 0hrs | |
+
+
+### Project Notes
+
+
+| Thursday, November 19 | 
+|---|
+| Backend: Rails app is set up. 2 models - users and workouts. Set up Authorization. Tested on Postman. Deployed to Heroku | 
+| Goal for rest of the day: watch Alex's videos about setting up Auth on front end, think through react Architecture | 
+
+
+| Friday, November 20 | 
+|---|
+- Worked on Authentication
+	- Troubleshooting the sign up, login, log out functionality
+	- The sign up and login in forms are working. 
+	- Have been able to fetch data. Log out is working. 
+	- Can see the token being saved in local storage in the "Application" section of Developer Tools 
+- Goal for rest of the day: Render user's data on dashboard component 
 
 
 ## Additional Libraries
