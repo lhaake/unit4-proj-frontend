@@ -81,6 +81,7 @@ Screenshots of Strava for inspiration:
 - Back End 
 	- Set up project with Rails
 	- 2 tables: Users and Workouts
+		- One to many relationship --> USER can have many workouts
 		- Users
 			- Username - string
 			- Password - string
@@ -95,7 +96,6 @@ Screenshots of Strava for inspiration:
 			- Url (if video) - string
 			- isFavorite - boolean 
 			- user_id - integer (foreign key of user)
-		- One to many relationship --> USER can have many workouts
 	- Edit Controllers
 	- Testing in Postman
 	- Deployment
@@ -124,16 +124,16 @@ Screenshots of Strava for inspiration:
 | Styling | M | 5hrs| |  |
 | Research | M | 4hr| |  |
 | Troubleshooting | H | 5hrs| 1hr | |
-| Total |  | 45hrs|  | |
+| Total |  | 51hrs|  | |
 
 
 ## PostMVP Timeline
 | Component | Priority | Estimated Time | Actual Time | Notes |
 | --- | :---: |  :---: | :---: | :---: | 
-| Calculate pace | M | 3hr| |  |
+| Calculate pace | M | 5hr| |  |
 | Calendar | M | 6hr| |  |
 | Additional functionality to filter data | M | 6hr| |  |
-| Total |  | 15hrs| 0hrs | |
+| Total |  | 17hrs| hrs | |
 
 
 ### Project Notes
@@ -142,13 +142,14 @@ Screenshots of Strava for inspiration:
 | Thursday, November 19 | 
 |---|
 - Met with Alex for project approval. 
-- Backend: Rails app is set up. 2 tables in database - users and workouts. Set up Authorization on backend. Tested CRUD routes, Auth on Postman. Deployed to Heroku. Tested on postman after deployment with Heroku url. 
+- Backend: Rails app is set up. 2 tables in database - users and workouts. Researched Authentication. Set up Auth on backend. Tested CRUD routes, Auth on Postman. Deployed to Heroku. Tested on postman after deployment with Heroku url. 
 - Goal for rest of the day: watch Alex's videos about setting up Auth on front end, think through, write notes for react Architecture 
 
 
 | Friday, November 20 | 
 |---|
 - Worked on Authentication
+	- Research
 	- Troubleshooting the sign up, login, log out functionality
 	- The sign up and log in forms are working. 
 	- Can see the token being saved in local storage in the "Application" section of Developer Tools 
