@@ -4,12 +4,12 @@
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Day 1 - Thursday, Nov. 19 | Planning, Work on backend | -
-|Day 2 - Friday, Nov. 20 | Backend, Deploy backend | -
+|Day 1 - Thursday, Nov. 19 | Planning, Work on backend, Deploy backend | Complete
+|Day 2 - Friday, Nov. 20 | Authorization, Frontend | -
 |Day 3 - Monday, Nov. 23 | Frontend | -
 |Day 4 - Tuesday, Nov. 24 | Frontend | -
-|Day 5 - Wednesday, Nov. 25 |  | -
-|Day 6 - Thursday, Nov. 26 | Frontend, Style | -
+|Day 5 - Wednesday, Nov. 25 | Frontend, Style  | -
+|Day 6 - Thursday, Nov. 26 | Frontend, Style  | -
 |Day 7 - Friday, Nov. 27 | Style | -
 
 ## Project Links
@@ -24,7 +24,7 @@
 For my project, I plan to create a training log dashboard for a user to log their workouts with CRUD functionality. I'd like to use Strava as an example app. 
 - Using React and Rails 
 - Incorporating User Authentication
-- Libraries: React Bootstrap Or Atomize (TBD)
+- New tech -- Libraries: React Bootstrap Or Atomize (TBD)
 
 
 ## Wireframes
@@ -45,13 +45,14 @@ Screenshots of Strava for inspiration:
 
 | Component | Description | 
 | --- | :---: |  
-| App | This will be my parent Component | 
-| Nav | This will render the nav | 
-| About | This will render the about page | 
-| Dashboard | This will render the list of all workouts with some details  | 
-| Form | This will render form to add and update a workout | 
-| Workout | This will render single workout with full details | 
-| Filter | This will filter all workouts based on title | 
+| App | parent Component | 
+| Nav | Navbar | 
+| About | About page | 
+| LoginForm | Form for user to Sign up or to Login | 
+| Dashboard | Full list of workouts with some details  | 
+| WorkoutForm | Form for user to add and update a workout | 
+| Workout | 1 workout with full details | 
+| Filter | Search bar that filters workouts based on title | 
 
 
 ## MVP/PostMVP 
@@ -62,13 +63,14 @@ Screenshots of Strava for inspiration:
 	- Installs
 	- Set up file structure
 	- Build Components
-	- API Calls
-	- CRUD Functionality
+	- Make API Calls
+	- Build CRUD Functionality
 	- Key Features:
+		- User Authentication 
 		- Display all workouts on Dashboard - listing title, date, time, type of workout
 		- Add/Edit/Delete workouts
 		- Display one workout view with full details 
-		- Form
+		- Workout Form
 			- Drop down of Sports to select 
 			- Hide distance field on form when "crossfit", "yoga" are selected
 			- Exertion - use a slider (like on Strava)
@@ -100,7 +102,7 @@ Screenshots of Strava for inspiration:
 
 #### PostMVP 
 - For running: calculate pace based on distance and time
-- Calendar that would display the workouts by date - API research for this
+- Calendar that would display the workouts entered by date (API research needed for this)
 - Add additional functionality to filter data by date, time, distance, keyword 
 
 
