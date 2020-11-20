@@ -21,7 +21,6 @@ const LoginForm = (props) => {
         event.preventDefault()
         props.handleForm(formData);
         props.history.push('/');
-
     }
 
     //function to reset the form after submit

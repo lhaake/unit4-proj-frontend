@@ -1,19 +1,21 @@
 import React, {useState} from 'react'
 import './App.css';
-import {Route} from "react-router-dom"
+import {Route, Link, Switch} from "react-router-dom"
 import TestForm from "./TestForm"
+import Dash from "./Dash"
 
 function App() {
     // url to backend
-	const url = "https://lh-training-log-backend.herokuapp.com"
+    const url = "https://lh-training-log-backend.herokuapp.com"
 
-  // state for user info
-  const [userLogin, setUserLogin] = useState({})
+    // state for user login info
+    const [userLogin, setUserLogin] = useState({})
 
-  const [userSignup, setUserSignup] = useState({})
+    //state for user signup info
+    const [userSignup, setUserSignup] = useState({})
 
     // state for user's workouts
-  const [workouts, setWorkouts] = useState([])
+    const [workouts, setWorkouts] = useState([])
 
     const signup = async (newUser) => {
         console.log("signup function start")
@@ -84,28 +86,46 @@ function App() {
         <h1>This is App!</h1>
          {/* <button onClick={() => }>Sign Up</button> */}
         {/* <button onClick={() => login()}>Log In</button> */}
-        <button onClick={() => testGetWorkouts()}>Test Fetch Workouts</button>
+        <Link to="/">Home</Link><br /><br />
+        <Link to="/signup">Sign up</Link><br /><br />
+        <Link to="/login">Log in</Link><br /><br />
+        <Link to="/dashboard">Dashboard</Link><br /><br />
+        <button onClick={() => testGetWorkouts()}>Test Fetch Workouts</button><br /><br />
         <button onClick={() => logout()}>Log out</button>
-
-        <Route exact path="/"
-			  render={(rp) => (
+        
+      <Switch>
+        <Route path="/signup"
+			render={(rp) => (
         	<TestForm
-              {...rp}
-              label="Sign Up"
+                {...rp}
+                label="Sign Up"
 			    handleForm={signup}
 		    />
       	    )}
         />
 
-        <Route exact path="/"
+        <Route path="/login"
 			render={(rp) => (
         	<TestForm
-              {...rp}
+                {...rp}
                 label="Login"
 			    handleForm={login}
 		    />
       	    )}
         />
+        
+        { workouts[0] ? 
+         <Route path="/dashboard"
+			  render={(rp) => (
+        	<Dash
+                {...rp}
+			    workouts={workouts}
+		    />
+      	    )}
+        />
+        : null
+        } 
+</Switch> 
         </div>
     )
 

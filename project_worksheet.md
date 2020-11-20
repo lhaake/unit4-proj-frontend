@@ -155,7 +155,7 @@ Back End
 	- Can see the token being saved in local storage in the "Application" section of Developer Tools 
 	- Have been able to fetch workout data for user that is logged in. 
 	- Log out button is working. 
-2. Goal for rest of the day: map over user's data on dashboard component 
+2. Goal for rest of the day: map over user's data on dashboard component, update React architecture 
 
 
 ## Additional Libraries
