@@ -155,7 +155,16 @@ Back End
 	- Can see the token being saved in local storage in the "Application" section of Developer Tools 
 	- Have been able to fetch workout data for user that is logged in. 
 	- Log out button is working. 
-2. Goal for rest of the day: map over user's data on dashboard component, update React architecture 
+2. Goal for rest of the day: map over user's data on dashboard component
+3. Created Dash component and Workout component. Added routes and links so that when a user clicks the title of a workout on the Dashboard that they are brought to the Workout component, "/workout/:id" with the 1 workout they clicked on and full details. 
+
+
+Next up:
+- update React architecture
+- Add a "Add Workout" Button to Dashboard
+- On Workout component, add "Add Workout"
+- CRUD --> Create, Update, Delete
+- Will need a Form 
 
 
 ## Additional Libraries

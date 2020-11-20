@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom"
 
 const Dash = (props) => {
     const {workouts} = props
@@ -10,9 +11,14 @@ console.log("workout data", workouts)
     <h1> Dash Component</h1>
       {workouts.map((workout) => (
         <article>
-          <h1>{workout.title}</h1>
-          <h3>{workout.time}</h3>
+        <Link to={`/workout/${workout.id}`}><h1>Title: {workout.title}</h1></Link>
+          <h3>Date: {workout.date}</h3>
+          <h3>Time: {workout.time} hours</h3>
+          <h3>Sport: {workout.sport}</h3>
+          {workout.isFavorite? <h3>Heart/Thumbs Up for favorite</h3> : null }
+     
 
+          <hr />
         </article>
       ))}
       </div>

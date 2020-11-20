@@ -1,8 +1,9 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './App.css';
 import {Route, Link, Switch} from "react-router-dom"
 import TestForm from "./TestForm"
 import Dash from "./Dash"
+import Workout from "./Workout"
 
 function App() {
     // url to backend
@@ -81,6 +82,8 @@ function App() {
     console.log("logged out")
   }
 
+  useEffect( () => testGetWorkouts(), [userLogin.user])
+
     return (
         <div>
         <h1>This is App!</h1>
@@ -125,6 +128,19 @@ function App() {
         />
         : null
         } 
+
+      { workouts[0] ? 
+      <Route path="/workout/:id"
+			  render={(rp) => (
+        	<Workout
+            {...rp}
+          workouts={workouts}
+		    />
+      	)}
+      />
+       : null
+        } 
+
 </Switch> 
         </div>
     )
