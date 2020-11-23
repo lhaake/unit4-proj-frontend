@@ -14,11 +14,11 @@ function App() {
 	  const emptyForm = {
       title: "",
       date: "",
-      time: 0,
-      distance: 0,
+      time: null,
+      distance: null,
       sport: "",
       description: "",
-      exertion: 0,
+      exertion: null,
       url: "",
       isFavorite: false,
     }

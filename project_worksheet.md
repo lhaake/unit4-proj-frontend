@@ -164,13 +164,18 @@ Back End
 2. Test Form - see that is it added to Dashboard list of all workouts
 3. 'Add Workout' Link on Dashboard and App 
 4. Troubleshooting my useEffect in App. I realized that things weren't working correctly because the useEffect was calling getWorkouts() before the login() had stored the login values (token) in state (which is needed in the getWorkouts()). I ended up passing a function to useEffect that is an if statement to check if the userLogin state had the token. if it did, then the getWorkouts() would run
-5. Work on: 
+5. React Bootstrap Form, confirmed the form is working. Need to think about the units entered - Date, time, distance, favorite, exertion 
+6. Date: 
 
 Next up:
 - Style the Form - dropdown, hidden fields, slider, favorite (icon)
 - CRUD --> Create, Update, Delete 
 	- Edit a workout
 	- Delete a workout 
+- Error message on screen when Logging In - Invalid Username or Password
+- Message confirming you have signed in - created an Account
+- Message confirming you are logged in
+- Adding form validation (required field)
 - Update React architecture
 - Project Name
 
