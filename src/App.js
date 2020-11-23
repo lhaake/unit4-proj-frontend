@@ -53,6 +53,7 @@ function App() {
     if (window.localStorage.getItem('token')) {
         console.log('token exits')
         token = JSON.parse(window.localStorage.getItem('token'))
+        setUserLogin(token)
     } else {
         console.log('no token')
       const response = await fetch(url + "/login", {
@@ -75,6 +76,7 @@ function App() {
   console.log("userlogin state", userLogin)
 
   // testing fetch for user's workouts after logged in
+
    const getWorkouts = async () => {
     console.log("start of test function")
     const response = await fetch(url + "/workouts/", {
@@ -86,8 +88,10 @@ function App() {
     const result = await response.json()
      setWorkouts(result)
     console.log(result)
-
+    
   }
+   
+ 
 
   // user logout function 
   const logout = () => {
@@ -96,16 +100,27 @@ function App() {
     console.log("logged out")
   }
 
-  useEffect( () => getWorkouts(), [userLogin.user])
+  // I was troubleshooting because my useEffect was making the GET request for workouts before the token was in state. This is the source I used to help allow for a conditional within useEffect: https://reactjs.org/docs/hooks-rules.html
+    useEffect(function conditionalLoad() {
+    if (userLogin.token) {
+      getWorkouts()
+    }
+  }, [userLogin.token]);
+
+
+  // useEffect( () => {
+  //   getWorkouts()
+  // }, [userLogin.token])
+
 
   
   // handleCreate for creating new workouts
 	const handleCreate = async (newWorkout) => {
 		const response = await fetch(url + "/workouts/", {
-			method: 'post',
+			method: "post",
 			headers: {
         "Authorization": `bearer ${userLogin.token}`
-     , 'Content-Type': 'application/json' },
+     , "Content-Type": "application/json" },
 			body: JSON.stringify(newWorkout),
     })
     const result = await response.json()
@@ -124,6 +139,7 @@ function App() {
         <Link to="/signup">Sign up</Link><br /><br />
         <Link to="/login">Log in</Link><br /><br />
         <Link to="/dashboard">Dashboard</Link><br /><br />
+         <Link to="/workout/add">Add a Workout</Link><br /><br />
         {/* <button onClick={() => getWorkouts()}>Test Fetch Workouts</button><br /><br /> */}
         <button onClick={() => logout()}>Log out</button>
         
@@ -161,17 +177,6 @@ function App() {
         } 
 
       { workouts[0] ? 
-      <Route path="/workout/:id"
-			  render={(rp) => (
-        <Workout
-          {...rp}
-          workouts={workouts}
-		    />
-      	)}
-      />
-      : null
-      } 
-
       <Route path="/workout/add"
 			render={(rp) => (
 			<WorkoutForm
@@ -182,6 +187,20 @@ function App() {
 			/>
 			)}
 		/>
+     : null
+     } 
+
+      { workouts[0] ? 
+      <Route path="/workout/:id"
+			  render={(rp) => (
+        <Workout
+          {...rp}
+          workouts={workouts}
+		    />
+      	)}
+      />
+      : null
+      } 
 
     </Switch> 
     </div>

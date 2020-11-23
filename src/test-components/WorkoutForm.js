@@ -2,8 +2,11 @@ import React, {useState} from "react"
 // import {Link} from "react-router-dom"
 
 const WorkoutForm = (props) => {
+
     // state for the form 
     const [formData, setFormData] = useState(props.workout);   // update with props sent down from app for an empty form 
+    
+    console.log("props", props.workout)
     
     // HandleSubmit 
     const handleSubmit = (event) => {
