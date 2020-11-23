@@ -100,12 +100,17 @@ function App() {
 
   
   // handleCreate for creating new workouts
-	const handleCreate = (newWorkout) => {
-		fetch(url + "/workouts/", {
+	const handleCreate = async (newWorkout) => {
+		const response = await fetch(url + "/workouts/", {
 			method: 'post',
-			headers: { 'Content-Type': 'application/json' },
+			headers: {
+        "Authorization": `bearer ${userLogin.token}`
+     , 'Content-Type': 'application/json' },
 			body: JSON.stringify(newWorkout),
-		}).then((response) => getWorkouts());
+    })
+    const result = await response.json()
+     setWorkouts(result)
+    getWorkouts()
   };
 
 
@@ -167,7 +172,7 @@ function App() {
       : null
       } 
 
-      <Route exact path="/workout/add"
+      <Route path="/workout/add"
 			render={(rp) => (
 			<WorkoutForm
 				{...rp}

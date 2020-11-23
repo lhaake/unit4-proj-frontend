@@ -161,6 +161,8 @@ Back End
 | Monday, November 23 | 
 |---|
 1. Work on Form to Add a Workout 
+2. Test Form 
+3. Add Button on Dashboard 
 
 
 Next up:
@@ -169,6 +171,7 @@ Next up:
 - On Workout component, add "Add Workout"
 - CRUD --> Create, Update, Delete 
 - update React architecture
+- Project Name
 
 
 - [Look into](https://www.npmjs.com/package/running-calculations)

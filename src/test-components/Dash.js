@@ -10,6 +10,7 @@ console.log("workouts data passed as props in Dash component", workouts)
  const loaded = () => (
     <div style={{ textAlign: "center" }}>
     <h1>Dash Component</h1>
+    <Link to="/workout/add">Add a Workout</Link><br /><br />
       {workouts.map((workout) => (
         <article>
         <Link to={`/workout/${workout.id}`}><h1>Title: {workout.title}</h1></Link>
