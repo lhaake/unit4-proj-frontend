@@ -3,13 +3,13 @@ import React from "react"
 
 const Workout = (props) => {
 
-    const {workouts} = props
+  const {workouts} = props
 
-   let workoutId = props.match.params.id
-    workoutId = parseInt(workoutId)
+  let workoutId = props.match.params.id
+  workoutId = parseInt(workoutId)
 
 console.log("workout data", workouts)
-// let workoutId = props.id
+
 console.log("workoutId from url params: ", workoutId)
 
 let displayWorkout = []

@@ -1,14 +1,28 @@
 import React, {useState, useEffect} from 'react'
-import './App.css';
 import {Route, Link, Switch} from "react-router-dom"
-import TestForm from "./TestForm"
-import Dash from "./Dash"
-import Workout from "./Workout"
+import './App.css';
+import TestForm from "./test-components/TestForm"
+import Dash from "./test-components/Dash"
+import Workout from "./test-components/Workout"
+import WorkoutForm from "./test-components/WorkoutForm"
 
 function App() {
     // url to backend
     const url = "https://lh-training-log-backend.herokuapp.com"
 
+    // empty form for "add a new workout"
+	  const emptyForm = {
+      title: "",
+      date: "",
+      time: 0,
+      distance: 0,
+      sport: "",
+      description: "",
+      exertion: 0,
+      url: "",
+      isFavorite: false,
+    }
+    
     // state for user login info
     const [userLogin, setUserLogin] = useState({})
 
@@ -61,7 +75,7 @@ function App() {
   console.log("userlogin state", userLogin)
 
   // testing fetch for user's workouts after logged in
-   const testGetWorkouts = async () => {
+   const getWorkouts = async () => {
     console.log("start of test function")
     const response = await fetch(url + "/workouts/", {
       method: "get", 
@@ -82,49 +96,61 @@ function App() {
     console.log("logged out")
   }
 
-  useEffect( () => testGetWorkouts(), [userLogin.user])
+  useEffect( () => getWorkouts(), [userLogin.user])
+
+  
+  // handleCreate for creating new workouts
+	const handleCreate = (newWorkout) => {
+		fetch(url + "/workouts/", {
+			method: 'post',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(newWorkout),
+		}).then((response) => getWorkouts());
+  };
+
+
 
     return (
-        <div>
-        <h1>This is App!</h1>
-         {/* <button onClick={() => }>Sign Up</button> */}
+      <div>
+      <h1>App Component</h1>
+        {/* <button onClick={() => }>Sign Up</button> */}
         {/* <button onClick={() => login()}>Log In</button> */}
         <Link to="/">Home</Link><br /><br />
         <Link to="/signup">Sign up</Link><br /><br />
         <Link to="/login">Log in</Link><br /><br />
         <Link to="/dashboard">Dashboard</Link><br /><br />
-        <button onClick={() => testGetWorkouts()}>Test Fetch Workouts</button><br /><br />
+        {/* <button onClick={() => getWorkouts()}>Test Fetch Workouts</button><br /><br /> */}
         <button onClick={() => logout()}>Log out</button>
         
       <Switch>
         <Route path="/signup"
-			render={(rp) => (
+			    render={(rp) => (
         	<TestForm
-                {...rp}
-                label="Sign Up"
-			    handleForm={signup}
-		    />
-      	    )}
+            {...rp}
+            label="Sign Up"
+			      handleForm={signup}
+		      />
+      	)}
         />
 
         <Route path="/login"
-			render={(rp) => (
+			    render={(rp) => (
         	<TestForm
-                {...rp}
-                label="Login"
-			    handleForm={login}
-		    />
-      	    )}
+            {...rp}
+            label="Login"
+			      handleForm={login}
+		      />
+      	  )}
         />
         
         { workouts[0] ? 
-         <Route path="/dashboard"
-			  render={(rp) => (
+        <Route path="/dashboard"
+			    render={(rp) => (
         	<Dash
-                {...rp}
-			    workouts={workouts}
-		    />
-      	    )}
+            {...rp}
+            workouts={workouts}
+		      />
+      	  )}
         />
         : null
         } 
@@ -132,19 +158,29 @@ function App() {
       { workouts[0] ? 
       <Route path="/workout/:id"
 			  render={(rp) => (
-        	<Workout
-            {...rp}
+        <Workout
+          {...rp}
           workouts={workouts}
 		    />
       	)}
       />
-       : null
-        } 
+      : null
+      } 
 
-</Switch> 
-        </div>
+      <Route exact path="/workout/add"
+			render={(rp) => (
+			<WorkoutForm
+				{...rp}
+				label="Save"
+				workout={emptyForm}
+				handleSubmit={handleCreate}
+			/>
+			)}
+		/>
+
+    </Switch> 
+    </div>
     )
-
 }
 
 export default App;

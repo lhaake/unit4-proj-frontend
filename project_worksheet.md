@@ -5,8 +5,8 @@
 |  Day | Deliverable | Status
 |---|---| ---|
 |Day 1 - Thursday, Nov. 19 | Planning, Work on backend, Deploy backend | Complete
-|Day 2 - Friday, Nov. 20 | Authorization, Frontend | -
-|Day 3 - Monday, Nov. 23 | Frontend | -
+|Day 2 - Friday, Nov. 20 | Authorization, Frontend | Done
+|Day 3 - Monday, Nov. 23 | Frontend, CRUD | -
 |Day 4 - Tuesday, Nov. 24 | Frontend | -
 |Day 5 - Wednesday, Nov. 25 | Frontend, Style  | -
 |Day 6 - Thursday, Nov. 26 | | -
@@ -101,7 +101,7 @@ Back End
 
 
 ## PostMVP 
-- For running: calculate pace based on distance and time
+- For running/biking: calculate pace based on distance and time
 - Calendar that would display the workouts entered by date (API research needed for this)
 - Add additional functionality to filter data by date, time, distance, keyword 
 
@@ -158,13 +158,20 @@ Back End
 2. Goal for rest of the day: map over user's data on dashboard component
 3. Created Dash component and Workout component. Added routes and links so that when a user clicks the title of a workout on the Dashboard that they are brought to the Workout component, "/workout/:id" with the 1 workout they clicked on and full details. 
 
+| Monday, November 23 | 
+|---|
+1. Work on Form to Add a Workout 
+
 
 Next up:
-- update React architecture
+- Form 
 - Add a "Add Workout" Button to Dashboard
 - On Workout component, add "Add Workout"
-- CRUD --> Create, Update, Delete
-- Will need a Form 
+- CRUD --> Create, Update, Delete 
+- update React architecture
+
+
+- [Look into](https://www.npmjs.com/package/running-calculations)
 
 
 ## Additional Libraries
