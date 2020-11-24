@@ -9,7 +9,10 @@ const WorkoutForm = (props) => {
     const [formData, setFormData] = useState(props.workout)   // update with props sent down from app for an empty form 
     
     console.log("props", props.workout)
-
+    let thedate = "2020-11-23"
+    let newDate = ""
+    newDate = thedate.toLocaleDateString('en-US')
+    console.log("converting the date", newDate)
     // HandleSubmit 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -22,6 +25,7 @@ const WorkoutForm = (props) => {
     const handleChange = (event) => {
         setFormData({...formData, [event.target.name]: event.target.value })
     }
+
 
 return (
     <Form onSubmit={handleSubmit}>
@@ -38,7 +42,7 @@ return (
             onChange={handleChange} />
     </Form.Group>
 
-    <Form.Group as={Col} controlId="">
+    <Form.Group as={Col} controlId="sport-select">
       <Form.Label>Sport</Form.Label>
       <Form.Control as="select" defaultValue="Choose..."
         type="text"
@@ -74,7 +78,7 @@ return (
   <Form.Group as={Col} controlId="">
     <Form.Label>Date</Form.Label>
     <Form.Control 
-        type="text"
+        type="date"
         name="date"
         value={formData.date}
         onChange={handleChange}
@@ -104,6 +108,7 @@ return (
     />
   </Form.Group>
 
+    {formData.sport === "Run" || formData.sport === "Bike" || formData.sport === "Hike" || formData.sport === "Walk" ? 
     <Form.Group as={Col} controlId="">
       <Form.Label>Distance</Form.Label>
       <Form.Control
@@ -113,9 +118,12 @@ return (
         onChange={handleChange}
         placeholder="" />
     </Form.Group>
+    : null 
+    }
 
+    {formData.sport === "Yoga" || formData.sport === "Workout" || formData.sport === "Pilates" || formData.sport === "Lift Weights" || formData.sport === "HIIT" || formData.sport === "Crossfit" ? 
     <Form.Group as={Col} controlId="">
-      <Form.Label>URL</Form.Label>
+      <Form.Label>Workout Video URL</Form.Label>
       <Form.Control 
         type="text"
         name="url"
@@ -123,6 +131,8 @@ return (
         onChange={handleChange}
         placeholder="" />
     </Form.Group>
+    : null 
+    }
 
     <Form.Group as={Col} controlId="">
       <Form.Label>Exertion</Form.Label>
@@ -145,7 +155,7 @@ return (
     </Form.Group>
    
 
-  <Button variant="primary" type="submit" value={props.label}>
+  <Button variant="primary" size="lg" type="submit" value={props.label}>
     Save
   </Button>
 

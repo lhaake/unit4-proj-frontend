@@ -164,11 +164,15 @@ Back End
 2. Test Form - see that is it added to Dashboard list of all workouts
 3. 'Add Workout' Link on Dashboard and App 
 4. Troubleshooting my useEffect in App. I realized that things weren't working correctly because the useEffect was calling getWorkouts() before the login() had stored the login values (token) in state (which is needed in the getWorkouts()). I ended up passing a function to useEffect that is an if statement to check if the userLogin state had the token. if it did, then the getWorkouts() would run
-5. React Bootstrap Form, confirmed the form is working. Need to think about the units entered - Date, time, distance, favorite, exertion 
-6. Date: 
+5. React Bootstrap Form, confirmed the form is working. 
+6. On Form, hid the distance field when selected a sport that is not Run, Walk, Hike, or Bike. 
+7. On Form, hid the URL field when selected a sport that is not Yoga, pilates, Workout..etc
+8. Need to think about the units entered - Date, time, distance, favorite, exertion 
+9. https://momentjs.com/
+
 
 Next up:
-- Style the Form - dropdown, hidden fields, slider, favorite (icon)
+- Style the Form - dropdown, hidden fields, slider for exertion, favorite (icon), units entered 
 - CRUD --> Create, Update, Delete 
 	- Edit a workout
 	- Delete a workout 
