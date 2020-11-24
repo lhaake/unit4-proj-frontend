@@ -112,20 +112,20 @@ Back End
 
 | Component | Priority | Estimated Time | Actual Time | Status |
 | --- | :---: |  :---: | :---: | :---: |
-| Meetings | H | 3hrs| 0.5 | |
+| Meetings | H | 3hrs|  | |
 | Backend: Rails set up, building structure, relationships, seeding data | H | 3hrs| 2.5hrs | |
 | Backend: Authentication + Research | H | 4hrs| 3hrs |  |
 | Backend: Testing CRUD | H | 2hrs| 1hr |  |
 | Backend: Heroku Deployment | H | 2hr | 0.5hr |  |
-| Frontend: Create React App | H | 1hr|  |  |
+| Frontend: Create React App | H | 1hr| 0.5hr |  |
 | Frontend: Build Components | H | 8hrs|  | |
 | Frontend: Authentication + Research | H | 4hr| 3hr |  |
 | Frontend: Testing CRUD | H | 4hrs|  | |
 | Frontend: Netlify Deployment| H | 1hr| |
 | Frontend: new tech | H | 5hr| |
 | Styling | M | 5hrs| |  |
-| Research | M | 4hr| |  |
-| Troubleshooting | H | 5hrs| 1hr | |
+| Research | M | 4hr| 2hr|  |
+| Troubleshooting | H | 5hrs| 3hr | |
 | Total |  | 51hrs|  | |
 
 
