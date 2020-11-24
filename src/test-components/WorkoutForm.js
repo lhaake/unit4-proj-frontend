@@ -9,10 +9,7 @@ const WorkoutForm = (props) => {
     const [formData, setFormData] = useState(props.workout)   // update with props sent down from app for an empty form 
     
     console.log("props", props.workout)
-    let thedate = "2020-11-23"
-    let newDate = ""
-    newDate = thedate.toLocaleDateString('en-US')
-    console.log("converting the date", newDate)
+
     // HandleSubmit 
     const handleSubmit = (event) => {
         event.preventDefault()

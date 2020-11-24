@@ -1,5 +1,5 @@
 import React from "react"
-// import {Link} from "react-router-dom"
+import { Icon } from "atomize";
 
 const Workout = (props) => {
 
@@ -37,7 +37,25 @@ console.log("looking for workout[workoutId] array", displayWorkout)
           <h3>Sport: {workout.sport}</h3>
           {workout.isFavorite? <h3>Heart/Thumbs Up for favorite</h3> : null }
           { workout.url ? <a href={workout.url} target="_blank">Workout Video</a> : null }
+          <br />
+          <button onClick={() => {
+								props.selectWorkout(workout);
+								props.history.push(`${props.match.url}/edit`);
+							}}
+						>
+							Edit
+						</button>
 
+           	<button
+							onClick={() => {
+                props.deleteWorkout(workout);
+                props.history.push("/dashboard")
+							}}
+						>
+							Delete
+						</button> 
+
+            <Icon name="Add" color="black" size="5px" />
           <hr />
         </article>
       ))}

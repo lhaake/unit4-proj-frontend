@@ -4,13 +4,15 @@
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Day 1 - Thursday, Nov. 19 | Planning, Work on backend, Deploy backend | Complete
-|Day 2 - Friday, Nov. 20 | Authorization, Frontend | Done
-|Day 3 - Monday, Nov. 23 | Frontend, CRUD | -
-|Day 4 - Tuesday, Nov. 24 | Frontend | -
-|Day 5 - Wednesday, Nov. 25 | Frontend, Style  | -
+|Day 1 - Thursday, Nov. 19 | Planning, Work on backend, Deploy backend | Done
+|Day 2 - Friday, Nov. 20 | Auth, Frontend | Done
+|Day 3 - Monday, Nov. 23 | Frontend, CRUD | Done
+|Day 4 - Tuesday, Nov. 24 | Frontend, CRUD | -
+|Day 5 - Wednesday, Nov. 25 | Frontend, Filter Component, Styling  | -
 |Day 6 - Thursday, Nov. 26 | | -
-|Day 7 - Friday, Nov. 27 | Style | -
+|Day 7 - Friday, Nov. 27  | Styling | -
+|Day 8,9 - Weekend  |  | -
+|Day 10 - Monday, Nov. 30  | Project Due | -
 
 ## Project Links
 
@@ -167,8 +169,21 @@ Back End
 5. React Bootstrap Form, confirmed the form is working. 
 6. On Form, hid the distance field when selected a sport that is not Run, Walk, Hike, or Bike. 
 7. On Form, hid the URL field when selected a sport that is not Yoga, pilates, Workout..etc
-8. Need to think about the units entered - Date, time, distance, favorite, exertion 
-9. https://momentjs.com/
+
+
+| Tuesday, November 24 | 
+|---|
+1. CRUD --> Create, Update, Delete - Complete
+	- Edit a workout
+	- Delete a workout 
+2. Atomize - icons for edit and delete 
+3. Workout Form 
+	- Need to think about the units entered 
+	- Time: minutes?
+	- Distance: miles?
+	- Favorites
+	- JS Date - format to read Tues, Nov 24, 2020
+	- Exertion: slider 
 
 
 Next up:

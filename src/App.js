@@ -32,6 +32,9 @@ function App() {
     // state for user's workouts
     const [workouts, setWorkouts] = useState([])
 
+    // state for selected workout (edit)
+    const [selectedWorkout, setSelectedWorkout] = useState(emptyForm);
+
     const signup = async (newUser) => {
         console.log("signup function start")
         const response = await fetch(url + "/users", {
@@ -75,8 +78,7 @@ function App() {
  
   console.log("userlogin state", userLogin)
 
-  // testing fetch for user's workouts after logged in
-
+  // fetch for user's workouts after logged in
    const getWorkouts = async () => {
     console.log("start of test function")
     const response = await fetch(url + "/workouts/", {
@@ -88,10 +90,7 @@ function App() {
     const result = await response.json()
      setWorkouts(result)
     console.log(result)
-    
   }
-   
- 
 
   // user logout function 
   const logout = () => {
@@ -112,8 +111,6 @@ function App() {
   //   getWorkouts()
   // }, [userLogin.token])
 
-
-  
   // handleCreate for creating new workouts
 	const handleCreate = async (newWorkout) => {
 		const response = await fetch(url + "/workouts/", {
@@ -128,7 +125,38 @@ function App() {
     getWorkouts()
   };
 
+  //  handleUpdate to editing workouts
+	const handleUpdate = async (workout) => {
+    const response = await fetch(url + "/workouts/" + workout.id, {
+			method: 'put',
+		  headers: {
+        "Authorization": `bearer ${userLogin.token}`
+     , "Content-Type": "application/json" },
+			body: JSON.stringify(workout),
+    })
+    // const result = await response.json()
+    //  setWorkouts(result)
+    getWorkouts()
+  };
 
+  // select a workout
+  const selectWorkout = (workout) => {
+    setSelectedWorkout(workout)
+  }
+
+  // delete a song
+	const deleteWorkout = async (workout) => {
+    const response = await fetch(url + "/workouts/" + workout.id, {
+			method: 'delete',
+	    headers: {
+        "Authorization": `bearer ${userLogin.token}`
+     , "Content-Type": "application/json" },
+			body: JSON.stringify(workout),
+    })
+    // const result = await response.json()
+    //  setWorkouts(result)
+    getWorkouts()
+  };
 
     return (
       <div>
@@ -191,11 +219,27 @@ function App() {
      } 
 
       { workouts[0] ? 
+      <Route path="/workout/:id/edit"
+			render={(rp) => (
+			<WorkoutForm
+				{...rp}
+				label="Update"
+				workout={selectedWorkout}
+				handleSubmit={handleUpdate}
+			/>
+			)}
+		/>
+     : null
+     } 
+
+      { workouts[0] ? 
       <Route path="/workout/:id"
 			  render={(rp) => (
         <Workout
           {...rp}
           workouts={workouts}
+          selectWorkout={selectWorkout}
+          deleteWorkout={deleteWorkout}
 		    />
       	)}
       />
