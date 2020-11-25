@@ -47,6 +47,7 @@ return (
         name="sport"
         value={formData.sport}
         onChange={handleChange}
+
       >
         <option>Choose...</option>
         <option>Walk</option>
@@ -67,6 +68,7 @@ return (
         <option>Kayak</option>
         <option>Stand Up Paddleboard</option>
         <option>Workout</option>
+      
         </Form.Control>
     </Form.Group>
 
@@ -80,7 +82,8 @@ return (
         name="date"
         value={formData.date}
         onChange={handleChange}
-        placeholder="" />
+        placeholder=""
+        required />
   </Form.Group>
 
   <Form.Group as={Col} controlId="">

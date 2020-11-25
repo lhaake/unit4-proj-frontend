@@ -5,6 +5,10 @@ import TestForm from "./test-components/TestForm"
 import Dash from "./test-components/Dash"
 import Workout from "./test-components/Workout"
 import WorkoutForm from "./test-components/WorkoutForm"
+import Filter from "./test-components/Filter"
+import FilterForm from "./test-components/FilterForm"
+
+import * as QueryString from "query-string"
 
 function App() {
     // url to backend
@@ -34,6 +38,9 @@ function App() {
 
     // state for selected workout (edit)
     const [selectedWorkout, setSelectedWorkout] = useState(emptyForm);
+
+    // state for filtered workouts
+    const [filteredWorkouts, setFilteredWorkouts] = useState([])
 
     const signup = async (newUser) => {
         console.log("signup function start")
@@ -166,6 +173,52 @@ function App() {
     getWorkouts()
   };
 
+  const filterTitle = (workouts, searchInput) => {
+      let filterResults = []
+      console.log(typeof searchInput)
+      for (let i = 0; i < workouts.length; i += 1) {
+        console.log("searchVal", searchInput)
+        console.log("workouts", workouts)
+        
+
+        // if (workouts[i]['title'] === searchInput) {
+        //   filterResults.push(workouts[i]);
+        // }
+
+          //  typeof searchInput
+      let str = ""
+      str = workouts[i]['title']
+      if (str.includes(searchInput)) {
+        console.log("We have a match!")
+        filterResults.push(workouts[i]);
+      }
+    } 
+  
+    // string.includes(searchInput)
+
+    console.log("results array", filterResults)
+    setFilteredWorkouts(filterResults)
+  }
+  
+console.log("filtered workouts", filteredWorkouts)
+
+        // let filterUrl = `https://lh-training-log-backend.herokuapp.com/workouts?title=${input}`
+        // // http://newsapi.org/v2/everything?q=${input}&from=${date}&sortBy=relevancy&language=en&domains=${trusteddomains}&pageSize=10&apiKey=7967fe7ec6e44428a417b6bc133b26f4
+
+        // const response = await fetch(filterUrl, {
+		    // method: 'get',
+	      // headers: {
+        // "Authorization": `bearer ${userLogin.token}`
+        // }
+        // })
+        // const json = await response.json()
+        // setFilteredWorkouts(json)
+        // console.log(json)
+
+      // const params = QueryString.parse(props.location.search);
+      // console.log(params.q); // "shoes"
+      // console.log(params.clearance); // true
+
     return (
       <div>
       <h1>App Component</h1>
@@ -175,7 +228,9 @@ function App() {
         <Link to="/signup">Sign up</Link><br /><br />
         <Link to="/login">Log in</Link><br /><br />
         <Link to="/dashboard">Dashboard</Link><br /><br />
-         <Link to="/workout/add">Add a Workout</Link><br /><br />
+        <Link to="/workout/add">Add a Workout</Link><br /><br />
+        <Link to="/search">Search List of Workouts</Link><br /><br />
+        <Link to="/filter">The filtered list</Link><br /><br />
         {/* <button onClick={() => getWorkouts()}>Test Fetch Workouts</button><br /><br /> */}
         <button onClick={() => logout()}>Log out</button>
         
@@ -253,13 +308,36 @@ function App() {
       />
       : null
       } 
+      
+      <Route path="/search"
+			    render={(rp) => (
+            <FilterForm
+            {...rp}
+            label="Search"
+            filterTitle={filterTitle}
+            workouts={workouts}
+          />
+        )}
+        />
+
+      { filteredWorkouts[0] ? 
+         <Route exact path="/filter"
+			    render={(rp) => (
+        	<Filter
+            {...rp}
+            filteredWorkouts={filteredWorkouts}
+          />
+          )}
+        />
+        : null }
+
+ 
+  
+    
 
     </Switch> 
      
-    {userSignup.token ? <h1>You have successfully signed up! Please Log in</h1> : null }
-    {userLogin.token ? <h1>You are logged in!</h1> : null }
-    {userLogin.error ? <h1>Invalid username or Password. Please Log In again.</h1> : null }
-
+  
     </div>
     )
 }
@@ -272,3 +350,19 @@ export default App;
     //         password: '123',
     //     }),
     //   })
+
+
+    // login messages
+    //  {userSignup.token ? <h1>You have successfully signed up! Please Log in</h1> : null }
+    // {userLogin.token ? <h1>You are logged in!</h1> : null }
+    // {userLogin.error ? <h1>Invalid username or Password. Please Log In again.</h1> : null }
+
+
+        // <Route exact path="/search"
+			  //   render={(rp) => (
+        // 	<Filter
+        //     {...rp}
+        //     filteredWorkouts={filteredWorkouts}
+        //   />
+        //   )}
+        // />

@@ -176,20 +176,33 @@ Back End
 1. Added and Tested CRUD Functionality --> Create, Update, Delete 
 	- Edit a workout
 	- Delete a workout 
-2. Log in / Sign Up Messages -> Error and Confirmation
+2. Research icons for edit and delete - React-icons
+3. Decided to not use Atomize for the project
+4. Researched form validation, added "required" to Login, Sign Up and Workout form fields
+
+
+| Wednesday, November 25 | 
+|---|
+1. Created Filter and FilterForm Components
+2. FilterForm is filtering based on title entered. I spent a lot of time troubleshooting how I could filter titles that include a word included in the title, without a === strict match of every letter being the same as the title. I opted to use a for loop and conditional statement that checks the titles stored in state with the input from the form using a string method .includes()
+3. ^ The method is currently case sensitive, and will need to add logic to make all characters of title and input lowercase for comparison in function
+
+
+
+Next up:
+1. Test out form - entering strings in a number field, etc. Form validation if someone enters a string in a number field -- distance, time
+2. Work on adding form validatioon before pressing save
+3. "Sport" - required 
+4.  Log in / Sign Up Messages -> Error and Confirmation
   - When Logged In change the nav ?
-3. Form Validation - Server Side
-4. React-icons for edit and delete 
-5. Workout Form 
+5. React-icons for edit and delete 
+6. Workout Form 
 	- Time: minutes
 	- Distance: miles
 	- Favorites
 	- JS Date - format to read Tues, Nov 24, 2020
 	- Exertion: slider 
 	- Verification - if a number is not entered
-
-
-Next up:
 - Style the Form - dropdown, hidden fields, slider for exertion, favorite (icon), units entered 
 - Error message on screen when Logging In - Invalid Username or Password
 - Message confirming you have signed in - created an Account
@@ -198,8 +211,6 @@ Next up:
 - Update React architecture
 - Project Name
 
-
-- [Look into](https://www.npmjs.com/package/running-calculations)
 
 
 ## Additional Libraries
