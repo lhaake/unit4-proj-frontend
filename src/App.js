@@ -180,27 +180,23 @@ function App() {
         console.log("searchVal", searchInput)
         console.log("workouts", workouts)
         
+        let str = ""
+        str = workouts[i]['title']
+        str = str.toLowerCase()
+        console.log("str lowercase", str)
 
-        // if (workouts[i]['title'] === searchInput) {
-        //   filterResults.push(workouts[i]);
-        // }
-
-          //  typeof searchInput
-      let str = ""
-      str = workouts[i]['title']
-      if (str.includes(searchInput)) {
-        console.log("We have a match!")
-        filterResults.push(workouts[i]);
-      }
+        searchInput = searchInput.toLowerCase()
+        console.log("input lowercase", searchInput)
+        
+        if (str.includes(searchInput)) {
+          console.log("We have a match!")
+          filterResults.push(workouts[i]);
+        }
     } 
-  
-    // string.includes(searchInput)
-
     console.log("results array", filterResults)
     setFilteredWorkouts(filterResults)
   }
-  
-console.log("filtered workouts", filteredWorkouts)
+  console.log("filtered workouts", filteredWorkouts)
 
         // let filterUrl = `https://lh-training-log-backend.herokuapp.com/workouts?title=${input}`
         // // http://newsapi.org/v2/everything?q=${input}&from=${date}&sortBy=relevancy&language=en&domains=${trusteddomains}&pageSize=10&apiKey=7967fe7ec6e44428a417b6bc133b26f4

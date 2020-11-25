@@ -184,8 +184,8 @@ Back End
 | Wednesday, November 25 | 
 |---|
 1. Created Filter and FilterForm Components
-2. FilterForm is filtering based on title entered. I spent a lot of time troubleshooting how I could filter titles that include a word included in the title, without a === strict match of every letter being the same as the title. I opted to use a for loop and conditional statement that checks the titles stored in state with the input from the form using a string method .includes()
-3. ^ The method is currently case sensitive, and will need to add logic to make all characters of title and input lowercase for comparison in function
+2. FilterForm is filtering based on title entered. I spent a lot of time troubleshooting how I could filter titles that include a word included in the title, without a === strict match of every letter being the same as the title. I opted to use a for loop and conditional statement that checks the titles stored in state with the input from the form using a string method .includes(). Due to case sensitivity,  I converted the input string and title string to be lowercase to compare more effectively. 
+
 
 
 
