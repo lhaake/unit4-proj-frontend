@@ -26,7 +26,7 @@
 For my project, I plan to create a training log dashboard for a user to log their workouts with CRUD functionality. I'd like to use Strava as an example app to guide my design. 
 - Using React and Rails 
 - Incorporating User Authentication
-- New tech -- Libraries: React Bootstrap Or Atomize (TBD)
+- New tech: React Bootstrap and [react-icons](https://react-icons.github.io/)
 
 
 ## Wireframes
@@ -173,24 +173,24 @@ Back End
 
 | Tuesday, November 24 | 
 |---|
-1. CRUD --> Create, Update, Delete - Complete
+1. Added and Tested CRUD Functionality --> Create, Update, Delete 
 	- Edit a workout
 	- Delete a workout 
-2. Atomize - icons for edit and delete 
-3. Workout Form 
-	- Need to think about the units entered 
-	- Time: minutes?
-	- Distance: miles?
+2. Log in / Sign Up Messages -> Error and Confirmation
+  - When Logged In change the nav ?
+3. Form Validation - Server Side
+4. React-icons for edit and delete 
+5. Workout Form 
+	- Time: minutes
+	- Distance: miles
 	- Favorites
 	- JS Date - format to read Tues, Nov 24, 2020
 	- Exertion: slider 
+	- Verification - if a number is not entered
 
 
 Next up:
 - Style the Form - dropdown, hidden fields, slider for exertion, favorite (icon), units entered 
-- CRUD --> Create, Update, Delete 
-	- Edit a workout
-	- Delete a workout 
 - Error message on screen when Logging In - Invalid Username or Password
 - Message confirming you have signed in - created an Account
 - Message confirming you are logged in

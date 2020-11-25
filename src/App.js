@@ -49,16 +49,17 @@ function App() {
     }
 
 
+
     // user login function -- with a user that is already been created in the database - username: test1, password: test1
 	const login = async (user) => {
         let token = ""
         console.log('start login function')
-    if (window.localStorage.getItem('token')) {
-        console.log('token exits')
-        token = JSON.parse(window.localStorage.getItem('token'))
-        setUserLogin(token)
-    } else {
-        console.log('no token')
+    // if (window.localStorage.getItem('token')) {
+    //     console.log('token exits')
+    //     token = JSON.parse(window.localStorage.getItem('token'))
+    //     setUserLogin(token)
+    // } else {
+    //     console.log('no token')
       const response = await fetch(url + "/login", {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
@@ -66,14 +67,19 @@ function App() {
       })
       const newtoken = await response.json()
       setUserLogin(newtoken)
-
+      // if (userLogin.error) {
+      //   return (
+      //     <h1>Invalid username or Password. Please Log In again.</h1>
+      //   )
+      // } 
+     
       console.log("newtoken", newtoken)
       token = newtoken
       window.localStorage.setItem('token', JSON.stringify(token))
 
-      const userId = token.user.id
-      console.log("user id", userId)
-    }
+      // const userId = token.user.id
+      // console.log("user id", userId)
+    
   }
  
   console.log("userlogin state", userLogin)
@@ -100,16 +106,18 @@ function App() {
   }
 
   // I was troubleshooting because my useEffect was making the GET request for workouts before the token was in state. This is the source I used to help allow for a conditional within useEffect: https://reactjs.org/docs/hooks-rules.html
-    useEffect(function conditionalLoad() {
+  //   useEffect(function conditionalLoad() {
+  //   if (userLogin.token) {
+  //     getWorkouts()
+  //   }
+  // }, [userLogin.token]);
+
+
+  useEffect( () => {
     if (userLogin.token) {
       getWorkouts()
     }
-  }, [userLogin.token]);
-
-
-  // useEffect( () => {
-  //   getWorkouts()
-  // }, [userLogin.token])
+  }, [userLogin.token])
 
   // handleCreate for creating new workouts
 	const handleCreate = async (newWorkout) => {
@@ -120,8 +128,8 @@ function App() {
      , "Content-Type": "application/json" },
 			body: JSON.stringify(newWorkout),
     })
-    const result = await response.json()
-     setWorkouts(result)
+    // const result = await response.json()
+    //  setWorkouts(result)
     getWorkouts()
   };
 
@@ -247,6 +255,11 @@ function App() {
       } 
 
     </Switch> 
+     
+    {userSignup.token ? <h1>You have successfully signed up! Please Log in</h1> : null }
+    {userLogin.token ? <h1>You are logged in!</h1> : null }
+    {userLogin.error ? <h1>Invalid username or Password. Please Log In again.</h1> : null }
+
     </div>
     )
 }

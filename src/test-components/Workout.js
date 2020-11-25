@@ -1,5 +1,7 @@
 import React from "react"
-import { Icon } from "atomize";
+import './Workout.css';
+import { BiEdit } from 'react-icons/bi';
+import { FiEdit2 } from 'react-icons/fi';
 
 const Workout = (props) => {
 
@@ -30,7 +32,7 @@ console.log("looking for workout[workoutId] array", displayWorkout)
         <article>
         <h1>Title: {workout.title}</h1>
           <h3>Date: {workout.date}</h3>
-          <h3>Time: {workout.time} hours</h3>
+          <h3>Time: {workout.time} minutes</h3>
           <h3>Description: {workout.description}</h3>
           <h3>Distance: {workout.distance} miles</h3>
           <h3>Exertion (scale of 1-10): {workout.exertion}</h3>
@@ -55,7 +57,9 @@ console.log("looking for workout[workoutId] array", displayWorkout)
 							Delete
 						</button> 
 
-            <Icon name="Add" color="black" size="5px" />
+              <BiEdit size="25px" />
+              <FiEdit2 size="25px" className="edit-icon" />
+           
           <hr />
         </article>
       ))}

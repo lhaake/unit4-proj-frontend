@@ -30,16 +30,17 @@ return (
 
     <Form.Row>
     <Form.Group as={Col} controlId="">
-        <Form.Label>Title</Form.Label>
+        <Form.Label>Title (*)</Form.Label>
         <Form.Control 
             type="text"
             placeholder=""
             name="title"
             value={formData.title}
-            onChange={handleChange} />
+            onChange={handleChange} 
+            required />
     </Form.Group>
 
-    <Form.Group as={Col} controlId="sport-select">
+    <Form.Group as={Col} controlId="">
       <Form.Label>Sport</Form.Label>
       <Form.Control as="select" defaultValue="Choose..."
         type="text"
@@ -83,11 +84,11 @@ return (
   </Form.Group>
 
   <Form.Group as={Col} controlId="">
-      <Form.Label>Time</Form.Label>
+      <Form.Label>Time (minutes)</Form.Label>
       <Form.Control 
         type="number"
         name="time"
-        placeholder="Enter a time"
+        placeholder=""
         value={formData.time}
         onChange={handleChange}
         placeholder="" />
@@ -107,7 +108,7 @@ return (
 
     {formData.sport === "Run" || formData.sport === "Bike" || formData.sport === "Hike" || formData.sport === "Walk" ? 
     <Form.Group as={Col} controlId="">
-      <Form.Label>Distance</Form.Label>
+      <Form.Label>Distance (miles)</Form.Label>
       <Form.Control
         type="number"
         name="distance"
@@ -132,7 +133,7 @@ return (
     }
 
     <Form.Group as={Col} controlId="">
-      <Form.Label>Exertion</Form.Label>
+      <Form.Label>Exertion (1-10)</Form.Label>
       <Form.Control 
         type="number"
         name="exertion"
