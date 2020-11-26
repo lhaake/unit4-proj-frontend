@@ -7,8 +7,8 @@
 |Day 1 - Thursday, Nov. 19 | Planning, Work on backend, Deploy backend | Done
 |Day 2 - Friday, Nov. 20 | Auth, Frontend | Done
 |Day 3 - Monday, Nov. 23 | Frontend, CRUD | Done
-|Day 4 - Tuesday, Nov. 24 | Frontend, CRUD | -
-|Day 5 - Wednesday, Nov. 25 | Frontend, Filter Component, Styling  | -
+|Day 4 - Tuesday, Nov. 24 | Frontend, CRUD | Done
+|Day 5 - Wednesday, Nov. 25 | Frontend, Filter Component | -
 |Day 6 - Thursday, Nov. 26 | | -
 |Day 7 - Friday, Nov. 27  | Styling | -
 |Day 8,9 - Weekend  |  | -
@@ -185,20 +185,17 @@ Back End
 |---|
 1. Created Filter and FilterForm Components
 2. FilterForm is filtering based on title entered. I spent a lot of time troubleshooting how I could filter titles that include a word included in the title, without a === strict match of every letter being the same as the title. I opted to use a for loop and conditional statement that checks the titles stored in state with the input from the form using a string method .includes(). Due to case sensitivity,  I converted the input string and title string to be lowercase to compare more effectively. 
-
-
+3. Would like the search to appear above the filtered results - right now for testing, they are on seperate routes
 
 
 Next up:
 1. Test out form - entering strings in a number field, etc. Form validation if someone enters a string in a number field -- distance, time
-2. Work on adding form validatioon before pressing save
-3. "Sport" - required 
-4.  Log in / Sign Up Messages -> Error and Confirmation
+2. Add form validation that shows up before pressing save
+4. Log in / Sign Up Messages -> Error and Confirmation
   - When Logged In change the nav ?
 5. React-icons for edit and delete 
 6. Workout Form 
-	- Time: minutes
-	- Distance: miles
+	- "Sport" - required 
 	- Favorites
 	- JS Date - format to read Tues, Nov 24, 2020
 	- Exertion: slider 
@@ -207,7 +204,6 @@ Next up:
 - Error message on screen when Logging In - Invalid Username or Password
 - Message confirming you have signed in - created an Account
 - Message confirming you are logged in
-- Adding form validation (required field)
 - Update React architecture
 - Project Name
 

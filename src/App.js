@@ -8,8 +8,6 @@ import WorkoutForm from "./test-components/WorkoutForm"
 import Filter from "./test-components/Filter"
 import FilterForm from "./test-components/FilterForm"
 
-import * as QueryString from "query-string"
-
 function App() {
     // url to backend
     const url = "https://lh-training-log-backend.herokuapp.com"
@@ -187,7 +185,7 @@ function App() {
 
         searchInput = searchInput.toLowerCase()
         console.log("input lowercase", searchInput)
-        
+
         if (str.includes(searchInput)) {
           console.log("We have a match!")
           filterResults.push(workouts[i]);

@@ -3,6 +3,7 @@ import './Workout.css';
 import { BiEdit } from 'react-icons/bi';
 import { FiEdit2 } from 'react-icons/fi';
 
+
 const Workout = (props) => {
 
   const {workouts} = props
@@ -26,10 +27,12 @@ let displayWorkout = []
 console.log("looking for workout[workoutId] array", displayWorkout)
 
  const loaded = () => (
-    <div style={{ textAlign: "center" }}>
-    <h1>Workout Component</h1>
+   <>
+   <h1>Workout Component</h1>
+    <div className="workout-header">
+    
       {displayWorkout.map((workout) => (
-        <article>
+        <article className="workout-card">
         <h1>Title: {workout.title}</h1>
           <h3>Date: {workout.date}</h3>
           <h3>Time: {workout.time} minutes</h3>
@@ -60,10 +63,11 @@ console.log("looking for workout[workoutId] array", displayWorkout)
               <BiEdit size="25px" />
               <FiEdit2 size="25px" className="edit-icon" />
            
-          <hr />
         </article>
       ))}
-      </div>
+
+  </div>
+    </>
   )
 
   return displayWorkout.length > 0 ? loaded() : <h1>Loading...</h1>
