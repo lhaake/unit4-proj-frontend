@@ -20,7 +20,7 @@ function App() {
       distance: null,
       sport: "",
       description: "",
-      exertion: null,
+      exertion: 1,
       url: "",
       isFavorite: false,
     }
@@ -52,8 +52,6 @@ function App() {
         console.log("usersignup", result)
 
     }
-
-
 
     // user login function -- with a user that is already been created in the database - username: test1, password: test1
 	const login = async (user) => {
@@ -147,8 +145,8 @@ function App() {
      , "Content-Type": "application/json" },
 			body: JSON.stringify(workout),
     })
-    // const result = await response.json()
-    //  setWorkouts(result)
+    const result = await response.json()
+     setWorkouts(result)
     getWorkouts()
   };
 
@@ -195,23 +193,6 @@ function App() {
     setFilteredWorkouts(filterResults)
   }
   console.log("filtered workouts", filteredWorkouts)
-
-        // let filterUrl = `https://lh-training-log-backend.herokuapp.com/workouts?title=${input}`
-        // // http://newsapi.org/v2/everything?q=${input}&from=${date}&sortBy=relevancy&language=en&domains=${trusteddomains}&pageSize=10&apiKey=7967fe7ec6e44428a417b6bc133b26f4
-
-        // const response = await fetch(filterUrl, {
-		    // method: 'get',
-	      // headers: {
-        // "Authorization": `bearer ${userLogin.token}`
-        // }
-        // })
-        // const json = await response.json()
-        // setFilteredWorkouts(json)
-        // console.log(json)
-
-      // const params = QueryString.parse(props.location.search);
-      // console.log(params.q); // "shoes"
-      // console.log(params.clearance); // true
 
     return (
       <div>
@@ -303,35 +284,24 @@ function App() {
       : null
       } 
       
-      <Route path="/search"
+      <Route exact path="/search"
 			    render={(rp) => (
+            <div>
             <FilterForm
             {...rp}
             label="Search"
             filterTitle={filterTitle}
             workouts={workouts}
-          />
+            />
+            <Filter
+              {...rp}
+              filteredWorkouts={filteredWorkouts}
+            />
+          </div>
         )}
         />
 
-      { filteredWorkouts[0] ? 
-         <Route exact path="/filter"
-			    render={(rp) => (
-        	<Filter
-            {...rp}
-            filteredWorkouts={filteredWorkouts}
-          />
-          )}
-        />
-        : null }
-
- 
-  
-    
-
     </Switch> 
-     
-  
     </div>
     )
 }
@@ -360,3 +330,16 @@ export default App;
         //   />
         //   )}
         // />
+
+
+
+      {/* { filteredWorkouts[0] ? 
+         <Route exact path="/search"
+			    render={(rp) => (
+        	<Filter
+            {...rp}
+            filteredWorkouts={filteredWorkouts}
+          />
+          )}
+        />
+        : null } */}

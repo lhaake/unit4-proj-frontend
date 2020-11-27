@@ -1,30 +1,43 @@
 import React from "react"
 import {Link} from "react-router-dom"
+import { BiLike } from "react-icons/bi";
 
 const Dash = (props) => {
 
 const {workouts} = props
 
-let dateInfo = '2014-04-03'.split('-');
-console.log(dateInfo)
-// Please pay attention to the month (parts[1]); JavaScript counts months from 0:
-// January - 0, February - 1, etc.
-// Source: https://stackoverflow.com/questions/5619202/converting-a-string-to-a-date-in-javascript
-let mydate = new Date(dateInfo[0], dateInfo[1] - 1, dateInfo[2]); 
-console.log(mydate.toDateString());
-
 const formatDate = (workout) => {
-let dateInfo2 = ""
-let dateInfo3 = []
-let mydate2 = ""
-    dateInfo2 = workout.date 
-      console.log(dateInfo2)
-    dateInfo3 = dateInfo2.split('-')
-      console.log(dateInfo3)
-    mydate2 = new Date(dateInfo3[0], dateInfo3[1] - 1, dateInfo3[2])
-      console.log(mydate2.toDateString())
-  return mydate2.toDateString()
+  let dateinfo = ""
+  let dateArr = []
+  let dateStr = ""
+  dateinfo = workout.date 
+    console.log(dateinfo)
+  dateArr = dateinfo.split('-')
+    console.log(dateArr)
+  dateStr = new Date(dateArr[0], dateArr[1] - 1, dateArr[2])
+    console.log(dateStr.toDateString())
+  return dateStr.toDateString()
 }
+
+// let array = ["July 11, 1960", "February 1, 1974", "July 11, 1615", "October 18, 1851", "November 12, 1995"];
+
+// let newArr = array.sort(function(date1, date2) {
+//    date1 = new Date(date1);
+//    date2 = new Date(date2);
+//    if (date1 > date2) return 1;
+//    if (date1 < date2) return -1;
+// })
+
+// console.log(newArr)
+// https://stackoverflow.com/questions/8837454/sort-array-of-objects-by-single-key-with-date-value
+let newWorkoutList = workouts.sort((a, b) =>{
+  let keyA = new Date(a.date)
+  let keyB = new Date(b.date)
+  return keyB - keyA
+
+})
+
+console.log(newWorkoutList);
 
 console.log("workouts data passed as props in Dash component", workouts)
  
@@ -34,12 +47,10 @@ console.log("workouts data passed as props in Dash component", workouts)
       <Link to="/workout/add">Add a Workout</Link><br /><br />
     <div className="dash-header">
     
-      {workouts.map((workout) => (
+      {newWorkoutList.map((workout) => (
        
         <article className="dash-titles">
         <Link to={`/workout/${workout.id}`}><h3>Title: {workout.title}</h3></Link>
-      
-      
           <ul>
             <li>
               {/* Date: {workout.date} */}
@@ -52,7 +63,7 @@ console.log("workouts data passed as props in Dash component", workouts)
             Sport: {workout.sport}
             </li>
           </ul>
-          {workout.isFavorite ? <p>Heart/Thumbs Up for favorite</p> : null }
+          {workout.isFavorite ? <BiLike size="25px" /> : null }
       
         </article>
       ))}
@@ -71,8 +82,10 @@ export default Dash;
   // let pace = 0
   // {workout.distance ? <h3>Pace: {pace = workout.time / workout.distance} minutes / mile</h3> : null }
 
-// let dateInfo ='2014-04-03'.split('-');
-// // Please pay attention to the month (parts[1]); JavaScript counts months from 0:
-// // January - 0, February - 1, etc.
+  // Please pay attention to the month (parts[1]); JavaScript counts months from 0:
+// January - 0, February - 1, etc.
+// Source: https://stackoverflow.com/questions/5619202/converting-a-string-to-a-date-in-javascript
+// Example code: let dateInfo = '2014-04-03'.split('-');
+// console.log(dateInfo)
 // let mydate = new Date(dateInfo[0], dateInfo[1] - 1, dateInfo[2]); 
 // console.log(mydate.toDateString());

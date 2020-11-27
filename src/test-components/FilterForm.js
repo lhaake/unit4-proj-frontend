@@ -18,10 +18,8 @@ const FilterForm = (props) => {
         event.preventDefault()
         props.filterTitle(workouts, searchData);
         setSearchData("")
-    //    props.history.push('/filter');
+       props.history.push('/search');
     }
-
-
 
   return (
     <div>

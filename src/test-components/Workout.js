@@ -2,7 +2,7 @@ import React from "react"
 import './Workout.css';
 import { BiEdit } from 'react-icons/bi';
 import { FiEdit2 } from 'react-icons/fi';
-
+import { BiLike } from "react-icons/bi";
 
 const Workout = (props) => {
 
@@ -40,7 +40,7 @@ console.log("looking for workout[workoutId] array", displayWorkout)
           <h3>Distance: {workout.distance} miles</h3>
           <h3>Exertion (scale of 1-10): {workout.exertion}</h3>
           <h3>Sport: {workout.sport}</h3>
-          {workout.isFavorite? <h3>Heart/Thumbs Up for favorite</h3> : null }
+          {workout.isFavorite ? <h3>Favorite: <BiLike size="25px" /></h3> : null }
           { workout.url ? <a href={workout.url} target="_blank">Workout Video</a> : null }
           <br />
           <button onClick={() => {

@@ -86,3 +86,11 @@ thead tr {
   position: relative;
   list-style: none;
 } */
+
+input[type=range].range-slider.range-slider--sm {
+  padding: 1.25rem 0;
+}
+
+.custom-switch {
+  padding-top: 0.5rem;
+}

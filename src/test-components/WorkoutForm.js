@@ -1,14 +1,30 @@
 import React, {useState} from "react"
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+import FormCheck from 'react-bootstrap/FormCheck'
+import RangeSlider from 'react-bootstrap-range-slider'
+import { BiLike } from "react-icons/bi";
 
 const WorkoutForm = (props) => {
 
+  const { workout } = props
+  console.log("checking the fav boolean", workout.isFavorite)
+    // state for switch 
+    const [swt, setSwt] = useState(workout.isFavorite)
+
+    const [range, setRange] = useState(workout.exertion)
+
     // state for the form 
-    const [formData, setFormData] = useState(props.workout)   // update with props sent down from app for an empty form 
+    const [formData, setFormData] = useState(workout)   // update with props sent down from app for an empty form 
     
-    console.log("props", props.workout)
+
+    // const onSwitchAction = () => {
+    //   setIsSwitchOn(!isSwitchOn)
+    // }
+
+    console.log("props in WorkoutForm", props.workout)
 
     // HandleSubmit 
     const handleSubmit = (event) => {
@@ -28,7 +44,7 @@ return (
     <Form onSubmit={handleSubmit}>
     <h1>WorkoutForm Component</h1>
 
-    <Form.Row>
+    <Form.Row as={Col}>
     <Form.Group as={Col} controlId="">
         <Form.Label>Title (*)</Form.Label>
         <Form.Control 
@@ -74,7 +90,7 @@ return (
 
   </Form.Row>
 
-<Form.Row>
+<Form.Row as={Col}>
   <Form.Group as={Col} controlId="">
     <Form.Label>Date</Form.Label>
     <Form.Control 
@@ -135,28 +151,60 @@ return (
     : null 
     }
 
-    <Form.Group as={Col} controlId="">
-      <Form.Label>Exertion (1-10)</Form.Label>
+    
+      {/* <Form.Label>Exertion (1-10)</Form.Label>
       <Form.Control 
         type="number"
         name="exertion"
         value={formData.exertion}
         onChange={handleChange}
         placeholder="" />
+    </Form.Group> */}
+
+    {/* <RangeSlider
+      value={range}
+      onChange={changeEvent => setRange(changeEvent.target.value)}
+    /> */}
+
+    
+<Form.Group as={Col} controlId="">
+    <Form.Group as={Row}>
+        <Form.Label column sm="3">
+          Exertion (1-10)
+        </Form.Label>
+        <Col xs="4">
+          <RangeSlider
+            type="number"
+            name="exertion"
+            min={1}
+            max={10}
+            value={formData.exertion = range}
+            variant={range > 7 ? 'danger' : range > 4 ? 'warning' : 'primary'} 
+            onChange={e => setRange(e.target.value) && handleChange}
+            size='sm'
+          />
+        </Col>
     </Form.Group>
+</Form.Group>
 
     <Form.Group as={Col} controlId="">
-      <Form.Label>Favorite?</Form.Label>
-      <Form.Control 
-        type="text"
-        name="isFavorite"
-        value={formData.isFavorite}
-        onChange={handleChange}
-        placeholder="" />
+    <Form.Group as={Row} controlId="">
+    <Form.Label column sm="1"><BiLike size="27px" /></Form.Label>
+     <Col sm="1">
+    <Form.Check 
+      type="switch"
+      id="custom-switch"
+      name="isFavorite"
+      onClick={() => setSwt(!swt)}
+      value={formData.isFavorite = swt}
+      onChange={handleChange}
+      checked={swt === true}
+    />
+    </Col>
     </Form.Group>
-   
+    </Form.Group>
 
-  <Button variant="primary" size="lg" type="submit" value={props.label}>
+  <Button variant="danger" size="lg" type="submit" value={props.label}>
     Save
   </Button>
 

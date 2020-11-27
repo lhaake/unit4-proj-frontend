@@ -8,9 +8,9 @@
 |Day 2 - Friday, Nov. 20 | Auth, Frontend | Done
 |Day 3 - Monday, Nov. 23 | Frontend, CRUD | Done
 |Day 4 - Tuesday, Nov. 24 | Frontend, CRUD | Done
-|Day 5 - Wednesday, Nov. 25 | Frontend, Filter Component | -
+|Day 5 - Wednesday, Nov. 25 | Frontend, Filter Component | Done
 |Day 6 - Thursday, Nov. 26 | | -
-|Day 7 - Friday, Nov. 27  | Styling | -
+|Day 7 - Friday, Nov. 27  | Frontend, Styling | -
 |Day 8,9 - Weekend  |  | -
 |Day 10 - Monday, Nov. 30  | Project Due | -
 
@@ -185,20 +185,27 @@ Back End
 |---|
 1. Created Filter and FilterForm Components
 2. FilterForm is filtering based on title entered. I spent a lot of time troubleshooting how I could filter titles that include a word included in the title, without a === strict match of every letter being the same as the title. I opted to use a for loop and conditional statement that checks the titles stored in state with the input from the form using a string method .includes(). Due to case sensitivity,  I converted the input string and title string to be lowercase to compare more effectively. 
-3. Would like the search to appear above the filtered results - right now for testing, they are on seperate routes
+3. Created function that converts Date to read "Fri Nov 27 2020" - In Dash component
 
+
+
+| Friday, November 27 | 
+|---|
+1. Favorites switch is working !! (This was challenging to figure out the toggle between true and false, because the form is used for 2 different situations -- 1) empty form 2) selected item.
+2. Added Thumbs Up Icon (Favorite) to Dash, Filter, Workout Components 
+3. Added Range Slider for Exertion on Workout Form. I used the npm package "react-bootstrap-range-slider". Different colors for numbers
+4. Workouts are now ordered by most recent date (descending order) in the Dash and Filter Components
+5. Search bar and Filter are now on the same page!!
 
 Next up:
-1. Test out form - entering strings in a number field, etc. Form validation if someone enters a string in a number field -- distance, time
-2. Add form validation that shows up before pressing save
+1. Add form validation that shows up before pressing save
 4. Log in / Sign Up Messages -> Error and Confirmation
   - When Logged In change the nav ?
 5. React-icons for edit and delete 
 6. Workout Form 
-	- "Sport" - required 
-	- Favorites
-	- JS Date - format to read Tues, Nov 24, 2020
-	- Exertion: slider 
+	- Size -> Desktop 
+	- "Save" Button move 
+	- "Sport" - required  
 	- Verification - if a number is not entered
 - Style the Form - dropdown, hidden fields, slider for exertion, favorite (icon), units entered 
 - Error message on screen when Logging In - Invalid Username or Password
