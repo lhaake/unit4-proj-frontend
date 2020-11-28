@@ -1,0 +1,26 @@
+
+.edit-icon {
+    border: 1px solid lightgray;
+}
+
+.workout-card {
+  font-size: calc(8px + 2vmin);
+  width: 700px;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.2);
+  border-radius: 2px;
+  height: auto;
+  margin: 15px;
+  padding: 0px;
+  background-color: white;
+}
+
+
+.workout-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-content: flex-end;
+}
