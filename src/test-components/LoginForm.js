@@ -1,16 +1,17 @@
 import React, { useState } from "react"
+import './LoginForm.css';
 
 const LoginForm = (props) => {
 
     const emptyForm = {
         username: "", 
         password: "",
-        usernameError: "",
-        passwordError: ""
     }
 
     // state for login form 
     const [formData, setFormData] = useState(emptyForm)
+
+    const [isLoggedIn, setisLoggedIn] = useState(false)
 
     // state to reset form
     // const [resetState, setResetState] = useState({})
@@ -26,7 +27,10 @@ const LoginForm = (props) => {
         event.preventDefault()
         props.handleForm(formData);
         setFormData(emptyForm)
-       // props.history.push('/');
+        console.log("logged in")
+        setisLoggedIn(true)
+        console.log(isLoggedIn)
+       props.history.push('/dashboard');
     }
 
     //function to reset the form after submit
@@ -46,9 +50,10 @@ const LoginForm = (props) => {
 }
 
   return (
-    <div className="login-form">
+    <div className="login-form-container">
       <h1>{props.label} Form</h1> 
-      <form onSubmit={handleSubmit}>
+      {isLoggedIn ? <h3>You are logged in</h3> :
+      <form onSubmit={handleSubmit} className="login-form">
           Username:
           <input type="text" name="username" value={formData.username} onChange={handleChange} required />
           <br />
@@ -59,8 +64,8 @@ const LoginForm = (props) => {
          <br />
           <input type="submit" value={props.label} />
       </form>
-     
-
+    
+    }
     </div>
   )
 }

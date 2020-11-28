@@ -21,40 +21,7 @@
 } */
 
 
-.dash-header, .workout-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-flow: row wrap;
-    align-content: flex-end;
-}
 
-.dash-titles {
-  /* display: flex; */
-  /* flex-direction: row;
-  flex-wrap: wrap; */
-  font-size: calc(8px + 2vmin);
-  width: 300px;
-  box-shadow: 0 0 7px 0 rgba(0,0,0,0.2);
-  border-radius: 2px;
-  height: 400px;
-  margin: 15px;
-  padding: 0px;
-  background-color: lightgray;
-}
-
-.workout-card {
-  font-size: calc(8px + 2vmin);
-  width: 700px;
-  box-shadow: 0 0 7px 0 rgba(0,0,0,0.2);
-  border-radius: 2px;
-  height: auto;
-  margin: 15px;
-  padding: 0px;
-  background-color: white;
-}
 
 td {
   border-top: 0px solid white !important; 

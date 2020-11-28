@@ -46,7 +46,7 @@ return (
 
     <Form.Row as={Col}>
     <Form.Group as={Col} controlId="">
-        <Form.Label>Title (*)</Form.Label>
+        <Form.Label>Title</Form.Label>
         <Form.Control 
             type="text"
             placeholder=""
@@ -58,7 +58,8 @@ return (
 
     <Form.Group as={Col} controlId="">
       <Form.Label>Sport</Form.Label>
-      <Form.Control as="select" defaultValue="Choose..."
+      <Form.Control as="select" 
+        defaultValue="Choose..."
         type="text"
         name="sport"
         value={formData.sport}
@@ -83,6 +84,9 @@ return (
         <option>Surf</option>
         <option>Kayak</option>
         <option>Stand Up Paddleboard</option>
+        <option>Tennis</option>
+        <option>Basketball</option>
+        <option>Soccer</option>
         <option>Workout</option>
       
         </Form.Control>

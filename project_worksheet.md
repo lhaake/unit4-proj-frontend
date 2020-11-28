@@ -11,8 +11,8 @@
 |Day 5 - Wednesday, Nov. 25 | Frontend, Filter Component | Done
 |Day 6 - Thursday, Nov. 26 | | -
 |Day 7 - Friday, Nov. 27  | Frontend, Styling | -
-|Day 8,9 - Weekend  |  | -
-|Day 10 - Monday, Nov. 30  | Project Due | -
+|Day 8,9 - Weekend  | Frontend, Styling | -
+|Day 10 - Monday, Nov. 30  | Project Due, Worksheet | -
 
 ## Project Links
 
@@ -188,6 +188,9 @@ Back End
 3. Created function that converts Date to read "Fri Nov 27 2020" - In Dash component
 
 
+| Thursday, November 26 | 
+|---|
+DAY OFF 
 
 | Friday, November 27 | 
 |---|
@@ -197,6 +200,7 @@ Back End
 4. Workouts are now ordered by most recent date (descending order) in the Dash and Filter Components
 5. Search bar and Filter are now on the same page!!
 
+Working on: You are logged in message - login screen 
 Next up:
 1. Add form validation that shows up before pressing save
 4. Log in / Sign Up Messages -> Error and Confirmation
@@ -213,6 +217,11 @@ Next up:
 - Message confirming you are logged in
 - Update React architecture
 - Project Name
+- Remove comments / console.logs
+- Netlify Deployment
+
+
+
 
 
 

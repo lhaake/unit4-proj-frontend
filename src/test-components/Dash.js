@@ -1,4 +1,5 @@
 import React from "react"
+import './Dash.css';
 import {Link} from "react-router-dom"
 import { BiLike } from "react-icons/bi";
 
@@ -40,17 +41,17 @@ let newWorkoutList = workouts.sort((a, b) =>{
 console.log(newWorkoutList);
 
 console.log("workouts data passed as props in Dash component", workouts)
- 
+      
  const loaded = () => (
-   <div>
+   <div className="dash-container">
      <h1>Dash Component</h1>
       <Link to="/workout/add">Add a Workout</Link><br /><br />
     <div className="dash-header">
     
       {newWorkoutList.map((workout) => (
        
-        <article className="dash-titles">
-        <Link to={`/workout/${workout.id}`}><h3>Title: {workout.title}</h3></Link>
+        <article className="dash-titles" style={{ }}>
+        <Link to={`/workout/${workout.id}`}><h6>{workout.title}</h6></Link>
           <ul>
             <li>
               {/* Date: {workout.date} */}

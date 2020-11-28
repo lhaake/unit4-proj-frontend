@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import {Route, Link, Switch} from "react-router-dom"
+import {Route, Link, Switch, Redirect} from "react-router-dom"
 import './App.css';
-import TestForm from "./test-components/TestForm"
+import Navigation from "./test-components/Navigation"
+import LoginForm from "./test-components/LoginForm"
 import Dash from "./test-components/Dash"
 import Workout from "./test-components/Workout"
 import WorkoutForm from "./test-components/WorkoutForm"
@@ -105,8 +106,15 @@ function App() {
   const logout = () => {
     // let token = ""
     window.localStorage.removeItem('token')
+    setUserLogin("logged out")
+    setWorkouts([])
+    
+
+    // setUserLogin({})
     console.log("logged out")
+
   }
+
 
   // I was troubleshooting because my useEffect was making the GET request for workouts before the token was in state. This is the source I used to help allow for a conditional within useEffect: https://reactjs.org/docs/hooks-rules.html
   //   useEffect(function conditionalLoad() {
@@ -116,11 +124,24 @@ function App() {
   // }, [userLogin.token]);
 
 
-  useEffect( () => {
+  // useEffect( () => {
+  //   if (userLogin.token) {
+  //     getWorkouts()
+  //   }
+  // }, [userLogin.token])
+
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem('token');
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+      setUserLogin(foundUser);
+    }
+
     if (userLogin.token) {
       getWorkouts()
     }
-  }, [userLogin.token])
+  }, [userLogin.token]);
 
   // handleCreate for creating new workouts
 	const handleCreate = async (newWorkout) => {
@@ -196,23 +217,17 @@ function App() {
 
     return (
       <div>
-      <h1>App Component</h1>
-        {/* <button onClick={() => }>Sign Up</button> */}
-        {/* <button onClick={() => login()}>Log In</button> */}
-        <Link to="/">Home</Link><br /><br />
-        <Link to="/signup">Sign up</Link><br /><br />
-        <Link to="/login">Log in</Link><br /><br />
-        <Link to="/dashboard">Dashboard</Link><br /><br />
-        <Link to="/workout/add">Add a Workout</Link><br /><br />
-        <Link to="/search">Search List of Workouts</Link><br /><br />
-        <Link to="/filter">The filtered list</Link><br /><br />
-        {/* <button onClick={() => getWorkouts()}>Test Fetch Workouts</button><br /><br /> */}
-        <button onClick={() => logout()}>Log out</button>
-        
+        <Navigation logout={logout} />
+      
+        {userLogin === "logged out" ? <Redirect to="/login" /> : null }
+        {userLogin === "logged out" ? <h3>You are logged out!</h3> : null} 
+        {/* {userLogin === "logged out" ? setUserLogin({}) : null } */}
+   
+      
       <Switch>
         <Route path="/signup"
 			    render={(rp) => (
-        	<TestForm
+        	<LoginForm
             {...rp}
             label="Sign Up"
 			      handleForm={signup}
@@ -222,7 +237,7 @@ function App() {
 
         <Route path="/login"
 			    render={(rp) => (
-        	<TestForm
+        	<LoginForm
             {...rp}
             label="Login"
 			      handleForm={login}
@@ -283,8 +298,9 @@ function App() {
       />
       : null
       } 
-      
-      <Route exact path="/search"
+
+       { workouts[0] ? 
+      <Route path="/search"
 			    render={(rp) => (
             <div>
             <FilterForm
@@ -295,11 +311,13 @@ function App() {
             />
             <Filter
               {...rp}
+              workouts={workouts}
               filteredWorkouts={filteredWorkouts}
-            />
+            /> 
           </div>
         )}
         />
+        : null }
 
     </Switch> 
     </div>
@@ -309,6 +327,22 @@ function App() {
 export default App;
 
 
+
+
+      //  <Link to="/">Home</Link><br /><br />
+      //   <Link to="/signup">Sign up</Link><br /><br />
+      //   <Link to="/login">Log in</Link><br /><br />
+      //   <Link to="/dashboard">Dashboard</Link><br /><br />
+      //   <Link to="/workout/add">Add a Workout</Link><br /><br />
+      //   <Link to="/search">Search List of Workouts</Link><br /><br />
+      // <button onClick={() => logout()}>Log out</button>
+
+
+  // useEffect( () => {
+  //   if (userLogin.token) {
+  //     getWorkouts()
+  //   }
+  // }, [userLogin.token])
     // body: JSON.stringify({
     //         username: 'hello123',
     //         password: '123',
@@ -343,3 +377,9 @@ export default App;
           )}
         />
         : null } */}
+
+
+        {/* <button onClick={() => }>Sign Up</button> */}
+        {/* <button onClick={() => login()}>Log In</button> */}
+
+        {/* <button onClick={() => getWorkouts()}>Test Fetch Workouts</button><br /><br /> */}

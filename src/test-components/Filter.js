@@ -1,12 +1,12 @@
-import React from "react"
+import React, {useEffect} from "react"
 import {Link} from "react-router-dom"
 import Table from 'react-bootstrap/Table'
 import { BiLike } from "react-icons/bi";
 
 const Filter = (props) => {
-
-    const {filteredWorkouts} = props
-    console.log("filtered workouts list", filteredWorkouts)
+  const {workouts} = props
+  const {filteredWorkouts} = props
+  console.log("filtered workouts list", filteredWorkouts)
 
   const formatDate = (workout) => {
   let dateinfo = ""
@@ -25,10 +25,56 @@ let newWorkoutList = filteredWorkouts.sort((a, b) =>{
   let keyA = new Date(a.date)
   let keyB = new Date(b.date)
   return keyB - keyA
-
 })
-    const loaded = () => (
-    <>
+
+
+
+  // if(!workouts) return <h3>no workouts</h3>
+
+  //   const loadedAllWorkouts = () => {
+
+  //   return (
+  //   <>
+  //   <h1>Filter Component</h1>
+  //   <div> 
+  //   <h3>{workouts.length} Workouts</h3>
+  //   <Table responsive="sm">
+  //   <thead>
+  //     <tr>
+  //       <th>#</th>
+  //       <th>Sport</th>
+  //       <th>Date</th>
+  //       <th>Workout Title</th>
+  //       <th>Time</th>
+  //       <th>Distance</th>
+  //       <th>Favorite?</th>
+  //     </tr>
+  //   </thead>
+    
+  //   {workouts.map((workout, key) => (
+    
+  //   <tbody>
+  //     <tr>
+  //       <td>{key + 1}</td>
+  //       <td>{workout.sport}</td>
+  //       <td>{formatDate(workout)}</td>
+  //       <Link to={`/workout/${workout.id}`}><td>{workout.title}</td></Link>
+  //       <td>{workout.time} minutes</td>
+  //       {workout.sport === "Run" || workout.sport === "Bike" || workout.sport === "Hike" || workout.sport === "Walk" ? <td>{workout.distance} miles</td> : <td></td> }
+  //       <td>{workout.isFavorite ? <BiLike size="25px" /> : null }</td>
+  //     </tr>
+  //   </tbody>
+  //   ))}
+   
+  //   </Table>
+  //   </div>
+  //   </>
+  //   )
+
+
+
+const showFilteredWorkouts = (w) => (
+  <>
     <h1>Filter Component</h1>
     <div> 
         {/* <article>
@@ -36,7 +82,7 @@ let newWorkoutList = filteredWorkouts.sort((a, b) =>{
             <p>Date: {workout.date}</p>
             <p>Time: {workout.time} minutes</p>
         </article> */}
-    <h3>{filteredWorkouts.length} Workouts</h3>
+    <h3>{w.length} Workouts</h3>
     <Table responsive="sm">
     <thead>
       <tr>
@@ -45,12 +91,12 @@ let newWorkoutList = filteredWorkouts.sort((a, b) =>{
         <th>Date</th>
         <th>Workout Title</th>
         <th>Time</th>
-        {filteredWorkouts.sport === "Run" || filteredWorkouts.sport === "Bike" || filteredWorkouts.sport === "Hike" || filteredWorkouts.sport === "Walk" ?  <th>Distance</th> : null }
+        {w.sport === "Run" || w.sport === "Bike" || w.sport === "Hike" || w.sport === "Walk" ?  <th>Distance</th> : null }
         <th>Favorite?</th>
       </tr>
     </thead>
     
-    {newWorkoutList.map((workout, key) => (
+    {w.map((workout, key) => (
     
     <tbody>
       <tr>
@@ -59,7 +105,7 @@ let newWorkoutList = filteredWorkouts.sort((a, b) =>{
         <td>{formatDate(workout)}</td>
         <Link to={`/workout/${workout.id}`}><td>{workout.title}</td></Link>
         <td>{workout.time} minutes</td>
-        {filteredWorkouts.sport === "Run" || filteredWorkouts.sport === "Bike" || filteredWorkouts.sport === "Hike" || filteredWorkouts.sport === "Walk" ? <td>{workout.distance} miles</td> : null }
+        {w.sport === "Run" || w.sport === "Bike" || w.sport === "Hike" || w.sport === "Walk" ? <td>{workout.distance} miles</td> : null }
         <td>{workout.isFavorite ? <BiLike size="25px" /> : null }</td>
       </tr>
     </tbody>
@@ -67,13 +113,81 @@ let newWorkoutList = filteredWorkouts.sort((a, b) =>{
    
     </Table>
     </div>
-    </>
-  )
+  </> 
+)
 
-  return newWorkoutList.length > 0 ? loaded() : <h3>No workouts found. Please enter another title</h3>
+ useEffect( () => {
+    showFilteredWorkouts(workouts)
+  
+    console.log("useEffect")
+  }, [])
+
+
+return newWorkoutList.length > 0 ? showFilteredWorkouts(newWorkoutList) :  showFilteredWorkouts(workouts) 
+
+//  {showFilteredWorkouts(workouts)}
+// return (
+//   <>
+//   {showFilteredWorkouts(newWorkoutList)}
+//   </>
+// )
+
+
+  // const loadedWorkouts = (w) => (
+  //   <>
+  //   <h1>Filter Component</h1>
+  //   <div> 
+  //       {/* <article>
+  //           <p>Title: {workout.title}</p>
+  //           <p>Date: {workout.date}</p>
+  //           <p>Time: {workout.time} minutes</p>
+  //       </article> */}
+  //   <h3>{w.length} Workouts</h3>
+  //   <Table responsive="sm">
+  //   <thead>
+  //     <tr>
+  //       <th>#</th>
+  //       <th>Sport</th>
+  //       <th>Date</th>
+  //       <th>Workout Title</th>
+  //       <th>Time</th>
+  //       {w.sport === "Run" || w.sport === "Bike" || w.sport === "Hike" || w.sport === "Walk" ?  <th>Distance</th> : null }
+  //       <th>Favorite?</th>
+  //     </tr>
+  //   </thead>
+    
+  //   {w.map((workout, key) => (
+    
+  //   <tbody>
+  //     <tr>
+  //       <td>{key + 1}</td>
+  //       <td>{workout.sport}</td>
+  //       <td>{formatDate(workout)}</td>
+  //       <Link to={`/workout/${workout.id}`}><td>{workout.title}</td></Link>
+  //       <td>{workout.time} minutes</td>
+  //       {w.sport === "Run" || w.sport === "Bike" || w.sport === "Hike" || w.sport === "Walk" ? <td>{workout.distance} miles</td> : null }
+  //       <td>{workout.isFavorite ? <BiLike size="25px" /> : null }</td>
+  //     </tr>
+  //   </tbody>
+  //   ))}
+   
+  //   </Table>
+  //   </div>
+  //   </>
+  //   )
+
+  // useEffect( () => {
+  //   loadedWorkouts(workouts)
+  //   console.log("useEffect")
+  // }, [])
+
+  // return newWorkoutList.length > 0 ? loadedWorkouts(newWorkoutList) : <h3>No workouts found. Please enter another title</h3>
+
+
 }
 export default Filter;
 
+  // return newWorkoutList.length > 0 ? loadedWorkouts(newWorkoutList) : <h3>No workouts found. Please enter another title</h3>
 
 // const loaded = () => (
 //     <>

@@ -1,0 +1,63 @@
+.dash-header  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-content: flex-end;
+}
+
+.dash-titles {
+  /* display: flex; */
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+  font-size: calc(8px + 2vmin);
+  width: 400px;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.2);
+  border-radius: 2px;
+  height: 200px;
+  margin: 15px;
+  padding: 0px;
+  /* background-color: white; */
+  background-image: url(https://images.unsplash.com/photo-1518214598173-1666bc921d66?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=752&q=80);
+  height: 100%;
+  background-position: 0px -140px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+}
+
+@media only screen and (max-width: 480px) {
+    .dash-container {
+        /* Photo by */
+        padding: 20px;
+        background-color: lavender;
+        height: 100%;
+      
+    }   
+}
+
+@media only screen and (min-width: 768px) {
+    .dash-container {
+        /* Photo by <a href="https://unsplash.com/@joshgordon?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Josh Gordon on Unsplash</a></span> */
+        padding: 200px 20px;
+    	background-image: url(https://images.unsplash.com/photo-1523761156583-79f4b2c85a20?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=638&q=80);
+		height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+}
+
+@media only screen and (min-width: 1024px) {
+    .dash-container {
+        /* Photo by <a href="https://unsplash.com/@joshgordon?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Josh Gordon on Unsplash</a></span> */
+        padding: 200px 20px;
+    	background-image: url(https://images.unsplash.com/photo-1523761156583-79f4b2c85a20?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=638&q=80);
+		height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+}   
+}

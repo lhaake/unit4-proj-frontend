@@ -33,14 +33,15 @@ console.log("looking for workout[workoutId] array", displayWorkout)
     
       {displayWorkout.map((workout) => (
         <article className="workout-card">
-        <h1>Title: {workout.title}</h1>
-          <h3>Date: {workout.date}</h3>
-          <h3>Time: {workout.time} minutes</h3>
-          <h3>Description: {workout.description}</h3>
-          <h3>Distance: {workout.distance} miles</h3>
-          <h3>Exertion (scale of 1-10): {workout.exertion}</h3>
-          <h3>Sport: {workout.sport}</h3>
-          {workout.isFavorite ? <h3>Favorite: <BiLike size="25px" /></h3> : null }
+        <h3>{workout.title}</h3>
+          <h6>Date: {workout.date}</h6>
+          <h6>Sport: {workout.sport}</h6>
+          <h6>Time: {workout.time} minutes</h6>
+          <h6>Description: {workout.description}</h6>
+          <h6>Distance: {workout.distance} miles</h6>
+          <h6>Exertion (scale of 1-10): {workout.exertion}</h6>
+          
+          {workout.isFavorite ? <h6>Favorite: <BiLike size="25px" /></h6> : null }
           { workout.url ? <a href={workout.url} target="_blank">Workout Video</a> : null }
           <br />
           <button onClick={() => {
