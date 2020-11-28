@@ -1,0 +1,186 @@
+
+
+@media only screen and (max-width: 584px) {
+    .page-container {
+        /* Photo by  */
+    	background-color: #242428; 
+        height: 100%;
+        min-height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }  
+      .login-form-container {
+        background: rgba(0,0,0,0.75);
+        color: #fff;
+        margin: 0px auto;
+        width: 320px;
+        height: 500px;
+        border-radius: 3px;
+     }
+    .login-form-container h1 {
+        padding: 20px 50px;
+        background: rgba(0,0,0,0.5);
+        border-radius: 3px;
+        font-weight: 700;
+        font-size: 34px;
+        margin-top: 0;
+        text-align: center;
+    }
+     .login-form-container h6 {
+        padding: 10px 50px;
+        border-radius: 3px;
+        font-weight: 600;
+        font-size: 18px;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .login-form {
+        align-items: center;
+        padding-left: 20px;
+    }
+
+    .btn-primary {
+        width: 100% !important;
+        border-radius: 1px !important;
+        background-color:#9d0191 !important;
+        border-color: #9d0191 !important;
+        font-weight: 500 !important;
+    }
+
+    .login-form .form-control {
+        background: rgba(0,0,0,0.5);
+        border: 1px solid #666;
+        color: white;
+        border-radius: 1px;
+    }
+
+    .label {
+       font-weight: 500; 
+    } 
+} 
+
+ @media only screen and (min-width: 585px) {
+    .page-container {
+        /* Photo by */
+        padding: 20px 20px;
+    	background-image: url(https://images.unsplash.com/photo-1523341139367-9de570b874ed?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80);
+        height: 100%;
+        min-height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+      .login-form-container {
+        background: rgba(0,0,0,0.75);
+        color: #fff;
+        margin: 20px auto;
+        width: 400px;
+        height: 470px;
+        border-radius: 3px;
+     }
+    .login-form-container h1 {
+        padding: 20px 50px;
+        background: rgba(0,0,0,0.5);
+        border-radius: 3px;
+        font-weight: 700;
+        font-size: 34px;
+        margin-top: 0;
+        text-align: center;
+    }
+     .login-form-container h6 {
+        padding: 20px 50px;
+        border-radius: 3px;
+        font-weight: 600;
+        font-size: 20px;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .login-form {
+        align-items: center;
+        padding-left: 30px;
+    }
+
+    .btn-primary {
+        width: 100% !important;
+        border-radius: 1px !important;
+        background-color:#9d0191 !important;
+        border-color: #9d0191 !important;
+        font-weight: 500 !important;
+    }
+
+    .login-form .form-control {
+        background: rgba(0,0,0,0.5);
+        border: 1px solid #666;
+        color: white;
+        border-radius: 1px;
+    }
+
+    .label {
+       font-weight: 500; 
+    }
+} 
+
+@media only screen and (min-width: 1024px) {
+    .page-container {
+        /* Photo by */
+        padding: 20px 20px;
+    	background-image: url(https://images.unsplash.com/photo-1523341139367-9de570b874ed?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80);
+        height: 100%;
+        min-height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }   
+     .login-form-container {
+        background: rgba(0,0,0,0.75);
+        color: #fff;
+        margin: 50px 150px;
+        width: 400px;
+        height: 470px;
+        border-radius: 3px;
+     }
+    .login-form-container h1 {
+        padding: 20px 50px;
+        background: rgba(0,0,0,0.5);
+        border-radius: 3px;
+        font-weight: 700;
+        font-size: 34px;
+        margin-top: 0;
+        text-align: center;
+    }
+     .login-form-container h6 {
+        padding: 20px 50px;
+        border-radius: 3px;
+        font-weight: 600;
+        font-size: 20px;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .login-form {
+        align-items: center;
+        padding-left: 40px;
+    }
+
+    .btn-primary {
+        width: 100% !important;
+        border-radius: 1px !important;
+        background-color:#9d0191 !important;
+        border-color: #9d0191 !important;
+        font-weight: 500 !important;
+    }
+
+    .login-form .form-control {
+        background: rgba(0,0,0,0.5);
+        border: 1px solid #666;
+        color: white;
+        border-radius: 1px;
+    }
+
+    .label {
+       font-weight: 500; 
+    }
+}

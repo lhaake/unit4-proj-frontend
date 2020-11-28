@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import {Route, Link, Switch, Redirect} from "react-router-dom"
 import './App.css';
-import Navigation from "./test-components/Navigation"
-import LoginForm from "./test-components/LoginForm"
-import Dash from "./test-components/Dash"
-import Workout from "./test-components/Workout"
-import WorkoutForm from "./test-components/WorkoutForm"
-import Filter from "./test-components/Filter"
-import FilterForm from "./test-components/FilterForm"
+import Home from "./components/Home"
+import Navigation from "./components/Navigation"
+import LoginForm from "./components/LoginForm"
+import Dash from "./components/Dash"
+import Workout from "./components/Workout"
+import WorkoutForm from "./components/WorkoutForm"
+import Filter from "./components/Filter"
+import FilterForm from "./components/FilterForm"
 
 function App() {
     // url to backend
@@ -40,6 +41,7 @@ function App() {
 
     // state for filtered workouts
     const [filteredWorkouts, setFilteredWorkouts] = useState([])
+
 
     const signup = async (newUser) => {
         console.log("signup function start")
@@ -218,18 +220,20 @@ function App() {
     return (
       <div>
         <Navigation logout={logout} />
-      
+        
         {userLogin === "logged out" ? <Redirect to="/login" /> : null }
         {userLogin === "logged out" ? <h3>You are logged out!</h3> : null} 
         {/* {userLogin === "logged out" ? setUserLogin({}) : null } */}
    
       
       <Switch>
+        <Route exact path="/" component={Home} />
+
         <Route path="/signup"
 			    render={(rp) => (
         	<LoginForm
             {...rp}
-            label="Sign Up"
+            label="Sign up"
 			      handleForm={signup}
 		      />
       	)}
@@ -239,8 +243,8 @@ function App() {
 			    render={(rp) => (
         	<LoginForm
             {...rp}
-            label="Login"
-			      handleForm={login}
+            label="Log in"
+            handleForm={login}
 		      />
       	  )}
         />

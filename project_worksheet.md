@@ -204,28 +204,26 @@ DAY OFF
 | Saturday , November 28 | 
 |---|
 1. Deployed to Netlify!
-2. Styling 
-Working on: You are logged in message - login screen
+2. Styled Login, Sign up, Workout Form 
+3. Styling: Nav, Dashboard, Workout, Filter, FilterForm 
 
 
 Next up:
-1. Add form validation that shows up before pressing save
-4. Log in / Sign Up Messages -> Error and Confirmation
-  - When Logged In change the nav ?
-5. React-icons for edit and delete 
-6. Workout Form 
+1. Log in Error 
+  - Error message on screen when Logging In - Invalid Username or Password. The username or password did not match. Please try again. 
+
+
+2. Workout -- React-icons for edit and delete 
+
+3. Workout Form 
 	- Size -> Desktop 
 	- "Save" Button move 
 	- "Sport" - required  
-	- Verification - if a number is not entered
-- Style the Form - dropdown, hidden fields, slider for exertion, favorite (icon), units entered 
-- Error message on screen when Logging In - Invalid Username or Password
-- Message confirming you have signed in - created an Account
-- Message confirming you are logged in
+
+
 - Update React architecture
 - Project Name
 - Remove comments / console.logs
-- Netlify Deployment - create a custom domain
 
 
 
@@ -235,4 +233,11 @@ Next up:
 ## Additional Libraries
 ## Code Snippet
 ## Challenges 
-## Future Direction & Ideas, Takeaways
+## Takeaways
+
+## Future Direction & Ideas
+- PostMVP items - Pace, Calendar, Filter Options
+- Add form validation that shows up before pressing save
+- When Logged In change the nav to show a username / Icon. When Logged out - remove this
+- Message confirming you are logged in 
+- Message confirming you have signed up - created an Account
