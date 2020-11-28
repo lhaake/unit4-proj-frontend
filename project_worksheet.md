@@ -9,16 +9,16 @@
 |Day 3 - Monday, Nov. 23 | Frontend, CRUD | Done
 |Day 4 - Tuesday, Nov. 24 | Frontend, CRUD | Done
 |Day 5 - Wednesday, Nov. 25 | Frontend, Filter Component | Done
-|Day 6 - Thursday, Nov. 26 | | -
-|Day 7 - Friday, Nov. 27  | Frontend, Styling | -
-|Day 8,9 - Weekend  | Frontend, Styling | -
-|Day 10 - Monday, Nov. 30  | Project Due, Worksheet | -
+|Day 6 - Thursday, Nov. 26 | - | Day Off
+|Day 7 - Friday, Nov. 27  | Frontend, Styling | Done
+|Day 8,9 - Weekend  | Deploy to Netlify, Frontend, Styling | -
+|Day 10 - Monday, Nov. 30  | Project Due, Submit Links, Finalize Worksheet | -
 
 ## Project Links
 
 - [My github repo - frontend](https://github.com/lhaake/unit4-proj-frontend)
 - [My github repo - backend](https://github.com/lhaake/unit4-proj-backend)
-- [Netlify Deployment - frontend - not added yet]()
+- [Netlify Deployment - frontend](https://lhaake-unit4proj.netlify.app/)
 - [Heroku Deployment - backend](https://lh-training-log-backend.herokuapp.com)
 
 ## Project Description
@@ -112,29 +112,29 @@ Back End
 
 | Component | Priority | Estimated Time | Actual Time | Status |
 | --- | :---: |  :---: | :---: | :---: |
-| Meetings | H | 3hrs|  | |
+| Meetings | H | 3hrs| 1hr | |
 | Backend: Rails set up, building structure, relationships, seeding data | H | 3hrs| 2.5hrs | |
-| Backend: Authentication + Research | H | 4hrs| 3hrs |  |
+| Backend: Authentication + Research | H | 4hrs| 3hrs |  
 | Backend: Testing CRUD | H | 2hrs| 1hr |  |
 | Backend: Heroku Deployment | H | 2hr | 0.5hr |  |
-| Frontend: Create React App | H | 1hr| 0.5hr |  |
-| Frontend: Build Components | H | 8hrs|  | |
-| Frontend: Authentication + Research | H | 4hr| 3hr |  |
-| Frontend: Testing CRUD | H | 4hrs|  | |
-| Frontend: Netlify Deployment| H | 1hr| |
-| Frontend: new tech | H | 5hr| |
+| Frontend: Create React App + Installs | H | 1hr| 0.5hr |  |
+| Frontend: Build Components | H | 8hrs| 4hrs | |
+| Frontend: Authentication + Research | H | 4hrs| 3hrs |  |
+| Frontend: Testing CRUD | H | 4hrs| 1hr | |
+| Frontend: Netlify Deployment| H | 1hr| 0.25hr |
+| Frontend: New tech - React Bootstrap | H | 5hrs| 2hrs |
 | Styling | M | 5hrs| |  |
-| Research | M | 4hr| 2hr|  |
-| Troubleshooting | H | 5hrs| 3hr | |
+| Research | M | 4hrs| 4hrs|  |
+| Troubleshooting | H | 5hrs| 5hrs | |
 | Total |  | 51hrs|  | |
 
 
 ## PostMVP Timeline
 | Component | Priority | Estimated Time | Actual Time | Notes |
 | --- | :---: |  :---: | :---: | :---: | 
-| Calculate pace | M | 5hr| |  |
-| Calendar | M | 6hr| |  |
-| Additional functionality to filter data | M | 6hr| |  |
+| Calculate pace | M | 5hrs| |  |
+| Calendar | M | 6hrs| |  |
+| Additional functionality to filter data | M | 6hrs| |  |
 | Total |  | 17hrs| hrs | |
 
 
@@ -200,7 +200,14 @@ DAY OFF
 4. Workouts are now ordered by most recent date (descending order) in the Dash and Filter Components
 5. Search bar and Filter are now on the same page!!
 
-Working on: You are logged in message - login screen 
+
+| Saturday , November 28 | 
+|---|
+1. Deployed to Netlify!
+2. Styling 
+Working on: You are logged in message - login screen
+
+
 Next up:
 1. Add form validation that shows up before pressing save
 4. Log in / Sign Up Messages -> Error and Confirmation
@@ -218,7 +225,7 @@ Next up:
 - Update React architecture
 - Project Name
 - Remove comments / console.logs
-- Netlify Deployment
+- Netlify Deployment - create a custom domain
 
 
 
