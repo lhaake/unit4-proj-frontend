@@ -34,6 +34,7 @@ const WorkoutForm = (props) => {
 
 
 return (
+  <div className="form-background">
   <div className="form-container">
     <Form onSubmit={handleSubmit}>
     <h1>{props.title} Workout</h1>
@@ -191,6 +192,7 @@ return (
   </Button>
 
 </Form>
+</div>
 </div>
 )
 }

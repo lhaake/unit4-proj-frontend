@@ -204,16 +204,16 @@ DAY OFF
 | Saturday, November 28 | 
 |---|
 1. Deployed to Netlify!
-2. CSS Done: Styled Login, Sign up, Workout Form, Filter, FilterForm, Dashboard, 
+2. CSS Done: Styled Login, Sign up, Workout Form, Filter, FilterForm
 
 
 | Sunday, November 29 | 
 |---|
-1. Styling: Nav (links change from blue to black),  Workout, Google Fonts
+1. Styling Done: Dashboard, Nav (links change from blue to black)
 2. Dashboard edited the mobile css
-3. Workout - style, date format, icons for edit and delete
+3. To do:  Workout - style, date format, icons for edit and delete,  Google Fonts
 
-Decide on black background for Dashboard
+
 Issues: Log out in nav - can't style it correctly 
 
 Next up:

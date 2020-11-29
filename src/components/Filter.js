@@ -10,17 +10,17 @@ const Filter = (props) => {
   console.log("filtered workouts list", filteredWorkouts)
 
   const formatDate = (workout) => {
-  let dateinfo = ""
-  let dateArr = []
-  let dateStr = ""
-  dateinfo = workout.date 
-    console.log(dateinfo)
-  dateArr = dateinfo.split('-')
-    console.log(dateArr)
-  dateStr = new Date(dateArr[0], dateArr[1] - 1, dateArr[2])
-    console.log(dateStr.toDateString())
+    let dateinfo = ""
+    let dateArr = []
+    let dateStr = ""
+    dateinfo = workout.date 
+      console.log(dateinfo)
+    dateArr = dateinfo.split('-')
+      console.log(dateArr)
+    dateStr = new Date(dateArr[0], dateArr[1] - 1, dateArr[2])
+      console.log(dateStr.toDateString())
 
-  return dateStr.toDateString()
+    return dateStr.toDateString()
   }
 
 let sortedWorkouts = workouts.sort((a, b) => {
