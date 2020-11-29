@@ -49,7 +49,7 @@ const Dash = (props) => {
 
   const loaded = () => (
    <div className="dash-container">
-     <h1>Dashboard</h1>
+     {/* <h1>Dashboard</h1> */}
 
      {/* <Jumbotron>
         <h1>Dashboard</h1>
@@ -60,7 +60,7 @@ const Dash = (props) => {
     <div className="dash-header">
      
       {newWorkoutList.map((workout) => (
-        <article className="dash-cards"   
+        <Link to={`/workout/${workout.id}`}><article className="dash-cards"   
    
         style={ workout.sport === "Lift Weights" || workout.sport === "Crossfit" ? {backgroundImage: `url(${weights})` } : {backgroundImage: `url(${defaultimg})` } 
         && workout.sport === "Run" ? {backgroundImage: `url(${runimg})` } : {backgroundImage: `url(${defaultimg})` }   
@@ -75,12 +75,14 @@ const Dash = (props) => {
         
         
         <div className="dash-cards-text">
-        <Link to={`/workout/${workout.id}`}><h4>{workout.title}</h4> </Link>
+        <h5>{workout.title}</h5> 
           <ul>
             <li>{formatDate(workout)} | {workout.sport} | {workout.time} min | {workout.isFavorite ? <BiLike size="25px" /> : null }</li>
           </ul>
+          
           </div>
-        </article>
+         
+        </article></Link>
       ))}
       </div>
   </div>

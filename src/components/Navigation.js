@@ -22,7 +22,7 @@ const Navigation = (props) => {
         <NavDropdown.Item><Link to ="/signup">Sign up</Link></NavDropdown.Item>
         <NavDropdown.Item><Link to ="/login">Log in</Link></NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item onClick={() => props.logout()}>Log out</NavDropdown.Item>
+        <NavDropdown.Item className="logout-button" onClick={() => props.logout()}>Log out</NavDropdown.Item>
       </NavDropdown>
     </Nav>
     </Navbar.Collapse>

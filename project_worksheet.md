@@ -210,8 +210,11 @@ DAY OFF
 | Sunday, November 29 | 
 |---|
 1. Styling: Nav (links change from blue to black),  Workout, Google Fonts
-2. Dashboard edit the mobile css,
+2. Dashboard edited the mobile css
 3. Workout - style, date format, icons for edit and delete
+
+Decide on black background for Dashboard
+Issues: Log out in nav - can't style it correctly 
 
 Next up:
 1. Log in Error 

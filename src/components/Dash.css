@@ -34,10 +34,11 @@
     .dash-cards-text {
         background: rgba(248, 245, 245, 0.7);
         border-radius: 3px;
-        margin-top: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
-    .dash-cards-text h4 {
+    .dash-cards-text h5 {
         text-align: center;
         font-weight: 600;
         color: black;
@@ -59,20 +60,28 @@
     }
 
     .dash-container button {
-        background-color: #9d0191;
-        border: 2px solid #9d0191;
-        color: white;
-        font-weight: 500;
+         background-color: white;
+        border: 2px solid #02383c;
+        color: black;
+        font-weight: 600;
         width: 150px;
         height: 40px;
         border-radius: 4px;
         margin-bottom: 20px;
     }
     .dash-container button:hover {
-        background-color: white;
+        background-color: #02383c;
     }
      .dash-container button:hover a {
-        color: black;
+        color: white;
+        text-decoration: none;
+    }
+
+    .dash-header a {
+        text-decoration: none !important;
+    }
+    .dash-cards-text h5:hover {
+        color: #ed3833;
     }
     
     
@@ -113,10 +122,11 @@
     .dash-cards-text {
         background: rgba(248, 245, 245, 0.7);
         border-radius: 3px;
-        margin-top: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
-    .dash-cards-text h4 {
+    .dash-cards-text h5 {
         text-align: center;
         font-weight: 500;
         color: black;
@@ -138,8 +148,8 @@
     }
 
     .dash-container button {
-        background-color: #9d0191;
-        border: 2px solid #9d0191;
+        background-color: #02383c;
+        border: 2px solid #02383c;
         color: white;
         font-weight: 600;
         width: 200px;
@@ -152,6 +162,14 @@
     }
      .dash-container button:hover a {
         color: black;
+         text-decoration: none;
+    }
+
+    .dash-header a {
+        text-decoration: none !important;
+    }
+    .dash-cards-text h5:hover {
+        color: #ed3833;
     }
 
 
@@ -160,11 +178,13 @@
 @media only screen and (min-width: 1024px) {
     .dash-container { 
         padding: 10px 20px;
-        background-color: white;
+        background-color: black;
     }   
 
     .dash-container h1 {
         margin: 20px 0px;
+        text-align: center;
+        color: lightblue;
     }
     .dash-header  {
         display: flex;
@@ -192,10 +212,11 @@
     .dash-cards-text {
         background: rgba(248, 245, 245, 0.7);
         border-radius: 3px;
-        margin-top: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
-    .dash-cards-text h4 {
+    .dash-cards-text h5 {
         text-align: center;
         font-weight: 600;
         color: black;
@@ -203,7 +224,7 @@
 
     .dash-cards-text li {
         list-style: none;
-        font-size: 18px;
+        font-size: 14px;
         text-align: center;
     }
 
@@ -214,25 +235,34 @@
 
      .dash-container button a {
         color: white;
+        text-decoration: none;
     }
 
     .dash-container button {
-        background-color: #9d0191;
-        border: 2px solid #9d0191;
-        color: white;
+        background-color:  #02383c;
+        border: 2px solid #02383c;
         font-weight: 600;
         width: 200px;
         height: 40px;
         border-radius: 4px;
-        margin-bottom: 20px;
+        margin-top:20px;
+        margin-bottom: 20px; 
+        margin-left: 60px;
     }
     .dash-container button:hover {
         background-color: white;
+        border: 2px solid #9d0191;
     }
      .dash-container button:hover a {
         color: black;
     }
-   
+
+    .dash-header a {
+        text-decoration: none !important;
+    }
+   .dash-cards-text h5:hover {
+        color: #9d0191; 
+    }
 }
     /* .jumbotron {
         background-color: black !important;
