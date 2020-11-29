@@ -1,9 +1,6 @@
 import React, {useState} from "react"
-import Form from 'react-bootstrap/Form';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
-import FormCheck from 'react-bootstrap/FormCheck'
+import './WorkoutForm.css';
+import {Form, Col, Row, Button, FormCheck} from 'react-bootstrap';
 import RangeSlider from 'react-bootstrap-range-slider'
 import { BiLike } from "react-icons/bi";
 
@@ -11,18 +8,14 @@ const WorkoutForm = (props) => {
 
   const { workout } = props
   console.log("checking the fav boolean", workout.isFavorite)
+
     // state for switch 
     const [swt, setSwt] = useState(workout.isFavorite)
 
     const [range, setRange] = useState(workout.exertion)
 
     // state for the form 
-    const [formData, setFormData] = useState(workout)   // update with props sent down from app for an empty form 
-    
-
-    // const onSwitchAction = () => {
-    //   setIsSwitchOn(!isSwitchOn)
-    // }
+    const [formData, setFormData] = useState(workout) 
 
     console.log("props in WorkoutForm", props.workout)
 
@@ -41,22 +34,23 @@ const WorkoutForm = (props) => {
 
 
 return (
+  <div className="form-container">
     <Form onSubmit={handleSubmit}>
-    <h1>WorkoutForm Component</h1>
+    <h1>{props.title} Workout</h1>
 
     <Form.Row as={Col}>
-    <Form.Group as={Col} controlId="">
+    <Form.Group as={Col} controlId="title">
         <Form.Label>Title</Form.Label>
         <Form.Control 
             type="text"
-            placeholder=""
+            placeholder="Enter title"
             name="title"
             value={formData.title}
             onChange={handleChange} 
             required />
     </Form.Group>
 
-    <Form.Group as={Col} controlId="">
+    <Form.Group as={Col} controlId="sport">
       <Form.Label>Sport</Form.Label>
       <Form.Control as="select" 
         defaultValue="Choose..."
@@ -95,7 +89,7 @@ return (
   </Form.Row>
 
 <Form.Row as={Col}>
-  <Form.Group as={Col} controlId="">
+  <Form.Group as={Col} controlId="date">
     <Form.Label>Date</Form.Label>
     <Form.Control 
         type="date"
@@ -106,19 +100,19 @@ return (
         required />
   </Form.Group>
 
-  <Form.Group as={Col} controlId="">
+  <Form.Group as={Col} controlId="time">
       <Form.Label>Time (minutes)</Form.Label>
       <Form.Control 
         type="number"
         name="time"
-        placeholder=""
+        placeholder="minutes"
         value={formData.time}
         onChange={handleChange}
-        placeholder="" />
+         />
     </Form.Group>
 </Form.Row>
 
-    <Form.Group as={Col} controlId="">
+    <Form.Group as={Col} controlId="description">
     <Form.Label>Description</Form.Label>
     <Form.Control as="textarea" rows={4} 
         type="text"
@@ -130,7 +124,7 @@ return (
   </Form.Group>
 
     {formData.sport === "Run" || formData.sport === "Bike" || formData.sport === "Hike" || formData.sport === "Walk" ? 
-    <Form.Group as={Col} controlId="">
+    <Form.Group as={Col} controlId="distance">
       <Form.Label>Distance (miles)</Form.Label>
       <Form.Control
         type="number"
@@ -143,7 +137,7 @@ return (
     }
 
     {formData.sport === "Yoga" || formData.sport === "Workout" || formData.sport === "Pilates" || formData.sport === "Lift Weights" || formData.sport === "HIIT" || formData.sport === "Crossfit" ? 
-    <Form.Group as={Col} controlId="">
+    <Form.Group as={Col} controlId="URL">
       <Form.Label>Workout Video URL</Form.Label>
       <Form.Control 
         type="text"
@@ -154,22 +148,6 @@ return (
     </Form.Group>
     : null 
     }
-
-    
-      {/* <Form.Label>Exertion (1-10)</Form.Label>
-      <Form.Control 
-        type="number"
-        name="exertion"
-        value={formData.exertion}
-        onChange={handleChange}
-        placeholder="" />
-    </Form.Group> */}
-
-    {/* <RangeSlider
-      value={range}
-      onChange={changeEvent => setRange(changeEvent.target.value)}
-    /> */}
-
     
 <Form.Group as={Col} controlId="">
     <Form.Group as={Row}>
@@ -213,7 +191,7 @@ return (
   </Button>
 
 </Form>
-
+</div>
 )
 }
 export default WorkoutForm;

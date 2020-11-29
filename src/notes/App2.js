@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './App.css';
 import {Route} from "react-router-dom"
 import Nav from "./components/Nav"
-import LoginForm from "./components/LoginForm"
+import LoginForm from "../components/LoginForm"
 import Dashboard from "./components/Dashboard"
 
 function App() {

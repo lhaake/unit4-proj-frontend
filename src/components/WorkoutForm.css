@@ -1,0 +1,54 @@
+/* Slider for exertion level */
+input[type=range].range-slider.range-slider--sm {
+  padding: 1.25rem 0;
+}
+
+/* Favorite's switch */
+.custom-switch {
+  padding-top: 0.5rem;
+}
+
+.form-container button {
+   margin-left: 10px;
+   width: 120px;
+   height: auto;
+   font-weight: 500;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: auto;
+    border: 2px solid #16697a;
+    border-radius: 3px;
+    padding: 20px 0px;
+}
+
+.form-container .form-row>.col {
+    padding-right: 30px;
+}
+
+.form-container label {
+    font-weight: bold;
+}
+
+.form-container h1 {
+    /* text-align: center; */
+    padding: 10px 15px;
+}
+
+.form-container #distance {
+    width: 15%;
+}
+
+.form-container #time {
+    width: 30%;
+    
+}
+
+.form-container #date {
+    width: 60%;
+}
+
+.form-container #sport {
+    width: 60%;
+}

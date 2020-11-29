@@ -1,0 +1,25 @@
+
+td {
+  border-top: 0px solid white !important; 
+}
+
+thead {
+  border-bottom: 3px solid #9ad3bc;
+
+  /* dee2e6; */
+  /* #16697a */
+  /* 9ad3bc */
+}
+
+thead tr {
+  background-color: #9ad3bc;
+}
+
+.filter-container {
+    padding: 20px;
+    margin: 0px 20px; 
+}
+
+/* .filter-container a {
+    color: #0a043c;
+} */

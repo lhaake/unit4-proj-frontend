@@ -1,0 +1,30 @@
+
+/* .ml-auto .nav-link {
+   
+} */
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 2.5rem !important;
+        padding-left: 3.5rem !important;
+    }
+
+
+}
+
+.navbar-expand-lg .navbar-nav .nav-link a, #basic-nav-dropdown .dropdown-item a {
+   color: black !important; 
+}
+
+.navbar-expand-lg .navbar-nav .nav-link a:hover {
+    color: black !important;
+}
+
+.title-nav a {
+    text-decoration: none !important;
+    color: black;
+}
+
+#basic-nav-dropdown {
+    color: black;
+}
