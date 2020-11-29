@@ -201,24 +201,22 @@ DAY OFF
 5. Search bar and Filter are now on the same page!!
 
 
-| Saturday , November 28 | 
+| Saturday, November 28 | 
 |---|
 1. Deployed to Netlify!
-2. CSS Done: Styled Login, Sign up, Workout Form, Filter, FilterForm  
-3. Styling: Nav (links change from blue to black), Dashboard, Workout, Font
+2. CSS Done: Styled Login, Sign up, Workout Form, Filter, FilterForm, Dashboard, 
 
-Dashboard -- edit the Add a Workout link --> button, edit the mobile css, add default image for other sports 
 
-Workout - date format
+| Sunday, November 29 | 
+|---|
+1. Styling: Nav (links change from blue to black),  Workout, Google Fonts
+2. Dashboard edit the mobile css,
+3. Workout - style, date format, icons for edit and delete
 
 Next up:
 1. Log in Error 
   - Error message on screen when Logging In - Invalid Username or Password. The username or password did not match. Please try again. 
-
-2. Workout -- React-icons for edit and delete 
-
-3. Workout Form 
-	- "Sport" - required  
+ 
 
 - Update React architecture
 - Project Name
@@ -242,3 +240,4 @@ Next up:
 - Message confirming you are logged in 
 - Message confirming you have signed up - created an Account
 - Pagination on Filter 
+- Workout Form  make the "Sport" field required 
