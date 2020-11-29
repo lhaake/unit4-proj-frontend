@@ -4,7 +4,7 @@ td {
 }
 
 thead {
-  border-bottom: 3px solid #16697a;
+  border-bottom: 3px solid #9ad3bc;
 
   /* dee2e6; */
   /* #16697a */
@@ -12,7 +12,7 @@ thead {
 }
 
 thead tr {
-  background-color: #dee2e6;;
+  background-color: #9ad3bc;
 }
 
 .filter-container {

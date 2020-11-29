@@ -204,26 +204,23 @@ DAY OFF
 | Saturday , November 28 | 
 |---|
 1. Deployed to Netlify!
-2. Styled Login, Sign up, Workout Form 
-3. Styling: Nav, Dashboard, Workout, Filter, FilterForm 
+2. CSS Done: Styled Login, Sign up, Workout Form, Filter, FilterForm  
+3. Styling: Nav (links change from blue to black), Dashboard, Workout, Font
 
 
 Next up:
 1. Log in Error 
   - Error message on screen when Logging In - Invalid Username or Password. The username or password did not match. Please try again. 
 
-
 2. Workout -- React-icons for edit and delete 
 
 3. Workout Form 
-	- Size -> Desktop 
-	- "Save" Button move 
 	- "Sport" - required  
-
 
 - Update React architecture
 - Project Name
 - Remove comments / console.logs
+- Push master branch to github
 
 
 
