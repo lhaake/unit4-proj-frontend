@@ -2,6 +2,7 @@ import React from "react"
 import './Dash.css';
 import {Link} from "react-router-dom"
 import { BiLike } from "react-icons/bi";
+import {Jumbotron, Button} from "react-bootstrap"
 
 const Dash = (props) => {
 
@@ -39,29 +40,44 @@ const Dash = (props) => {
   let hike = "https://images.unsplash.com/photo-1537430802614-118bf14be50c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80"
 
   let walk = "https://images.unsplash.com/photo-1515767079362-106c32de23f2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80"
+
+  let defaultimg = "https://images.unsplash.com/photo-1557330359-ffb0deed6163?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
+
+  let bike = "https://images.unsplash.com/photo-1474962558142-9ca83af74bb7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80"
+
+  let swim = "https://images.unsplash.com/photo-1557957002-a0e8957e0e07?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
+
   const loaded = () => (
    <div className="dash-container">
      <h1>Dashboard</h1>
-      <Link to="/workout/add">Add a Workout</Link><br /><br />
 
+     {/* <Jumbotron>
+        <h1>Dashboard</h1>
+        <Button variant="">Add a Workout</Button>
+      </Jumbotron> */}
+
+      <button><Link to="/workout/add">Add Workout</Link></button>
     <div className="dash-header">
      
       {newWorkoutList.map((workout) => (
         <article className="dash-cards"   
-        // style={ workout.sport === "Run" ? {backgroundImage: `url(${runimg})` } : null }
-        style={ workout.sport === "Lift Weights" ? {backgroundImage: `url(${weights})` } : null 
-        || workout.sport === "Run" ? {backgroundImage: `url(${runimg})` } : null 
-        || workout.sport === "Yoga" ? {backgroundImage: `url(${yoga})` } : null 
-        || workout.sport === "Hike" ? {backgroundImage: `url(${hike})` } : null 
-        || workout.sport === "Walk" ? {backgroundImage: `url(${walk})` } : null 
-      }>
+   
+        style={ workout.sport === "Lift Weights" || workout.sport === "Crossfit" ? {backgroundImage: `url(${weights})` } : {backgroundImage: `url(${defaultimg})` } 
+        && workout.sport === "Run" ? {backgroundImage: `url(${runimg})` } : {backgroundImage: `url(${defaultimg})` }   
+        && workout.sport === "Yoga" || workout.sport === "Pilates" ? {backgroundImage: `url(${yoga})` } : {backgroundImage: `url(${defaultimg})` }  
+        && workout.sport === "Hike" ? {backgroundImage: `url(${hike})` } : {backgroundImage: `url(${defaultimg})` }  
+        && workout.sport === "Walk" ? {backgroundImage: `url(${walk})` } : {backgroundImage: `url(${defaultimg})` }  
+        && workout.sport === "Bike" ? {backgroundImage: `url(${bike})` } : {backgroundImage: `url(${defaultimg})` } 
+        && workout.sport === "Swim" ? {backgroundImage: `url(${swim})` } : {backgroundImage: `url(${defaultimg})` } 
+      }
+      >
         
         
         
         <div className="dash-cards-text">
         <Link to={`/workout/${workout.id}`}><h4>{workout.title}</h4> </Link>
           <ul>
-            <li>{formatDate(workout)} | {workout.sport} | {workout.time} minutes | {workout.isFavorite ? <BiLike size="25px" /> : null }</li>
+            <li>{formatDate(workout)} | {workout.sport} | {workout.time} min | {workout.isFavorite ? <BiLike size="25px" /> : null }</li>
           </ul>
           </div>
         </article>

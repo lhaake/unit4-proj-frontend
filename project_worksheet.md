@@ -207,6 +207,9 @@ DAY OFF
 2. CSS Done: Styled Login, Sign up, Workout Form, Filter, FilterForm  
 3. Styling: Nav (links change from blue to black), Dashboard, Workout, Font
 
+Dashboard -- edit the Add a Workout link --> button, edit the mobile css, add default image for other sports 
+
+Workout - date format
 
 Next up:
 1. Log in Error 

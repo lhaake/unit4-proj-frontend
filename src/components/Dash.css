@@ -35,7 +35,9 @@
         background-color: lavender;
         height: 100%;
       
-    }   
+    } 
+    
+    
 }
 
 @media only screen and (min-width: 768px) {
@@ -48,13 +50,17 @@
         background-repeat: no-repeat;
         background-size: cover; */
 }
+
+
 }
 
 @media only screen and (min-width: 1024px) {
     .dash-container {
-        /* Photo by <a href="https://unsplash.com/@joshgordon?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Josh Gordon on Unsplash</a></span> */
+        /* Photo by <a href="https://unsplash.com/@joshgordon?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Josh Gordon on Unsplash</a></span> */    
         padding: 10px 20px;
         background-color: white;
+        display: flex;
+        flex-direction: column;
     	/* background-image: url(https://images.unsplash.com/photo-1526403223670-2aa44aaface2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80);
         height: 100%;
         min-height: 100vh;
@@ -62,6 +68,12 @@
         background-repeat: no-repeat;
         background-size: cover; */
     }   
+
+    .dash-container h1 {
+        /* text-align: center; */
+        margin: 20px 0px;
+    }
+
     .dash-cards {
         /* display: flex; */
         /* flex-direction: row;
@@ -101,6 +113,44 @@
         list-style: none;
         font-size: 18px;
     }
+
+     .dash-container button a {
+        color: white;
+    }
+
+    .dash-container button {
+        background-color: #9d0191;
+        border: 2px solid #9d0191;
+        color: white;
+        font-weight: 600;
+        width: 200px;
+        height: 40px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+    .dash-container button:hover {
+        background-color: white;
+    }
+     .dash-container button:hover a {
+        color: black;
+    }
+  
+    /* .jumbotron {
+        background-color: black !important;
+        color: white;
+        height: 400px; 
+        margin-top: 10px;
+    } 
+
+    .jumbotron h1 {
+        padding: 20px 0px;
+    } 
+
+    .jumbotron button {
+        align-content: center;
+    } */
+
+   
 }
 
 /* 
