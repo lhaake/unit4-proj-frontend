@@ -36,7 +36,7 @@ const WorkoutForm = (props) => {
 return (
   <div className="form-container">
     <Form onSubmit={handleSubmit}>
-    <h1>Workout Form</h1>
+    <h1>{props.title} Workout</h1>
 
     <Form.Row as={Col}>
     <Form.Group as={Col} controlId="title">

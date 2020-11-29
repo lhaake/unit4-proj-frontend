@@ -266,7 +266,8 @@ function App() {
 			render={(rp) => (
 			<WorkoutForm
 				{...rp}
-				label="Save"
+        label="Save"
+        title="Add"
 				workout={emptyForm}
 				handleSubmit={handleCreate}
 			/>
@@ -280,7 +281,8 @@ function App() {
 			render={(rp) => (
 			<WorkoutForm
 				{...rp}
-				label="Update"
+        label="Save"
+        title="Edit"
 				workout={selectedWorkout}
 				handleSubmit={handleUpdate}
 			/>

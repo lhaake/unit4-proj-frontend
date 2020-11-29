@@ -26,10 +26,8 @@ const FilterForm = (props) => {
 
   return (
     <div>
-      <h1>My Workouts</h1> 
-            
-
         <div className="filter-form-container">
+          <h1>My Workouts</h1> 
           <h6>Enter a Workout title to search all workouts</h6>
             <form onSubmit={handleSubmit} className="form-search">
                  <input

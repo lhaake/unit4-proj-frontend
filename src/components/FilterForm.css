@@ -8,6 +8,9 @@
     padding: 20px;
     width: 500px;
 }
+.filter-form-container h1 {
+    padding-bottom: 10px;   
+}
 
 .form-search button {
     margin-left: 10px;
@@ -28,6 +31,6 @@
 .form-search input {
     width: 300px;
     height: 40px; 
-    border: 2px solid black;
+    border: 2px solid #f5b461;
     border-radius: 4px;
 }

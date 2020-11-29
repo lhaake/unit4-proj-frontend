@@ -4,9 +4,22 @@ td {
 }
 
 thead {
-  border-bottom: 3px solid #dee2e6;
+  border-bottom: 3px solid #16697a;
+
+  /* dee2e6; */
+  /* #16697a */
+  /* 9ad3bc */
 }
 
 thead tr {
-  background-color: lavender;
+  background-color: #dee2e6;;
 }
+
+.filter-container {
+    padding: 20px;
+    margin: 0px 20px; 
+}
+
+/* .filter-container a {
+    color: #0a043c;
+} */

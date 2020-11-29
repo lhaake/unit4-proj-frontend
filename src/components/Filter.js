@@ -23,7 +23,13 @@ const Filter = (props) => {
   return dateStr.toDateString()
   }
 
-let newWorkoutList = filteredWorkouts.sort((a, b) =>{
+let sortedWorkouts = workouts.sort((a, b) => {
+  let keyA = new Date(a.date)
+  let keyB = new Date(b.date)
+  return keyB - keyA
+})
+
+let sortedFilteredWorkouts = filteredWorkouts.sort((a, b) => {
   let keyA = new Date(a.date)
   let keyB = new Date(b.date)
   return keyB - keyA
@@ -31,7 +37,7 @@ let newWorkoutList = filteredWorkouts.sort((a, b) =>{
 
 const showFilteredWorkouts = (w) => (
   <>
-    <div> 
+    <div className="filter-container"> 
         {/* <article>
             <p>Title: {workout.title}</p>
             <p>Date: {workout.date}</p>
@@ -72,13 +78,13 @@ const showFilteredWorkouts = (w) => (
 )
 
  useEffect( () => {
-    showFilteredWorkouts(workouts)
+    showFilteredWorkouts(sortedWorkouts)
   
     console.log("useEffect")
   }, [])
 
 
-return newWorkoutList.length > 0 ? showFilteredWorkouts(newWorkoutList) :  showFilteredWorkouts(workouts) 
+return sortedFilteredWorkouts.length > 0 ? showFilteredWorkouts(sortedFilteredWorkouts) :  showFilteredWorkouts(sortedWorkouts) 
 
 }
 export default Filter;
