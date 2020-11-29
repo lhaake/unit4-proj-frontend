@@ -20,7 +20,7 @@ input[type=range].range-slider.range-slider--sm {
 .form-container {
     max-width: 800px;
     margin: auto;
-    border: 5px solid purple;
+    border: 2px solid black;
     padding: 20px 0px;
 }
 

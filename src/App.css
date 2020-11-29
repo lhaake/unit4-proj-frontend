@@ -24,17 +24,6 @@
 /*  */
 
 
-td {
-  border-top: 0px solid white !important; 
-}
-
-thead {
-  border-bottom: 3px solid #dee2e6;
-}
-
-thead tr {
-  background-color: lavender;
-}
 
 /* 
 .dash-titles {

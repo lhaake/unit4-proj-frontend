@@ -241,3 +241,4 @@ Next up:
 - When Logged In change the nav to show a username / Icon. When Logged out - remove this
 - Message confirming you are logged in 
 - Message confirming you have signed up - created an Account
+- Pagination on Filter 

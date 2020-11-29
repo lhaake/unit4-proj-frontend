@@ -1,0 +1,33 @@
+
+
+.filter-form-container {
+    /* max-width: 1000px;  */
+    margin: 0px 20px; 
+    /* border: 1px solid grey; */
+    /* border-radius: 3px; */
+    padding: 20px;
+    width: 500px;
+}
+
+.form-search button {
+    margin-left: 10px;
+    background-color: white;
+    border: 2px solid #9d0191;
+    color: black;
+    font-weight: 600;
+    width: 100px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+.form-search button:hover {
+    background-color: #9d0191;
+    color: white;
+}
+
+.form-search input {
+    width: 300px;
+    height: 40px; 
+    border: 2px solid black;
+    border-radius: 4px;
+}
