@@ -15,7 +15,7 @@ const Navigation = (props) => {
       
        <NavDropdown title="WORKOUTS" id="basic-nav-dropdown">
           <NavDropdown.Item><Link to ="/search">Search Workouts</Link></NavDropdown.Item>
-          <NavDropdown.Item><Link to ="/workout/add">Add a Workout</Link></NavDropdown.Item>
+          <NavDropdown.Item><Link to ="/workout/add">Add Workout</Link></NavDropdown.Item>
        </NavDropdown>
 
       <NavDropdown title="ACCOUNT" id="basic-nav-dropdown">

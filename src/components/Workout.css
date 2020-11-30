@@ -101,8 +101,10 @@
 'Montserrat', sans-serif; */
 
 .workout-card h3 {
-     font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 30px;
+    font-weight: 300;
+    
     /* font-weight: 500; */
 }
 

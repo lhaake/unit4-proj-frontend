@@ -40,14 +40,18 @@
 
     .dash-cards-text h5 {
         text-align: center;
-        font-weight: 600;
+        font-weight: 500;
         color: black;
+        font-family: 'Montserrat', sans-serif;
     }
 
     .dash-cards-text li {
         list-style: none;
         font-size: 14px;
         text-align: center;
+        font-family: 'Helvetica Neue', sans-serif;
+        line-height: 1.6em;
+        font-weight: 400
     }
 
     .dash-cards-text ul {
@@ -68,9 +72,11 @@
         height: 40px;
         border-radius: 4px;
         margin-bottom: 20px;
+        font-family: 'Montserrat', sans-serif;
     }
     .dash-container button:hover {
         background-color: #02383c;
+        border: 2px solid #9d0191;
     }
      .dash-container button:hover a {
         color: white;
@@ -81,7 +87,7 @@
         text-decoration: none !important;
     }
     .dash-cards-text h5:hover {
-        color: #ed3833;
+        color: #9d0191;
     }
     
     
@@ -130,12 +136,16 @@
         text-align: center;
         font-weight: 500;
         color: black;
+        font-family: 'Montserrat', sans-serif;
     }
 
     .dash-cards-text li {
         list-style: none;
-        font-size: 16px;
+        font-size: 14px;
         text-align: center;
+        font-family: 'Helvetica Neue', sans-serif;
+        line-height: 1.6em;
+        font-weight: 400
     }
 
     .dash-cards-text ul {
@@ -156,9 +166,11 @@
         height: 40px;
         border-radius: 4px;
         margin-bottom: 20px;
+        font-family: 'Montserrat', sans-serif;
     }
     .dash-container button:hover {
         background-color: white;
+        border: 2px solid #9d0191;
     }
      .dash-container button:hover a {
         color: black;
@@ -169,7 +181,7 @@
         text-decoration: none !important;
     }
     .dash-cards-text h5:hover {
-        color: #ed3833;
+        color: #9d0191;
     }
 
 
@@ -218,17 +230,16 @@
 
     .dash-cards-text h5 {
         text-align: center;
-        font-weight: 600;
+        font-weight: 500;
         color: black;
         font-family: 'Montserrat', sans-serif;
-        /* line-height: 30px; */
     }
 
     .dash-cards-text li {
         list-style: none;
         font-size: 14px;
         text-align: center;
-          font-family: 'Helvetica Neue', sans-serif;
+        font-family: 'Helvetica Neue', sans-serif;
         line-height: 1.6em;
         font-weight: 400
     }
@@ -246,11 +257,11 @@
     .dash-container button {
         background-color:  #02383c;
         border: 2px solid #02383c;
-        font-weight: 600;
+        font-weight: 500;
         width: 200px;
         height: 40px;
         border-radius: 4px;
-        margin-top:20px;
+        margin-top: 20px;
         margin-bottom: 20px; 
         margin-left: 60px;
         font-family: 'Montserrat', sans-serif;
