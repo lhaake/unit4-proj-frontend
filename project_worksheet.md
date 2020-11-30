@@ -28,6 +28,14 @@ For my project, I plan to create a training log dashboard for a user to log thei
 - Incorporating User Authentication
 - New tech: React Bootstrap and [react-icons](https://react-icons.github.io/)
 
+## User Stories
+- A user can create an account 
+- A user can log in to their account
+- A user can add workouts
+- A user can edit their workouts
+- A user can delete their workouts
+- A user can view their workouts in 3 places: Dashboard (some details), Search table (some details), Workout (full details)
+- A user can search through their list of workouts added by title
 
 ## Wireframes
 Screenshots of Strava application for inspiration:
@@ -214,7 +222,6 @@ DAY OFF
 3. To do:  Workout - style, date format, icons for edit and delete,  Google Fonts
 
 
-Issues: Log out in nav - can't style it correctly 
 
 Next up:
 1. Log in Error 
@@ -225,10 +232,8 @@ Next up:
 - Project Name
 - Remove comments / console.logs
 - Push master branch to github
-
-
-
-
+- Check netlify
+- Update Unit Project Spreadsheet
 
 
 ## Additional Libraries
@@ -244,3 +249,4 @@ Next up:
 - Message confirming you have signed up - created an Account
 - Pagination on Filter 
 - Workout Form  make the "Sport" field required 
+- Issues: Log out in nav - can't style it correctly 

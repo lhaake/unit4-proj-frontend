@@ -46,6 +46,7 @@ input[type=range].range-slider.range-slider--sm {
 .form-container h1 {
     /* text-align: center; */
     padding: 10px 15px;
+    font-family: 'Montserrat', sans-serif; 
 }
 
 .form-container #distance {

@@ -77,7 +77,7 @@ const Dash = (props) => {
         <div className="dash-cards-text">
         <h5>{workout.title}</h5> 
           <ul>
-            <li>{formatDate(workout)} | {workout.sport} | {workout.time} min | {workout.isFavorite ? <BiLike size="25px" /> : null }</li>
+            <li>{formatDate(workout)} | {workout.sport} | {workout.time} min | {workout.isFavorite ? <BiLike size="20px" /> : null }</li>
           </ul>
           
           </div>

@@ -14,10 +14,18 @@
     background: rgba(255, 255, 255, 0.9);
     width: 500px;
     height: auto;
-    border-radius: 3px;
+    border-radius: 6px;
     padding: 20px;
 }
 
+.home-message h1 {
+    font-family: 'Montserrat', sans-serif; 
+}
 .home-message h6 {
-    font-weight: 700;
+    font-weight: 600;
+    font-family: 'Helvetica Neue', sans-serif; 
+}
+
+.home-message li {
+    font-family: 'Helvetica Neue', sans-serif; 
 }

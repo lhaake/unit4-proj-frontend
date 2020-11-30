@@ -43,23 +43,26 @@ console.log("looking for workout[workoutId] array", displayWorkout)
 
  const loaded = () => (
    <>
-   <h1>Workout Component</h1>
     <div className="workout-header">
     
       {displayWorkout.map((workout) => (
         <article className="workout-card">
         <h3>{workout.title}</h3>
-          <h6>Date: {formatDate(workout)}</h6>
-          <h6>Sport: {workout.sport}</h6>
-          <h6>Time: {workout.time} minutes</h6>
-          <h6>Description: {workout.description}</h6>
-          <h6>Distance: {workout.distance} miles</h6>
-          <h6>Exertion (scale of 1-10): {workout.exertion}</h6>
-          
-          {workout.isFavorite ? <h6>Favorite: <BiLike size="25px" /></h6> : null }
-          { workout.url ? <a href={workout.url} target="_blank">Workout Video</a> : null }
+          <h6><strong>Date: </strong> {formatDate(workout)}</h6>
+          <h6><strong>Sport: </strong> {workout.sport}</h6>
+          <h6><strong>Time:</strong> {workout.time} minutes</h6>
+          {workout.sport === "Run" || workout.sport === "Hike" || workout.sport === "Walk" || workout.sport === "Bike" ? <h6><strong> Distance: </strong> {workout.distance} miles</h6> : null }
+
+          {/* <h6><strong>Distance:</strong> </h6> */}
+          <h6><strong>Exertion:</strong> {workout.exertion}</h6>
+          { workout.url ? <a href={workout.url} target="_blank"><strong>Workout Video</strong></a> : null }
+          {workout.isFavorite ? <h6><strong> Favorite: </strong> <BiLike size="25px" /></h6> : null }
+        
+          <h6><strong>Description:</strong> {workout.description}</h6>
+
           <br />
-          <button alt="Edit button"><MdEdit size="30px" onClick={() => {
+          <div className="buttons">
+          <button className="edit"><MdEdit size="30px" onClick={() => {
 								props.selectWorkout(workout);
 								props.history.push(`${props.match.url}/edit`);
 							}}
@@ -67,18 +70,16 @@ console.log("looking for workout[workoutId] array", displayWorkout)
 
     
 
-          <button className="button-tooltip"><TiDelete size="30px" onClick={() => {
+          <button className="delete"><TiDelete size="30px" onClick={() => {
                 props.deleteWorkout(workout);
                 props.history.push("/dashboard")
 							}}
             />
-            <p className="tooltip-text">Delete</p>
           </button>
-          
+          </div>
 
         </article>
       ))}
-
   </div>
     </>
   )
