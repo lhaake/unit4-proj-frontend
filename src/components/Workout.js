@@ -9,35 +9,38 @@ const Workout = (props) => {
 
   const {workouts} = props
 
+  // Need to take the id value from router props and parse to Int
   let workoutId = props.match.params.id
   workoutId = parseInt(workoutId)
 
-console.log("workout data", workouts)
+  console.log("workout data", workouts)
 
-console.log("workoutId from url params: ", workoutId)
+  console.log("workoutId from url params: ", workoutId)
 
+  // format Date to "Mon Nov 23 2020"
   const formatDate = (workout) => {
     let dateinfo = ""
     let dateArr = []
     let dateStr = ""
+
     dateinfo = workout.date 
-      console.log(dateinfo)
+      
     dateArr = dateinfo.split('-')
-      console.log(dateArr)
+     
     dateStr = new Date(dateArr[0], dateArr[1] - 1, dateArr[2])
-      console.log(dateStr.toDateString())
 
     return dateStr.toDateString()
   }
 
-let displayWorkout = []
-{workouts.map((workout) => {
+  // Match the workout id from workouts array to the workout from props.match.params.id
+  let displayWorkout = []
+  {workouts.map((workout) => {
     if(workout.id === workoutId) {
         displayWorkout.push(workout)
     } else {
         console.error("problem")
     }
-})}
+  })}
 
 console.log("looking for workout[workoutId] array", displayWorkout)
 
@@ -64,9 +67,6 @@ console.log("looking for workout[workoutId] array", displayWorkout)
 								props.history.push(`${props.match.url}/edit`);
 							}}
            /></button>
-
-    
-
           <button className="delete"><TiDelete size="30px" onClick={() => {
                 props.deleteWorkout(workout);
                 props.history.push("/dashboard")
@@ -83,30 +83,5 @@ console.log("looking for workout[workoutId] array", displayWorkout)
 
   return displayWorkout.length > 0 ? loaded() : <h1>Loading...</h1>
 
-
 }
 export default Workout;
-
-
-              // <BiEdit size="25px" />
-              // <FiEdit2 size="25px" className="edit-icon" />
-// import { BiEdit } from 'react-icons/bi';
-// import { FiEdit2 } from 'react-icons/fi';
-// import { BiLike } from "react-icons/bi";
-
-     	// <button
-			// 				onClick={() => {
-      //           props.deleteWorkout(workout);
-      //           props.history.push("/dashboard")
-			// 				}}
-			// 			>
-			// 				Delete
-      // 			</button>
-      
-            //  <button onClick={() => {
-						// 		props.selectWorkout(workout);
-						// 		props.history.push(`${props.match.url}/edit`);
-						// 	}}
-						// >
-						// 	Edit
-						// </button>

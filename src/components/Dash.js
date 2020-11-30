@@ -7,29 +7,27 @@ const Dash = (props) => {
 
   const {workouts} = props
 
+  // format Date
   const formatDate = (workout) => {
     let dateinfo = ""
     let dateArr = []
     let dateStr = ""
     dateinfo = workout.date 
-      console.log(dateinfo)
+      
     dateArr = dateinfo.split('-')
-      console.log(dateArr)
+     
     dateStr = new Date(dateArr[0], dateArr[1] - 1, dateArr[2])
-      console.log(dateStr.toDateString())
+      
     return dateStr.toDateString()
   }
 
-  // Source: https://stackoverflow.com/questions/8837454/sort-array-of-objects-by-single-key-with-date-value
+  // Sort workouts by date in descending order. 
   let newWorkoutList = workouts.sort((a, b) =>{
     let keyA = new Date(a.date)
     let keyB = new Date(b.date)
     return keyB - keyA
   })
 
-  console.log(newWorkoutList);
-
-  console.log("workouts data passed as props in Dash component", workouts)
   let runimg = "https://images.unsplash.com/photo-1530143311094-34d807799e8f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
 
   let weights = "https://images.unsplash.com/photo-1526403223670-2aa44aaface2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
@@ -48,7 +46,6 @@ const Dash = (props) => {
 
   const loaded = () => (
    <div className="dash-container">
-
       <button><Link to="/workout/add">Add Workout</Link></button>
     <div className="dash-header">
      
@@ -62,20 +59,15 @@ const Dash = (props) => {
         && workout.sport === "Walk" ? {backgroundImage: `url(${walk})` } : {backgroundImage: `url(${defaultimg})` }  
         && workout.sport === "Bike" ? {backgroundImage: `url(${bike})` } : {backgroundImage: `url(${defaultimg})` } 
         && workout.sport === "Swim" ? {backgroundImage: `url(${swim})` } : {backgroundImage: `url(${defaultimg})` } 
-      }
-      >
-        
-        
-        
+        }
+        >
+
         <div className="dash-cards-text">
         <h5>{workout.title}</h5> 
-       
           <ul>
             <li>{formatDate(workout)} | {workout.sport} | {workout.time} min | {workout.isFavorite ? <BiLike size="20px" /> : null }</li>
           </ul>
-          
           </div>
-         
         </article></Link>
       ))}
       </div>
@@ -86,34 +78,11 @@ const Dash = (props) => {
 }
 export default Dash;
 
- // if(!workouts) return <div>No workouts data</div>
-
- // pace Calculation
-  // let pace = 0
-  // {workout.distance ? <h3>Pace: {pace = workout.time / workout.distance} minutes / mile</h3> : null }
-
-  // Please pay attention to the month (parts[1]); JavaScript counts months from 0:
-// January - 0, February - 1, etc.
+// DATE function
+  // the month (parts[1]); JavaScript counts months from 0:
+  // January - 0, February - 1, etc.
 // Source: https://stackoverflow.com/questions/5619202/converting-a-string-to-a-date-in-javascript
-// Example code: let dateInfo = '2014-04-03'.split('-');
-// console.log(dateInfo)
-// let mydate = new Date(dateInfo[0], dateInfo[1] - 1, dateInfo[2]); 
-// console.log(mydate.toDateString());
 
-// let array = ["July 11, 1960", "February 1, 1974", "July 11, 1615", "October 18, 1851", "November 12, 1995"];
 
-// let newArr = array.sort(function(date1, date2) {
-//    date1 = new Date(date1);
-//    date2 = new Date(date2);
-//    if (date1 > date2) return 1;
-//    if (date1 < date2) return -1;
-// })
-
-// console.log(newArr)
-
-   {/* <h1>Dashboard</h1> */}
-
-     {/* <Jumbotron>
-        <h1>Dashboard</h1>
-        <Button variant="">Add a Workout</Button>
-      </Jumbotron> */}
+// SORT function
+// Source: https://stackoverflow.com/questions/8837454/sort-array-of-objects-by-single-key-with-date-value
