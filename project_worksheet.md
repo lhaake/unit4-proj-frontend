@@ -28,6 +28,14 @@ For my project, I plan to create a training log dashboard for a user to log thei
 - Incorporating User Authentication
 - New tech: React Bootstrap and [react-icons](https://react-icons.github.io/)
 
+## User Stories
+- A user can create an account 
+- A user can log in to their account
+- A user can add workouts
+- A user can edit their workouts
+- A user can delete their workouts
+- A user can view their workouts in 3 places: Dashboard (some details), Search table (some details), Workout (full details)
+- A user can search through their list of workouts added by title
 
 ## Wireframes
 Screenshots of Strava application for inspiration:
@@ -47,14 +55,15 @@ Screenshots of Strava application for inspiration:
 
 | Component | Description | 
 | --- | :---: |  
-| App | parent Component | 
+| App | The parent Component | 
 | Nav | Navbar | 
-| About | About page | 
+| Home | Home page | 
 | LoginForm | Form for user to Sign up or to Login | 
-| Dashboard | Full list of workouts with some details  | 
+| Dash | Full list of workouts with some details  | 
 | WorkoutForm | Form for user to add and update a workout | 
 | Workout | 1 workout with full details | 
-| Filter | Search bar that filters workouts based on the title | 
+| FilterForm | Search bar that filters workouts based on the title | 
+| Filter | Displays the filtered workouts in table format | 
 
 
 ## MVP
@@ -75,9 +84,9 @@ Front End
 		- Drop down of Sports to select 
 		- Hide distance field on form when "crossfit", "yoga" are selected
 		- Exertion - use a slider (like on Strava)
-		- Filter - Search all for workouts by title, date, favorites 
-	- Style
-	- Deployment
+	- Filter - Search all for workouts by title
+- Style
+- Deployment
 
 Back End 
 - Set up project with Rails
@@ -123,7 +132,7 @@ Back End
 | Frontend: Testing CRUD | H | 4hrs| 1hr | |
 | Frontend: Netlify Deployment| H | 1hr| 0.25hr |
 | Frontend: New tech - React Bootstrap | H | 5hrs| 2hrs |
-| Styling | M | 5hrs| |  |
+| Styling | M | 5hrs| 5hrs |  |
 | Research | M | 4hrs| 4hrs|  |
 | Troubleshooting | H | 5hrs| 5hrs | |
 | Total |  | 51hrs|  | |
@@ -132,14 +141,13 @@ Back End
 ## PostMVP Timeline
 | Component | Priority | Estimated Time | Actual Time | Notes |
 | --- | :---: |  :---: | :---: | :---: | 
-| Calculate pace | M | 5hrs| |  |
-| Calendar | M | 6hrs| |  |
-| Additional functionality to filter data | M | 6hrs| |  |
-| Total |  | 17hrs| hrs | |
+| Calculate pace | M | 5hrs| - |  |
+| Calendar | M | 6hrs| - |  |
+| Additional functionality to filter data | M | 6hrs| - |  |
+| Total |  | 17hrs| - | |
 
 
 ### Project Notes
-
 
 | Thursday, November 19 | 
 |---|
@@ -201,30 +209,28 @@ DAY OFF
 5. Search bar and Filter are now on the same page!!
 
 
-| Saturday , November 28 | 
+| Saturday, November 28 | 
 |---|
 1. Deployed to Netlify!
-2. CSS Done: Styled Login, Sign up, Workout Form, Filter, FilterForm  
-3. Styling: Nav (links change from blue to black), Dashboard, Workout, Font
+2. CSS Done: Styled Login, Sign up, Workout Form, Filter, FilterForm
+
+
+| Sunday, November 29 | 
+|---|
+1. Styling Done: Nav (links change from blue to black), Dashboard edited the mobile css, Workout - style, date format, icons for edit and delete, Google Fonts
 
 
 Next up:
-1. Log in Error 
+1. In App, userLogged Out message 
+2. Log in Error 
   - Error message on screen when Logging In - Invalid Username or Password. The username or password did not match. Please try again. 
+ 
 
-2. Workout -- React-icons for edit and delete 
-
-3. Workout Form 
-	- "Sport" - required  
-
-- Update React architecture
-- Project Name
-- Remove comments / console.logs
 - Push master branch to github
-
-
-
-
+- Check netlify
+- Test site after updated on netlify
+- Update times on worksheet 
+- Update Unit Project Spreadsheet - with my link
 
 
 ## Additional Libraries
@@ -239,3 +245,6 @@ Next up:
 - Message confirming you are logged in 
 - Message confirming you have signed up - created an Account
 - Pagination on Filter 
+- Workout Form  make the "Sport" field required 
+- Issues: Log out in nav - can't style it correctly 
+- Name ideas? 

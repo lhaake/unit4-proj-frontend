@@ -8,6 +8,16 @@ input[type=range].range-slider.range-slider--sm {
   padding-top: 0.5rem;
 }
 
+.form-background {
+    background-image: url(https://images.unsplash.com/photo-1518789013127-40b4f36a2eb1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1248&q=80);
+    height: 100%;
+    min-height: 100vh;
+    background-position: 0px -18px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px 20px;
+}
+
 .form-container button {
    margin-left: 10px;
    width: 120px;
@@ -18,9 +28,11 @@ input[type=range].range-slider.range-slider--sm {
 .form-container {
     max-width: 800px;
     margin: auto;
-    border: 2px solid #16697a;
-    border-radius: 3px;
-    padding: 20px 0px;
+    /* border: 4px solid #16697a; */
+    border-radius: 4px;
+    padding: 10px 0px;
+    background-color: white;
+    
 }
 
 .form-container .form-row>.col {
@@ -34,6 +46,7 @@ input[type=range].range-slider.range-slider--sm {
 .form-container h1 {
     /* text-align: center; */
     padding: 10px 15px;
+    font-family: 'Montserrat', sans-serif; 
 }
 
 .form-container #distance {

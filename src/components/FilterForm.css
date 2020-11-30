@@ -9,7 +9,11 @@
     width: 500px;
 }
 .filter-form-container h1 {
-    padding-bottom: 10px;   
+    padding-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;   
+}
+.filter-form-container h6 {
+    font-family: 'Helvetica Neue', sans-serif;   
 }
 
 .form-search button {
@@ -21,6 +25,7 @@
     width: 100px;
     height: 40px;
     border-radius: 4px;
+    font-family: 'Helvetica Neue', sans-serif; 
 }
 
 .form-search button:hover {
@@ -31,6 +36,8 @@
 .form-search input {
     width: 300px;
     height: 40px; 
-    border: 2px solid #f5b461;
+    border: 2px solid grey;
     border-radius: 4px;
 }
+
+/* #f5b461 */

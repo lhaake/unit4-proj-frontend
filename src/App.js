@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Route, Link, Switch, Redirect} from "react-router-dom"
+import {Route, Switch, Redirect} from "react-router-dom"
 import './App.css';
 import Home from "./components/Home"
 import Navigation from "./components/Navigation"
@@ -42,7 +42,7 @@ function App() {
     // state for filtered workouts
     const [filteredWorkouts, setFilteredWorkouts] = useState([])
 
-
+    // user sign up function - create an account
     const signup = async (newUser) => {
         console.log("signup function start")
         const response = await fetch(url + "/users", {
@@ -53,19 +53,12 @@ function App() {
         const result = await response.json()
         setUserSignup(result)
         console.log("usersignup", result)
-
     }
 
-    // user login function -- with a user that is already been created in the database - username: test1, password: test1
-	const login = async (user) => {
+    // user login function -- with a user that is already been created in the database
+	  const login = async (user) => {
         let token = ""
         console.log('start login function')
-    // if (window.localStorage.getItem('token')) {
-    //     console.log('token exits')
-    //     token = JSON.parse(window.localStorage.getItem('token'))
-    //     setUserLogin(token)
-    // } else {
-    //     console.log('no token')
       const response = await fetch(url + "/login", {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
@@ -73,19 +66,10 @@ function App() {
       })
       const newtoken = await response.json()
       setUserLogin(newtoken)
-      // if (userLogin.error) {
-      //   return (
-      //     <h1>Invalid username or Password. Please Log In again.</h1>
-      //   )
-      // } 
      
       console.log("newtoken", newtoken)
       token = newtoken
       window.localStorage.setItem('token', JSON.stringify(token))
-
-      // const userId = token.user.id
-      // console.log("user id", userId)
-    
   }
  
   console.log("userlogin state", userLogin)
@@ -110,29 +94,10 @@ function App() {
     window.localStorage.removeItem('token')
     setUserLogin("logged out")
     setWorkouts([])
-    
-
-    // setUserLogin({})
     console.log("logged out")
-
   }
 
-
-  // I was troubleshooting because my useEffect was making the GET request for workouts before the token was in state. This is the source I used to help allow for a conditional within useEffect: https://reactjs.org/docs/hooks-rules.html
-  //   useEffect(function conditionalLoad() {
-  //   if (userLogin.token) {
-  //     getWorkouts()
-  //   }
-  // }, [userLogin.token]);
-
-
-  // useEffect( () => {
-  //   if (userLogin.token) {
-  //     getWorkouts()
-  //   }
-  // }, [userLogin.token])
-
-
+  // Checking if there is a user who has a token saved in local storage AND checking if there is user logged in before fetching workout data
   useEffect(() => {
     const loggedInUser = localStorage.getItem('token');
     if (loggedInUser) {
@@ -173,12 +138,12 @@ function App() {
     getWorkouts()
   };
 
-  // select a workout
+  // select a workout (to edit workout)
   const selectWorkout = (workout) => {
     setSelectedWorkout(workout)
   }
 
-  // delete a song
+  // delete a workout
 	const deleteWorkout = async (workout) => {
     const response = await fetch(url + "/workouts/" + workout.id, {
 			method: 'delete',
@@ -192,6 +157,7 @@ function App() {
     getWorkouts()
   };
 
+  // Filter by title and search for workouts
   const filterTitle = (workouts, searchInput) => {
       let filterResults = []
       console.log(typeof searchInput)
@@ -223,9 +189,7 @@ function App() {
         
         {userLogin === "logged out" ? <Redirect to="/login" /> : null }
         {userLogin === "logged out" ? <h3>You are logged out!</h3> : null} 
-        {/* {userLogin === "logged out" ? setUserLogin({}) : null } */}
    
-      
       <Switch>
         <Route exact path="/" component={Home} />
 
@@ -332,60 +296,12 @@ function App() {
 
 export default App;
 
-
-
-
-      //  <Link to="/">Home</Link><br /><br />
-      //   <Link to="/signup">Sign up</Link><br /><br />
-      //   <Link to="/login">Log in</Link><br /><br />
-      //   <Link to="/dashboard">Dashboard</Link><br /><br />
-      //   <Link to="/workout/add">Add a Workout</Link><br /><br />
-      //   <Link to="/search">Search List of Workouts</Link><br /><br />
-      // <button onClick={() => logout()}>Log out</button>
-
-
-  // useEffect( () => {
-  //   if (userLogin.token) {
-  //     getWorkouts()
-  //   }
-  // }, [userLogin.token])
-    // body: JSON.stringify({
-    //         username: 'hello123',
-    //         password: '123',
-    //     }),
-    //   })
-
-
     // login messages
     //  {userSignup.token ? <h1>You have successfully signed up! Please Log in</h1> : null }
     // {userLogin.token ? <h1>You are logged in!</h1> : null }
     // {userLogin.error ? <h1>Invalid username or Password. Please Log In again.</h1> : null }
 
+      // <button onClick={() => }>Sign Up</button> 
+      //   <button onClick={() => login()}>Log In</button> 
 
-        // <Route exact path="/search"
-			  //   render={(rp) => (
-        // 	<Filter
-        //     {...rp}
-        //     filteredWorkouts={filteredWorkouts}
-        //   />
-        //   )}
-        // />
-
-
-
-      {/* { filteredWorkouts[0] ? 
-         <Route exact path="/search"
-			    render={(rp) => (
-        	<Filter
-            {...rp}
-            filteredWorkouts={filteredWorkouts}
-          />
-          )}
-        />
-        : null } */}
-
-
-        {/* <button onClick={() => }>Sign Up</button> */}
-        {/* <button onClick={() => login()}>Log In</button> */}
-
-        {/* <button onClick={() => getWorkouts()}>Test Fetch Workouts</button><br /><br /> */}
+      //  <button onClick={() => getWorkouts()}>Test Fetch Workouts</button><br /><br /> 

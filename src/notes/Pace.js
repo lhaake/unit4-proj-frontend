@@ -8,7 +8,7 @@
 // Once you have total seconds, calculate pace and convert back to minutes / miles 
 // We'd want to see the pace in this format 8:30 - would need to convert the time to be in this format minutes : seconds 0:00 or 00:00 for paces 10:00+ 
 
-const paceConverter = (hours, minutes, seconds) => {
-  let totalTime = 0
-  totalTime = (hours * 3600) + (minutes * 60) + seconds
-}
+// const paceConverter = (hours, minutes, seconds) => {
+//   let totalTime = 0
+//   totalTime = (hours * 3600) + (minutes * 60) + seconds
+// }

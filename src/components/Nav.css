@@ -1,8 +1,4 @@
 
-/* .ml-auto .nav-link {
-   
-} */
-
 @media (min-width: 992px) {
     .navbar-expand-lg .navbar-nav .nav-link {
         padding-right: 2.5rem !important;
@@ -12,19 +8,55 @@
 
 }
 
-.navbar-expand-lg .navbar-nav .nav-link a, #basic-nav-dropdown .dropdown-item a {
-   color: black !important; 
-}
-
-.navbar-expand-lg .navbar-nav .nav-link a:hover {
-    color: black !important;
-}
-
+/* My Training Log - Title Text */
 .title-nav a {
-    text-decoration: none !important;
+    text-decoration: none;
     color: black;
+    font-family: 'Pragati Narrow', sans-serif;
+    line-height: 1.2em;
+    letter-spacing: .10em;
+    font-weight: 500;
+    font-size: calc(1.2vw + 1rem);
+
+    /* font-family: 'Shrikhand', cursive; */
+}
+.title-nav a:hover {
+    text-decoration: none;
+    color: #056674;
 }
 
+
+/* Workouts and Account text */
 #basic-nav-dropdown {
     color: black;
+    font-weight: 400;
+    text-decoration: none;
+    line-height: 1.6em;
+}
+#basic-nav-dropdown:hover {
+    color: #056674;
+   
+}
+
+/* Dashboard text */
+.ml-auto .nav-link a {
+    color:black;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.ml-auto .nav-link a:hover {
+    color:#056674;
+}
+
+/* Dropdown text */
+.dropdown-item a {
+    color: black;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.dropdown-item a:hover {
+    color: #056674;
+     text-decoration: none;
 }

@@ -1,28 +1,26 @@
 import React, {useState} from "react"
 import './WorkoutForm.css';
-import {Form, Col, Row, Button, FormCheck} from 'react-bootstrap';
+import {Form, Col, Row, Button} from 'react-bootstrap';
 import RangeSlider from 'react-bootstrap-range-slider'
 import { BiLike } from "react-icons/bi";
 
 const WorkoutForm = (props) => {
 
   const { workout } = props
-  console.log("checking the fav boolean", workout.isFavorite)
 
-    // state for switch 
-    const [swt, setSwt] = useState(workout.isFavorite)
+  // state for switch 
+  const [swt, setSwt] = useState(workout.isFavorite)
 
-    const [range, setRange] = useState(workout.exertion)
+  // state for exertion range slider
+  const [range, setRange] = useState(workout.exertion)
 
-    // state for the form 
-    const [formData, setFormData] = useState(workout) 
-
-    console.log("props in WorkoutForm", props.workout)
+  // state for the form 
+  const [formData, setFormData] = useState(workout) 
 
     // HandleSubmit 
     const handleSubmit = (event) => {
         event.preventDefault()
-        // handleSubmit from app here 
+        // handleSubmit from app 
         props.handleSubmit(formData);
         props.history.push('/dashboard');
     }
@@ -32,8 +30,8 @@ const WorkoutForm = (props) => {
         setFormData({...formData, [event.target.name]: event.target.value })
     }
 
-
 return (
+  <div className="form-background">
   <div className="form-container">
     <Form onSubmit={handleSubmit}>
     <h1>{props.title} Workout</h1>
@@ -192,93 +190,7 @@ return (
 
 </Form>
 </div>
+</div>
 )
 }
 export default WorkoutForm;
-
-
-// original form 
-
-//   return (
-//       <div>
-//         <form onSubmit={handleSubmit}> 
-//         <br />
-//         <h1>WorkoutForm Component</h1>
-//         Title:
-//         <input
-//             type="text"
-//             name="title"
-//             value={formData.title}
-//             onChange={handleChange}
-//         />
-//         <br />
-//         Date: 
-//         <input
-//             type="text"
-//             name="date"
-//             value={formData.date}
-//             onChange={handleChange}
-//         />
-//         <br />
-//         Time:
-//         <input
-//             type="number"
-//             name="time"
-//             placeholder="Enter a time"
-//             value={formData.time}
-//             onChange={handleChange}
-//         />
-//         <br />
-//         Distance: 
-//         <input
-//             type="number"
-//             name="distance"
-//             value={formData.distance}
-//             onChange={handleChange}
-//         />
-//         <br />
-//         Sport: 
-//         <input
-//             type="text"
-//             name="sport"
-//             value={formData.sport}
-//             onChange={handleChange}
-//         />
-//         <br />
-//         Description:
-//         <input
-//             type="text"
-//             name="description"
-//             value={formData.description}
-//             onChange={handleChange}
-//         />
-//         <br />
-//         Exertion:
-//         <input
-//             type="number"
-//             name="exertion"
-//             value={formData.exertion}
-//             onChange={handleChange}
-//         />
-//         <br />
-//         URL:
-//         <input
-//             type="text"
-//             name="url"
-//             value={formData.url}
-//             onChange={handleChange}
-//         />
-//         <br />
-//         Favorite?: 
-//         <input
-//             type="text"
-//             name="isFavorite"
-//             value={formData.isFavorite}
-//             onChange={handleChange}
-//         />
-//         <br />
-//         <input className="form-button" type="submit" value={props.label} />
-
-//         </form>
-//     </div>
-//     )

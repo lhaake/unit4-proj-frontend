@@ -17,9 +17,16 @@ thead tr {
 
 .filter-container {
     padding: 20px;
-    margin: 0px 20px; 
+    margin: 0px 20px;
+    
 }
 
-/* .filter-container a {
-    color: #0a043c;
-} */
+.filter-container h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.filter-container table {
+  font-family: 'Helvetica Neue', sans-serif;
+  /* line-height: 1.6em; */
+  font-weight: 400
+}
