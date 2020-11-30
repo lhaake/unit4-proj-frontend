@@ -149,7 +149,6 @@ Back End
 
 ### Project Notes
 
-
 | Thursday, November 19 | 
 |---|
 1. Met with Alex for project approval. 
@@ -222,7 +221,8 @@ DAY OFF
 
 
 Next up:
-1. Log in Error 
+1. In App, userLogged Out message 
+2. Log in Error 
   - Error message on screen when Logging In - Invalid Username or Password. The username or password did not match. Please try again. 
  
 
