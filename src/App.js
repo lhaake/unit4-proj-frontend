@@ -225,7 +225,6 @@ function App() {
         : null
         } 
 
-      { workouts[0] ? 
       <Route path="/workout/add"
 			render={(rp) => (
 			<WorkoutForm
@@ -237,8 +236,6 @@ function App() {
 			/>
 			)}
 		/>
-     : null
-     } 
 
       { workouts[0] ? 
       <Route path="/workout/:id/edit"
@@ -305,3 +302,18 @@ export default App;
       //   <button onClick={() => login()}>Log In</button> 
 
       //  <button onClick={() => getWorkouts()}>Test Fetch Workouts</button><br /><br /> 
+
+    //    { workouts[0] ? 
+    //   <Route path="/workout/:id/edit"
+		// 	render={(rp) => (
+		// 	<WorkoutForm
+		// 		{...rp}
+    //     label="Save"
+    //     title="Edit"
+		// 		workout={selectedWorkout}
+		// 		handleSubmit={handleUpdate}
+		// 	/>
+		// 	)}
+		// />
+    //  : null
+    //  } 

@@ -218,15 +218,10 @@ DAY OFF
 | Sunday, November 29 | 
 |---|
 1. Styling Done: Nav (links change from blue to black), Dashboard edited the mobile css, Workout - style, date format, icons for edit and delete, Google Fonts
+2. Pushed master branch to github
+3. Tested netlify site
 
 
-Next up:
-1. In App, userLogged Out message 
-2. Log in Error 
-  - Error message on screen when Logging In - Invalid Username or Password. The username or password did not match. Please try again. 
- 
-
-- Push master branch to github
 - Check netlify
 - Test site after updated on netlify
 - Update times on worksheet 
@@ -239,6 +234,11 @@ Next up:
 ## Takeaways
 
 ## Future Direction & Ideas
+Ran out of time:
+1. In App, userLogged Out message 
+2. Log in Error 
+  - Error message on screen when Logging In - Invalid Username or Password. The username or password did not match. Please try again.
+
 - PostMVP items - Pace, Calendar, Filter Options
 - Add form validation that shows up before pressing save
 - When Logged In change the nav to show a username / Icon. When Logged out - remove this
