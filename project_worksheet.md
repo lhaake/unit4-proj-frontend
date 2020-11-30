@@ -128,14 +128,14 @@ Back End
 | Backend: Heroku Deployment | H | 2hr | 0.5hr |  |
 | Frontend: Create React App + Installs | H | 1hr| 0.5hr |  |
 | Frontend: Build Components | H | 8hrs| 4hrs | |
-| Frontend: Authentication + Research | H | 4hrs| 3hrs |  |
+| Frontend: Authentication + Research | H | 4hrs| 4hrs |  |
 | Frontend: Testing CRUD | H | 4hrs| 1hr | |
 | Frontend: Netlify Deployment| H | 1hr| 0.25hr |
-| Frontend: New tech - React Bootstrap | H | 5hrs| 2hrs |
-| Styling | M | 5hrs| 5hrs |  |
+| Frontend: New tech - React Bootstrap | H | 5hrs| 5hrs |
+| Styling | M | 5hrs| 6hrs |  |
 | Research | M | 4hrs| 4hrs|  |
-| Troubleshooting | H | 5hrs| 5hrs | |
-| Total |  | 51hrs|  | |
+| Testing & Troubleshooting | H | 5hrs| 5hrs | |
+| Total |  | 51hrs| 37.75hrs | |
 
 
 ## PostMVP Timeline
