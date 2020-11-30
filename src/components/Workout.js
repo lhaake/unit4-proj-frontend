@@ -52,14 +52,11 @@ console.log("looking for workout[workoutId] array", displayWorkout)
           <h6><strong>Sport: </strong> {workout.sport}</h6>
           <h6><strong>Time:</strong> {workout.time} minutes</h6>
           {workout.sport === "Run" || workout.sport === "Hike" || workout.sport === "Walk" || workout.sport === "Bike" ? <h6><strong> Distance: </strong> {workout.distance} miles</h6> : null }
-
-          {/* <h6><strong>Distance:</strong> </h6> */}
           <h6><strong>Exertion:</strong> {workout.exertion}</h6>
-          { workout.url ? <a href={workout.url} target="_blank"><strong>Workout Video</strong></a> : null }
-          {workout.isFavorite ? <h6><strong> Favorite: </strong> <BiLike size="25px" /></h6> : null }
-        
           <h6><strong>Description:</strong> {workout.description}</h6>
-
+          {workout.isFavorite ? <h6><strong> Favorite: </strong> <BiLike size="25px" /></h6> : null }
+          { workout.url ? <a href={workout.url} target="_blank"><h6><strong>Workout Video</strong></h6></a> : null }
+        
           <br />
           <div className="buttons">
           <button className="edit"><MdEdit size="30px" onClick={() => {

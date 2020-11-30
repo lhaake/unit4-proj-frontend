@@ -233,6 +233,8 @@ Next up:
 - Remove comments / console.logs
 - Push master branch to github
 - Check netlify
+- Test site 
+- Update time on worksheet 
 - Update Unit Project Spreadsheet
 
 

@@ -38,11 +38,6 @@ let sortedFilteredWorkouts = filteredWorkouts.sort((a, b) => {
 const showFilteredWorkouts = (w) => (
   <>
     <div className="filter-container"> 
-        {/* <article>
-            <p>Title: {workout.title}</p>
-            <p>Date: {workout.date}</p>
-            <p>Time: {workout.time} minutes</p>
-        </article> */}
     <h3>{w.length} Workouts</h3>
     <Table responsive="sm">
     <thead>
@@ -244,3 +239,9 @@ export default Filter;
   //   </div>
   //   </>
   //   )
+
+        //   <article>
+        //     <p>Title: {workout.title}</p>
+        //     <p>Date: {workout.date}</p>
+        //     <p>Time: {workout.time} minutes</p>
+        // </article>

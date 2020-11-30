@@ -2,7 +2,6 @@ import React from "react"
 import './Dash.css';
 import {Link} from "react-router-dom"
 import { BiLike } from "react-icons/bi";
-import {Jumbotron, Button} from "react-bootstrap"
 
 const Dash = (props) => {
 
@@ -49,12 +48,6 @@ const Dash = (props) => {
 
   const loaded = () => (
    <div className="dash-container">
-     {/* <h1>Dashboard</h1> */}
-
-     {/* <Jumbotron>
-        <h1>Dashboard</h1>
-        <Button variant="">Add a Workout</Button>
-      </Jumbotron> */}
 
       <button><Link to="/workout/add">Add Workout</Link></button>
     <div className="dash-header">
@@ -117,3 +110,10 @@ export default Dash;
 // })
 
 // console.log(newArr)
+
+   {/* <h1>Dashboard</h1> */}
+
+     {/* <Jumbotron>
+        <h1>Dashboard</h1>
+        <Button variant="">Add a Workout</Button>
+      </Jumbotron> */}

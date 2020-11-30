@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Route, Link, Switch, Redirect} from "react-router-dom"
+import {Route, Switch, Redirect} from "react-router-dom"
 import './App.css';
 import Home from "./components/Home"
 import Navigation from "./components/Navigation"
@@ -373,19 +373,19 @@ export default App;
 
 
 
-      {/* { filteredWorkouts[0] ? 
-         <Route exact path="/search"
-			    render={(rp) => (
-        	<Filter
-            {...rp}
-            filteredWorkouts={filteredWorkouts}
-          />
-          )}
-        />
-        : null } */}
+      // { filteredWorkouts[0] ? 
+        //  <Route exact path="/search"
+			  //   render={(rp) => (
+        // 	<Filter
+        //     {...rp}
+        //     filteredWorkouts={filteredWorkouts}
+        //   />
+        //   )}
+        // />
+        // : null }
 
 
-        {/* <button onClick={() => }>Sign Up</button> */}
-        {/* <button onClick={() => login()}>Log In</button> */}
+      // <button onClick={() => }>Sign Up</button> 
+      //   <button onClick={() => login()}>Log In</button> 
 
-        {/* <button onClick={() => getWorkouts()}>Test Fetch Workouts</button><br /><br /> */}
+      //  <button onClick={() => getWorkouts()}>Test Fetch Workouts</button><br /><br /> 

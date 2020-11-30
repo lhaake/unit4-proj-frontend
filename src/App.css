@@ -5,6 +5,8 @@
   min-height: 100%;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Pragati+Narrow:wght@700&family=Shrikhand&display=swap');
+
 /* .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -19,6 +21,3 @@
 .App-link {
   color: #61dafb;
 } */
-
-
-

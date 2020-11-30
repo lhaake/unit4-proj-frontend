@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import './WorkoutForm.css';
-import {Form, Col, Row, Button, FormCheck} from 'react-bootstrap';
+import {Form, Col, Row, Button} from 'react-bootstrap';
 import RangeSlider from 'react-bootstrap-range-slider'
 import { BiLike } from "react-icons/bi";
 
