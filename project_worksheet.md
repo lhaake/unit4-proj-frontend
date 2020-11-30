@@ -128,14 +128,14 @@ Back End
 | Backend: Heroku Deployment | H | 2hr | 0.5hr |  |
 | Frontend: Create React App + Installs | H | 1hr| 0.5hr |  |
 | Frontend: Build Components | H | 8hrs| 4hrs | |
-| Frontend: Authentication + Research | H | 4hrs| 3hrs |  |
+| Frontend: Authentication + Research | H | 4hrs| 4hrs |  |
 | Frontend: Testing CRUD | H | 4hrs| 1hr | |
 | Frontend: Netlify Deployment| H | 1hr| 0.25hr |
-| Frontend: New tech - React Bootstrap | H | 5hrs| 2hrs |
-| Styling | M | 5hrs| 5hrs |  |
+| Frontend: New tech - React Bootstrap | H | 5hrs| 5hrs |
+| Styling | M | 5hrs| 6hrs |  |
 | Research | M | 4hrs| 4hrs|  |
-| Troubleshooting | H | 5hrs| 5hrs | |
-| Total |  | 51hrs|  | |
+| Testing & Troubleshooting | H | 5hrs| 5hrs | |
+| Total |  | 51hrs| 37.75hrs | |
 
 
 ## PostMVP Timeline
@@ -218,14 +218,7 @@ DAY OFF
 | Sunday, November 29 | 
 |---|
 1. Styling Done: Nav (links change from blue to black), Dashboard edited the mobile css, Workout - style, date format, icons for edit and delete, Google Fonts
-2. Pushed master branch to github
-3. Tested netlify site
-
-
-- Check netlify
-- Test site after updated on netlify
-- Update times on worksheet 
-- Update Unit Project Spreadsheet - with my link
+2. Tested netlify site
 
 
 ## Additional Libraries
@@ -234,17 +227,20 @@ DAY OFF
 ## Takeaways
 
 ## Future Direction & Ideas
-Ran out of time:
-1. In App, userLogged Out message 
+1. In App, editing the userLogged Out message 
 2. Log in Error 
   - Error message on screen when Logging In - Invalid Username or Password. The username or password did not match. Please try again.
-
-- PostMVP items - Pace, Calendar, Filter Options
-- Add form validation that shows up before pressing save
-- When Logged In change the nav to show a username / Icon. When Logged out - remove this
-- Message confirming you are logged in 
-- Message confirming you have signed up - created an Account
-- Pagination on Filter 
-- Workout Form  make the "Sport" field required 
-- Issues: Log out in nav - can't style it correctly 
-- Name ideas? 
+3. Auth -- when someone hasn't logged out, there is an issue with logging in 
+4. PostMVP items
+	- For running/biking: calculate pace based on distance and time
+	- Calendar that would display the workouts entered by date (API research needed for this)
+	- Add additional functionality to filter data by date, time, distance, keyword 
+5. Add form validation that shows errors before submitting form
+6. When Logged In change the nav to show a username / Icon. When Logged out - remove this
+7. Message confirming you are logged in 
+8. Message confirming you have signed up - created an Account
+9. Scaling the app for large amounts of data over time - Calendar would be helpful for this 
+10. Pagination on Filter 
+11. Filter: add functionality to see full list after search
+12. Workout Form  make the "Sport" field required 
+13.  Name ideas? 
