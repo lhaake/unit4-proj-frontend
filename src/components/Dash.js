@@ -73,7 +73,7 @@ const Dash = (props) => {
       </div>
   </div>
   )
-  return workouts.length > 0 ? loaded() : <h1>Loading...</h1>
+  return workouts.length > 0 ? loaded() : <><h3>No workouts added yet.</h3><button className="first-button"><Link to="/workout/add">Add Workout</Link></button></>
 
 }
 export default Dash;

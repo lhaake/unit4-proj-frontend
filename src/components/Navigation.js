@@ -18,12 +18,20 @@ const Navigation = (props) => {
           <NavDropdown.Item><Link to ="/workout/add">Add Workout</Link></NavDropdown.Item>
        </NavDropdown>
 
+       {props.isLoggedIn === false ? 
       <NavDropdown title="ACCOUNT" id="basic-nav-dropdown">
+       
         <NavDropdown.Item><Link to ="/signup">Sign up</Link></NavDropdown.Item>
         <NavDropdown.Item><Link to ="/login">Log in</Link></NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item className="logout-button" onClick={() => props.logout()}>Log out</NavDropdown.Item>
       </NavDropdown>
+      : 
+      <NavDropdown title="ACCOUNT" id="basic-nav-dropdown">
+        <NavDropdown.Item>You are logged in</NavDropdown.Item>
+        <NavDropdown.Item className="logout-button" onClick={() => props.logout()}>Log out</NavDropdown.Item>
+      </NavDropdown>  
+      }
     </Nav>
     </Navbar.Collapse>
   </Navbar> 

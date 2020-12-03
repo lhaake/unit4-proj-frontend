@@ -10,6 +10,7 @@ const LoginForm = (props) => {
         username: "", 
         password: "",
     }
+    const {userCred} = props
 
     // state for login form 
     const [formData, setFormData] = useState(emptyForm)
@@ -23,12 +24,10 @@ const LoginForm = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         props.handleForm(formData);
-        setFormData(emptyForm)
-        console.log("logged in")
-       props.history.push('/dashboard');
+        setFormData(emptyForm)   
     }
 
-  // Using Vanilla JS to add the "show password functionality. Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_password
+  // Using Vanilla JS to add the "show password" functionality. Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_password
   const showPassword = () => {
     const data = document.getElementById("myInput")
   
@@ -44,7 +43,9 @@ const LoginForm = (props) => {
     <div className="login-form-container">
       <h1>{props.label}</h1>
       {props.label === "Log in" ? <h6>Not registered? <Link to="/signup">Sign up</Link></h6> : <h6>Already have an account? <Link to="/login">Log in</Link></h6> } 
-    
+      {userCred.error && props.label === "Log in" ? <p style={{color: "red", textAlign: "center"}}>Invalid username or password. Please log in again.</p> : null }
+      {userCred.error && props.label === "Sign up" ? <p style={{color: "red", textAlign: "center"}}>Username not available. Enter a different username.</p> : null }
+
     <Form onSubmit={handleSubmit} className="login-form">
     <Col sm={9}>
       <Form.Group controlId="formBasicEmail">
@@ -98,7 +99,6 @@ const LoginForm = (props) => {
 
 export default LoginForm;
 
-  // props.history.push('/');
 
   // ORIGINAL FORM
   //  <form onSubmit={handleSubmit} className="login-form">
@@ -112,3 +112,13 @@ export default LoginForm;
   //        <br />
   //         <input type="submit" value={props.label} />
   //     </form>
+
+  // props.history.push - originally in handleSubmit 
+      //   if(!userLogin.error) {
+      //     if (props.match.url === '/login')  {
+      //     props.history.push('/dashboard')
+      //     }
+
+        //   if(props.match.url === '/signup') {
+        //   props.history.push('/login')
+        // }

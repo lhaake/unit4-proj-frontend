@@ -241,6 +241,6 @@ DAY OFF
 8. Message confirming you have signed up - created an Account
 9. Scaling the app for large amounts of data over time - Calendar would be helpful for this 
 10. Pagination on Filter 
-11. Filter: add functionality to see full list after search
+11. Filter: add functionality to see full list after search, "no matches found"
 12. Workout Form  make the "Sport" field required 
 13.  Name ideas? 
