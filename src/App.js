@@ -42,6 +42,9 @@ function App() {
     // state for filtered workouts
     const [filteredWorkouts, setFilteredWorkouts] = useState([])
 
+    //state for log in (boolean)
+    const [isLoggedIn, setisLoggedIn] = useState(false)
+
     // user sign up function - create an account
     const signup = async (newUser) => {
         console.log("signup function start")
@@ -52,6 +55,8 @@ function App() {
       })
         const result = await response.json()
         setUserSignup(result)
+
+        if(userSignup.username)
         console.log("usersignup", result)
     }
 
@@ -66,7 +71,14 @@ function App() {
       })
       const newtoken = await response.json()
       setUserLogin(newtoken)
-     
+
+      if (userLogin.user) {
+        setisLoggedIn(true)
+      }
+
+      if (userLogin.error) {
+        setisLoggedIn(false)
+      }
       console.log("newtoken", newtoken)
       token = newtoken
       window.localStorage.setItem('token', JSON.stringify(token))
@@ -93,6 +105,7 @@ function App() {
     // let token = ""
     window.localStorage.removeItem('token')
     setUserLogin("logged out")
+    setisLoggedIn(false)
     setWorkouts([])
     console.log("logged out")
   }
@@ -103,6 +116,7 @@ function App() {
     if (loggedInUser) {
       const foundUser = JSON.parse(loggedInUser);
       setUserLogin(foundUser);
+      setisLoggedIn(true)
     }
 
     if (userLogin.token) {
@@ -181,15 +195,17 @@ function App() {
     console.log("results array", filterResults)
     setFilteredWorkouts(filterResults)
   }
-  console.log("filtered workouts", filteredWorkouts)
-
+  
     return (
       <div>
-        <Navigation logout={logout} />
-        
+        <Navigation 
+        logout={logout}
+        isLoggedIn={isLoggedIn} />
+  
+        {isLoggedIn ? <Redirect to="/dashboard" />  : null }
+        {userSignup.user ? <Redirect to="/login" />  : null }
         {userLogin === "logged out" ? <Redirect to="/login" /> : null }
-        {userLogin === "logged out" ? <h3>You are logged out!</h3> : null} 
-   
+
       <Switch>
         <Route exact path="/" component={Home} />
 
@@ -198,7 +214,8 @@ function App() {
         	<LoginForm
             {...rp}
             label="Sign up"
-			      handleForm={signup}
+            handleForm={signup}
+            userCred={userSignup}
 		      />
       	)}
         />
@@ -209,11 +226,12 @@ function App() {
             {...rp}
             label="Log in"
             handleForm={login}
+            userCred={userLogin}
 		      />
       	  )}
         />
         
-        { workouts[0] ? 
+        
         <Route path="/dashboard"
 			    render={(rp) => (
         	<Dash
@@ -222,8 +240,7 @@ function App() {
 		      />
       	  )}
         />
-        : null
-        } 
+    
 
       <Route path="/workout/add"
 			render={(rp) => (
@@ -293,15 +310,11 @@ function App() {
 
 export default App;
 
-    // login messages
-    //  {userSignup.token ? <h1>You have successfully signed up! Please Log in</h1> : null }
-    // {userLogin.token ? <h1>You are logged in!</h1> : null }
-    // {userLogin.error ? <h1>Invalid username or Password. Please Log In again.</h1> : null }
-
       // <button onClick={() => }>Sign Up</button> 
       //   <button onClick={() => login()}>Log In</button> 
 
       //  <button onClick={() => getWorkouts()}>Test Fetch Workouts</button><br /><br /> 
+
 
     //    { workouts[0] ? 
     //   <Route path="/workout/:id/edit"
@@ -317,3 +330,5 @@ export default App;
 		// />
     //  : null
     //  } 
+
+    // {userLogin === "logged out" ? <h3>You are logged out!</h3> : null} 
