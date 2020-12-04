@@ -58,7 +58,6 @@ function App(props) {
         const result = await response.json()
         setUserSignup(result)
 
-
         console.log("usersignup", result)
     }
 
@@ -74,18 +73,6 @@ function App(props) {
       const newtoken = await response.json()
       setUserLogin(newtoken)
 
-      // !userLogin.user ? console.log("true") : console.log("false")
-
-      if (userLogin.user) {
-         console.log("in the if statement of login")
-        setisLoggedIn(true)
-        // check()
-      }
-
-      if (userLogin.error) {
-         console.log("in the if statement of login - ERROR")
-        setisLoggedIn(false)
-      }
       console.log("newtoken", newtoken)
       token = newtoken
       window.localStorage.setItem('token', JSON.stringify(token))
