@@ -9,8 +9,9 @@ import Workout from "./components/Workout"
 import WorkoutForm from "./components/WorkoutForm"
 import Filter from "./components/Filter"
 import FilterForm from "./components/FilterForm"
+import About from "./components/About"
 
-function App() {
+function App(props) {
     // url to backend
     const url = "https://lh-training-log-backend.herokuapp.com"
 
@@ -45,6 +46,7 @@ function App() {
     //state for log in (boolean)
     const [isLoggedIn, setisLoggedIn] = useState(false)
 
+
     // user sign up function - create an account
     const signup = async (newUser) => {
         console.log("signup function start")
@@ -56,7 +58,7 @@ function App() {
         const result = await response.json()
         setUserSignup(result)
 
-        if(userSignup.username)
+
         console.log("usersignup", result)
     }
 
@@ -72,11 +74,16 @@ function App() {
       const newtoken = await response.json()
       setUserLogin(newtoken)
 
+      // !userLogin.user ? console.log("true") : console.log("false")
+
       if (userLogin.user) {
+         console.log("in the if statement of login")
         setisLoggedIn(true)
+        // check()
       }
 
       if (userLogin.error) {
+         console.log("in the if statement of login - ERROR")
         setisLoggedIn(false)
       }
       console.log("newtoken", newtoken)
@@ -116,13 +123,21 @@ function App() {
     if (loggedInUser) {
       const foundUser = JSON.parse(loggedInUser);
       setUserLogin(foundUser);
-      setisLoggedIn(true)
     }
 
     if (userLogin.token) {
+      setisLoggedIn(true)
       getWorkouts()
     }
   }, [userLogin.token]);
+
+  useEffect(() => {
+    if(<Route path="/login" />) {
+      if(isLoggedIn) {
+        props.history.push('/dashboard')
+      }
+    }  
+  }, [isLoggedIn])
 
   // handleCreate for creating new workouts
 	const handleCreate = async (newWorkout) => {
@@ -200,14 +215,23 @@ function App() {
       <div>
         <Navigation 
         logout={logout}
+        userLogin={userLogin}
         isLoggedIn={isLoggedIn} />
   
-        {isLoggedIn ? <Redirect to="/dashboard" />  : null }
-        {userSignup.user ? <Redirect to="/login" />  : null }
+        
+        {userSignup.user && <Route path="/signup" /> ? <Redirect to="/login" />  : null }
         {userLogin === "logged out" ? <Redirect to="/login" /> : null }
 
       <Switch>
         <Route exact path="/" component={Home} />
+
+        <Route path="/about"
+			  render={(rp) => (
+        <About
+          {...rp}
+		    />
+      	)}
+      />
 
         <Route path="/signup"
 			    render={(rp) => (
@@ -216,6 +240,8 @@ function App() {
             label="Sign up"
             handleForm={signup}
             userCred={userSignup}
+            
+            
 		      />
       	)}
         />
@@ -227,6 +253,8 @@ function App() {
             label="Log in"
             handleForm={login}
             userCred={userLogin}
+            
+            
 		      />
       	  )}
         />
@@ -302,8 +330,8 @@ function App() {
         )}
         />
         : null }
-
     </Switch> 
+   
     </div>
     )
 }
@@ -332,3 +360,5 @@ export default App;
     //  } 
 
     // {userLogin === "logged out" ? <h3>You are logged out!</h3> : null} 
+
+    // {((isLoggedIn) && <Route path="/login" />) ? <Redirect to="/dashboard" />  : null } 
