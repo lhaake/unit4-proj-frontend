@@ -26,7 +26,6 @@ const LoginForm = (props) => {
         event.preventDefault()
         props.handleForm(formData);
         setFormData(emptyForm) 
-        
     }
 
   // Using Vanilla JS to add the "show password" functionality. Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_password
