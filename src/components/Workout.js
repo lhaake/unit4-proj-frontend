@@ -35,7 +35,7 @@ const Workout = (props) => {
   // Match the workout id from workouts array to the workout from props.match.params.id
   let displayWorkout = []
   {workouts.map((workout) => {
-    if(workout.id === workoutId) {
+    if (workout.id === workoutId) {
         displayWorkout.push(workout)
     } else {
         console.error("problem")

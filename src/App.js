@@ -46,6 +46,8 @@ function App(props) {
     //state for log in (boolean)
     const [isLoggedIn, setisLoggedIn] = useState(false)
 
+    const [sortedByDate, setSortedByDate] = useState([])
+
 
     // user sign up function - create an account
     const signup = async (newUser) => {
@@ -197,6 +199,22 @@ function App(props) {
     console.log("results array", filterResults)
     setFilteredWorkouts(filterResults)
   }
+
+  //  Sort workouts by date in descending order.
+    const sortByDate = (workouts) => {
+      setSortedByDate(workouts.sort((a, b) => {
+          let keyA = new Date(a.date)
+          let keyB = new Date(b.date)
+          return keyB - keyA
+        }))
+    }
+
+  useEffect(() => {
+    if (workouts[0]) {
+      sortByDate(workouts)
+      console.log("in the useeffect", workouts)
+    }
+  }, [workouts]);
   
     return (
       <div>
@@ -241,7 +259,6 @@ function App(props) {
             handleForm={login}
             userCred={userLogin}
             
-            
 		      />
       	  )}
         />
@@ -251,7 +268,8 @@ function App(props) {
 			    render={(rp) => (
         	<Dash
             {...rp}
-            workouts={workouts}
+            sortedByDate={sortedByDate}
+            // workouts={workouts}
 		      />
       	  )}
         />
