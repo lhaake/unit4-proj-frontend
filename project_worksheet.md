@@ -242,5 +242,6 @@ Worked on:
 4. Pagination on Filter 
 5. Filter: add functionality to see full list after search, "no matches found"
 6. Workout Form  make the "Sport" field required 
-7.  Name ideas? 
+7. Name ideas? 
 8. On Dashboard, have an account with the username
+9. Design of Workout Component- the edit and delete icon boxes grow, description items --> put on next line?
