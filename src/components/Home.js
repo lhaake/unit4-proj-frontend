@@ -14,7 +14,7 @@ const Home = (props) => {
                 <li>In Workouts: select Add a Workout to save a workout to your account. Or select Search Workouts to view your full list of workouts, and filter search results</li>
                 <li>In Dashboard: view, edit and remove your workouts</li>
             </ul>
-            <h6></h6>
+      
         </div>
     </div>
   )

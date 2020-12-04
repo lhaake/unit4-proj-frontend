@@ -1,12 +1,13 @@
-import React from "react"
+import React, {useEffect} from "react"
 import './Dash.css';
 import {Link} from "react-router-dom"
 import { BiLike } from "react-icons/bi";
 
 const Dash = (props) => {
 
-  const {workouts} = props
-
+  // const {workouts} = props
+ const {sortedByDate} = props
+  console.log("checking workouts props", sortedByDate)
   // format Date
   const formatDate = (workout) => {
     let dateinfo = ""
@@ -21,12 +22,23 @@ const Dash = (props) => {
     return dateStr.toDateString()
   }
 
-  // Sort workouts by date in descending order. 
-  let newWorkoutList = workouts.sort((a, b) =>{
-    let keyA = new Date(a.date)
-    let keyB = new Date(b.date)
-    return keyB - keyA
-  })
+  // let newList = []
+// //  Sort workouts by date in descending order.
+//     const sortByDate = (workouts) => {
+//      return (
+//         newList = workouts.sort((a, b) => {
+//           let keyA = new Date(a.date)
+//           let keyB = new Date(b.date)
+//           return keyB - keyA
+//         })
+//      )
+//     }
+
+//   useEffect(() => {
+//     sortByDate(workouts)
+//     console.log("in the useeffect", workouts)
+//   }, [workouts]);
+
 
   let runimg = "https://images.unsplash.com/photo-1530143311094-34d807799e8f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
 
@@ -49,7 +61,7 @@ const Dash = (props) => {
       <button><Link to="/workout/add">Add Workout</Link></button>
     <div className="dash-header">
      
-      {newWorkoutList.map((workout) => (
+      {sortedByDate.map((workout) => (
         <Link to={`/workout/${workout.id}`}><article className="dash-cards"   
    
         style={ workout.sport === "Lift Weights" || workout.sport === "Crossfit" ? {backgroundImage: `url(${weights})` } : {backgroundImage: `url(${defaultimg})` } 
@@ -73,7 +85,7 @@ const Dash = (props) => {
       </div>
   </div>
   )
-  return workouts.length > 0 ? loaded() : <><h3>No workouts added yet.</h3><button className="first-button"><Link to="/workout/add">Add Workout</Link></button></>
+  return sortedByDate.length > 0 ? loaded() : <><h3>No workouts added yet.</h3><button className="first-button"><Link to="/workout/add">Add Workout</Link></button></>
 
 }
 export default Dash;
@@ -86,3 +98,23 @@ export default Dash;
 
 // SORT function
 // Source: https://stackoverflow.com/questions/8837454/sort-array-of-objects-by-single-key-with-date-value
+
+  // let newWorkoutList = []
+
+//   const sortByDate = (workouts) => { 
+//     workouts.sort((a, b) => {
+//     let keyA = new Date(a.date)
+//     let keyB = new Date(b.date)
+//     console.log("looking", workouts)
+//     return keyB - keyA
+//   })
+//   console.log(workouts)
+//   console.log("in the sort function")
+// }
+
+//  useEffect(() => {
+//     sortByDate(workouts)
+//     console.log("in the useeffect", workouts)
+//   }, [workouts]);
+
+// console.log("after sort function", newWorkoutList)

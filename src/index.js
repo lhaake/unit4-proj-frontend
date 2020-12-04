@@ -11,12 +11,12 @@ ReactDOM.render(
   <Router>
   <React.StrictMode>
     <Route 
-      render={(rp) => (
-        <App
-          {...rp}
+    render={(rp) => (
+        <App 
+        {...rp}
         />
     )}
-    />      
+     />
   </React.StrictMode>
   </Router>,
 

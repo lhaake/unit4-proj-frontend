@@ -1,5 +1,5 @@
 
-.about h3 {
+.about h3, h6 {
     font-family: 'Montserrat', sans-serif;
     padding: 10px 20px;
 }
@@ -7,4 +7,9 @@
 .about p {
     font-family: 'Helvetica Neue', sans-serif;
     padding: 10px 20px;
+}
+
+.about ul li {
+    font-family: 'Helvetica Neue', sans-serif;
+    margin-left: 20px;
 }
