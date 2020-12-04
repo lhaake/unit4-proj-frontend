@@ -1,9 +1,12 @@
 import React from "react"
 import {Link} from "react-router-dom"
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap'
+import { MdAccountCircle } from "react-icons/md"
+
 import './Nav.css';
 
 const Navigation = (props) => {
+  const {userLogin} = props
   return (
     <>
     <Navbar bg="light" expand="lg">
@@ -20,7 +23,7 @@ const Navigation = (props) => {
 
        {props.isLoggedIn === false ? 
       <NavDropdown title="ACCOUNT" id="basic-nav-dropdown">
-       
+       <NavDropdown.Item><Link to ="/about">About</Link></NavDropdown.Item>
         <NavDropdown.Item><Link to ="/signup">Sign up</Link></NavDropdown.Item>
         <NavDropdown.Item><Link to ="/login">Log in</Link></NavDropdown.Item>
         <NavDropdown.Divider />
@@ -28,7 +31,9 @@ const Navigation = (props) => {
       </NavDropdown>
       : 
       <NavDropdown title="ACCOUNT" id="basic-nav-dropdown">
-        <NavDropdown.Item>You are logged in</NavDropdown.Item>
+        <NavDropdown.Item><MdAccountCircle size="24px"/> {userLogin.user.username}</NavDropdown.Item>
+        <NavDropdown.Item><Link to ="/about">About</Link></NavDropdown.Item>
+        <NavDropdown.Divider />
         <NavDropdown.Item className="logout-button" onClick={() => props.logout()}>Log out</NavDropdown.Item>
       </NavDropdown>  
       }

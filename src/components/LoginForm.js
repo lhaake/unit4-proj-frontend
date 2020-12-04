@@ -12,6 +12,7 @@ const LoginForm = (props) => {
     }
     const {userCred} = props
 
+
     // state for login form 
     const [formData, setFormData] = useState(emptyForm)
 
@@ -24,7 +25,8 @@ const LoginForm = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         props.handleForm(formData);
-        setFormData(emptyForm)   
+        setFormData(emptyForm) 
+        
     }
 
   // Using Vanilla JS to add the "show password" functionality. Source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_password
