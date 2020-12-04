@@ -11,8 +11,8 @@
 |Day 5 - Wednesday, Nov. 25 | Frontend, Filter Component | Done
 |Day 6 - Thursday, Nov. 26 | - | Day Off
 |Day 7 - Friday, Nov. 27  | Frontend, Styling | Done
-|Day 8,9 - Weekend  | Deploy to Netlify, Frontend, Styling | -
-|Day 10 - Monday, Nov. 30  | Project Due, Submit Links, Finalize Worksheet | -
+|Day 8,9 - Weekend  | Deploy to Netlify, Frontend, Styling | Done
+|Day 10 - Monday, Nov. 30  | Project Due, Submit Links, Finalize Worksheet | Done
 
 ## Project Links
 
@@ -221,29 +221,26 @@ DAY OFF
 2. Tested netlify site
 
 
+Worked on:
+1. Login/SignUp/Logout functionality - error messages Invalid Username or Password. The username or password did not match. Please try again.
+2. When Logged In change the nav to show a username / Icon. When Logged out - remove this
+3. Message confirming you are logged in 
+4. Message confirming you have signed up - created an Account
+
 ## Additional Libraries
 ## Code Snippet
 ## Challenges 
 ## Takeaways
 
 ## Future Direction & Ideas
-1. In App, editing the userLogged Out message 
-2. Log in Error 
-  - Error message on screen when Logging In - Invalid Username or Password. The username or password did not match. Please try again.
-3. Auth -- when someone hasn't logged out, there is an issue with logging in 
-4. PostMVP items
+1. PostMVP items
 	- For running/biking: calculate pace based on distance and time
 	- Calendar that would display the workouts entered by date (API research needed for this)
 	- Add additional functionality to filter data by date, time, distance, keyword 
-5. Add form validation that shows errors before submitting form
-6. When Logged In change the nav to show a username / Icon. When Logged out - remove this
-7. Message confirming you are logged in 
-8. Message confirming you have signed up - created an Account
-9. Scaling the app for large amounts of data over time - Calendar would be helpful for this 
-10. Pagination on Filter 
-11. Filter: add functionality to see full list after search, "no matches found"
-12. Workout Form  make the "Sport" field required 
-13.  Name ideas? 
-14. On Dashboard, have an account with the username
-
-
+2. Add form validation that shows errors before submitting form
+3. Scaling the app for large amounts of data over time - Calendar would be helpful for this 
+4. Pagination on Filter 
+5. Filter: add functionality to see full list after search, "no matches found"
+6. Workout Form  make the "Sport" field required 
+7.  Name ideas? 
+8. On Dashboard, have an account with the username
